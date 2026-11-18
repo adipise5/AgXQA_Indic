@@ -1,0 +1,116 @@
+{
+  "status": "pilot_before_quality_review",
+  "language": "hi",
+  "documents": 10,
+  "words": 16576,
+  "xlmr_tokens": 26377,
+  "quality_reviews_accepted": 0,
+  "tokenizer": {
+    "id": "FacebookAI/xlm-roberta-base",
+    "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089"
+  },
+  "phase6": {
+    "phase6_documents": 70,
+    "raw_byte_matches": 66,
+    "changed_raw_snapshots": [
+      "BN_DOC_018",
+      "HI_DOC_003",
+      "MR_DOC_018",
+      "TA_DOC_005"
+    ],
+    "verified_qa_records": 2351,
+    "qa_contexts": 827,
+    "full_document_windows": 1133,
+    "full_document_reference": "reconstructed public snapshots"
+  },
+  "overlap": {
+    "candidate_documents": 10,
+    "text_documents_checked": 10,
+    "unscannable_document_ids": [],
+    "reference_windows": 1960,
+    "documents_with_hits": 0,
+    "findings": []
+  },
+  "document_manifest": [
+    {
+      "document_id": "AEC_HI_KHETI_944",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/944/759",
+      "raw_sha256": "2fc3761edcffed16a6aa5979ac90b0b4470f29ba086d221a43c97fff5552c57e",
+      "cleaned_sha256": "699fc84f64fc9544a83fa654f07ad0f9bc2c87d7dc3cf54fe99ec154bf3cc8b6",
+      "words": 853,
+      "tokens": 1299
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1856",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1856/1030",
+      "raw_sha256": "915b02a9f3d3d6e03b345ba129c0a3dd873be88b434177a0fb01a8f1b826b7a4",
+      "cleaned_sha256": "15f200c26fec57b51746579b14a2037fcbb442fb0ec50fae6a571e338bdd5538",
+      "words": 1535,
+      "tokens": 2534
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1608",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1608/1028",
+      "raw_sha256": "ea05d0a6c0456d49193e941eb514401a24bc54c137322607999f7b59cbe8efbd",
+      "cleaned_sha256": "7c2431168c3402eea21382ba491d35cbbecac6dab1358542115572c261fe8ac6",
+      "words": 1651,
+      "tokens": 2500
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1670",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1670/995",
+      "raw_sha256": "4440f736ea133b462a7f6982fa1731cbdd8e11073e418deb7cde1b32a4bf9314",
+      "cleaned_sha256": "2f4e92126697ee3100a8cfdf187774695d579b06add4a59cb3babd5834f47e2c",
+      "words": 2322,
+      "tokens": 3556
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1628",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1628/1085",
+      "raw_sha256": "afe88b8941c25b4616fe463a371fa081a2e67e6048e0069144186a2a027e6508",
+      "cleaned_sha256": "7ef52c32c953bc5e7849b9d44fb890df146ddc03297b2374d4e8d5fda01a4f04",
+      "words": 2030,
+      "tokens": 3018
+    },
+    {
+      "document_id": "AEC_HI_KHETI_952",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/952/767",
+      "raw_sha256": "46407d9eecab5d35ebc63c43b58d77af57c17562caf6d7d8b194908df42f50a4",
+      "cleaned_sha256": "96fe6ddcee448583872396673c5c10ff41b814b31441e79d4067d03768c57485",
+      "words": 1605,
+      "tokens": 2858
+    },
+    {
+      "document_id": "AEC_HI_KHETI_935",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/935/751",
+      "raw_sha256": "25726db3878701e80decf27043c61f3d17b5692897bae62bc5bd4c53b9229390",
+      "cleaned_sha256": "882f5aa30c6f735e67ac64b848ccab20fd028b6dfce5d9499a61051282a3bdbd",
+      "words": 1509,
+      "tokens": 2326
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1610",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1610/1081",
+      "raw_sha256": "da3939fa9f0ecb5378b443ca0ed5488c1281974e3927c91a9c6ec68419af6734",
+      "cleaned_sha256": "0bdad59b9be55dad081a9a0ace97c3390d58f1031c664f56119509e9ed3c2df4",
+      "words": 1683,
+      "tokens": 2724
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1847",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1847/1025",
+      "raw_sha256": "6e29ba9c99082a7c73428f5772a48584f50023edd2a4937be8f488b17871019a",
+      "cleaned_sha256": "10c77187bf13633f1d7851e7ff4e96ebf6d468a0c650461100a2152e8b752689",
+      "words": 1780,
+      "tokens": 2907
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1535",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1535/1009",
+      "raw_sha256": "94d31dea79382062ebe9c62d04521bb7d8797bc4b64cf3bc474759cffbcc638f",
+      "cleaned_sha256": "1077b2063fd448e25fe05ce8d4709efcd674aa26a550a44d8862604bc9caec6c",
+      "words": 1608,
+      "tokens": 2655
+    }
+  ]
+}
