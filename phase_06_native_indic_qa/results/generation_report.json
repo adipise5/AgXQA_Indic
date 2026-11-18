@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-11-18T13:21:54+00:00",
+  "configured": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "api_keys": [
+      {
+        "env": "GEMINI_API_KEY",
+        "max_calls_per_pacific_day": 485
+      },
+      {
+        "env": "GEMINI_API_KEY_2",
+        "max_calls_per_pacific_day": 440
+      }
+    ],
+    "temperature": 0.2,
+    "questions_per_context": 3,
+    "response_format": "json",
+    "max_retries": 3,
+    "rate_limit_delay_seconds": 4.5,
+    "prompt_version": "v2"
+  },
+  "current_prompt_sha256": "24e20dd19be5d37d35675f0a4d6b1ff74d55945eaf97401cf1272c6fdfaf1bd0",
+  "languages": {
+    "hi": {
+      "contexts_available": 393,
+      "contexts_processed": 398,
+      "status": {
+        "ok": 393,
+        "error": 5
+      },
+      "candidates": 1181,
+      "api_calls": 447,
+      "models_used": {
+        "gemini-3.5-flash-lite": 398
+      },
+      "prompt_versions_used": {
+        "v2:24e20dd19be5": 398
+      },
+      "temperatures_used": {
+        "0.2": 398
+      }
+    },
+    "mr": {
+      "contexts_available": 203,
+      "contexts_processed": 203,
+      "status": {
+        "ok": 203
+      },
+      "candidates": 612,
+      "api_calls": 208,
+      "models_used": {
+        "gemini-3.5-flash-lite": 203
+      },
+      "prompt_versions_used": {
+        "v2:24e20dd19be5": 203
+      },
+      "temperatures_used": {
+        "0.2": 203
+      }
+    },
+    "bn": {
+      "contexts_available": 146,
+      "contexts_processed": 146,
+      "status": {
+        "ok": 146
+      },
+      "candidates": 446,
+      "api_calls": 161,
+      "models_used": {
+        "gemini-3.5-flash-lite": 146
+      },
+      "prompt_versions_used": {
+        "v2:24e20dd19be5": 146
+      },
+      "temperatures_used": {
+        "0.2": 146
+      }
+    },
+    "ta": {
+      "contexts_available": 85,
+      "contexts_processed": 85,
+      "status": {
+        "ok": 85
+      },
+      "candidates": 267,
+      "api_calls": 91,
+      "models_used": {
+        "gemini-3.5-flash-lite": 85
+      },
+      "prompt_versions_used": {
+        "v2:24e20dd19be5": 85
+      },
+      "temperatures_used": {
+        "0.2": 85
+      }
+    }
+  }
+}

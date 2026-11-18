@@ -1,0 +1,42 @@
+You are an expert in agricultural extension, multilingual natural language processing, and extractive question-answering dataset creation.
+
+Objective:
+
+Generate high-quality native-language extractive question-answer pairs from the provided agricultural context.
+
+Target language: $LANGUAGE
+
+Instructions:
+1. Generate 2–3 meaningful agricultural questions directly from the provided context.
+2. Generate all questions in the target language without translating from English.
+3. Every question must be answerable using only the provided context.
+4. Every gold answer must be an exact, contiguous substring of the context.
+5. Do not paraphrase or modify the gold answer.
+6. Do not introduce external knowledge or unsupported facts.
+7. Questions must be natural, grammatically correct and understandable to native speakers.
+8. Preserve agricultural terminology, numerical values, units and regional details.
+9. Generate diverse questions covering factual knowledge, methods, conditions, causes, benefits and numerical information.
+10. Avoid trivial, repetitive, ambiguous, yes/no and context-dependent questions.
+11. If the context does not contain sufficient information, return an empty array.
+12. Do not modify the original context.
+
+Output format:
+
+Return only a valid JSON array containing objects with the following fields:
+- question
+- answer_text
+- evidence_sentence
+- question_type
+- difficulty
+- domain
+
+Field values:
+- answer_text: the shortest exact span of the context that fully answers the question, usually 1–8 words. Never a whole sentence, never a restatement of the question, and without sentence-final punctuation.
+- evidence_sentence: the full sentence of the context, copied exactly, that contains answer_text.
+- question_type: one of factual, numerical, temporal, procedural, causal, conditional, identification, benefit.
+- difficulty: one of easy, medium, hard.
+- domain: one of irrigation, crop_production, soil_management, fertilizers_nutrition, plant_diseases, pest_management, harvesting_storage, agricultural_technology.
+
+Context:
+
+$CONTEXT

@@ -1,0 +1,248 @@
+{
+  "dataset": "IndicAgriQA-Native",
+  "targets_per_language": {
+    "qa_pairs": 250,
+    "minimum_viable": 100
+  },
+  "languages": {
+    "hi": {
+      "qa_pairs": 1107,
+      "progress_vs_target": "1107/250",
+      "meets_minimum_viable": true,
+      "documents_in_manifest": 21,
+      "documents_in_final": 21,
+      "organizations": {
+        "Vikaspedia (MeitY / C-DAC)": 21
+      },
+      "license_status": {
+        "permission_required: email vikaspedia@cdac.in before redistribution; attribution required": 21
+      },
+      "unique_contexts": 392,
+      "human_validated": 0,
+      "irrigation_vs_other": {
+        "irrigation": 50,
+        "other": 1057
+      },
+      "domains": {
+        "pest_management": 464,
+        "crop_production": 283,
+        "plant_diseases": 166,
+        "fertilizers_nutrition": 59,
+        "irrigation": 50,
+        "soil_management": 40,
+        "harvesting_storage": 32,
+        "agricultural_technology": 13
+      },
+      "question_types": {
+        "factual": 340,
+        "numerical": 335,
+        "procedural": 145,
+        "temporal": 110,
+        "conditional": 58,
+        "identification": 53,
+        "causal": 52,
+        "benefit": 13,
+        "unknown": 1
+      },
+      "difficulty": {
+        "easy": 571,
+        "medium": 514,
+        "hard": 22
+      },
+      "mean_context_words": 123.3,
+      "mean_context_chars": 627.3,
+      "mean_question_words": 12.6,
+      "mean_answer_words": 3.6,
+      "funnel": {
+        "contexts": 393,
+        "contexts_sent_to_llm": 393,
+        "candidates_generated": 1181,
+        "passed_automatic_validation": 1167,
+        "after_deduplication": 1107,
+        "final": 1107
+      },
+      "review_agreement": {
+        "method": "single_reviewer"
+      }
+    },
+    "mr": {
+      "qa_pairs": 581,
+      "progress_vs_target": "581/250",
+      "meets_minimum_viable": true,
+      "documents_in_manifest": 20,
+      "documents_in_final": 20,
+      "organizations": {
+        "Vikaspedia (MeitY / C-DAC)": 20
+      },
+      "license_status": {
+        "permission_required: email vikaspedia@cdac.in before redistribution; attribution required": 20
+      },
+      "unique_contexts": 203,
+      "human_validated": 0,
+      "irrigation_vs_other": {
+        "irrigation": 117,
+        "other": 464
+      },
+      "domains": {
+        "crop_production": 146,
+        "irrigation": 117,
+        "pest_management": 101,
+        "fertilizers_nutrition": 99,
+        "soil_management": 51,
+        "plant_diseases": 46,
+        "agricultural_technology": 18,
+        "harvesting_storage": 3
+      },
+      "question_types": {
+        "numerical": 216,
+        "factual": 169,
+        "procedural": 73,
+        "temporal": 40,
+        "identification": 26,
+        "causal": 22,
+        "conditional": 21,
+        "benefit": 14
+      },
+      "difficulty": {
+        "easy": 314,
+        "medium": 254,
+        "hard": 13
+      },
+      "mean_context_words": 122.5,
+      "mean_context_chars": 798.8,
+      "mean_question_words": 8.3,
+      "mean_answer_words": 3.2,
+      "funnel": {
+        "contexts": 203,
+        "contexts_sent_to_llm": 203,
+        "candidates_generated": 612,
+        "passed_automatic_validation": 595,
+        "after_deduplication": 581,
+        "final": 581
+      },
+      "review_agreement": {
+        "method": "single_reviewer"
+      }
+    },
+    "bn": {
+      "qa_pairs": 420,
+      "progress_vs_target": "420/250",
+      "meets_minimum_viable": true,
+      "documents_in_manifest": 18,
+      "documents_in_final": 18,
+      "organizations": {
+        "Vikaspedia (MeitY / C-DAC)": 18
+      },
+      "license_status": {
+        "permission_required: email vikaspedia@cdac.in before redistribution; attribution required": 18
+      },
+      "unique_contexts": 146,
+      "human_validated": 0,
+      "irrigation_vs_other": {
+        "irrigation": 27,
+        "other": 393
+      },
+      "domains": {
+        "crop_production": 225,
+        "plant_diseases": 63,
+        "pest_management": 33,
+        "fertilizers_nutrition": 30,
+        "irrigation": 27,
+        "soil_management": 24,
+        "harvesting_storage": 12,
+        "agricultural_technology": 6
+      },
+      "question_types": {
+        "numerical": 133,
+        "factual": 117,
+        "temporal": 52,
+        "procedural": 51,
+        "identification": 22,
+        "conditional": 18,
+        "causal": 16,
+        "benefit": 11
+      },
+      "difficulty": {
+        "easy": 233,
+        "medium": 181,
+        "hard": 6
+      },
+      "mean_context_words": 102.0,
+      "mean_context_chars": 587.7,
+      "mean_question_words": 9.1,
+      "mean_answer_words": 3.3,
+      "funnel": {
+        "contexts": 146,
+        "contexts_sent_to_llm": 146,
+        "candidates_generated": 446,
+        "passed_automatic_validation": 439,
+        "after_deduplication": 420,
+        "final": 420
+      },
+      "review_agreement": {
+        "method": "single_reviewer"
+      }
+    },
+    "ta": {
+      "qa_pairs": 243,
+      "progress_vs_target": "243/250",
+      "meets_minimum_viable": true,
+      "documents_in_manifest": 11,
+      "documents_in_final": 11,
+      "organizations": {
+        "Vikaspedia (MeitY / C-DAC)": 11
+      },
+      "license_status": {
+        "permission_required: email vikaspedia@cdac.in before redistribution; attribution required": 11
+      },
+      "unique_contexts": 85,
+      "human_validated": 0,
+      "irrigation_vs_other": {
+        "irrigation": 71,
+        "other": 172
+      },
+      "domains": {
+        "soil_management": 86,
+        "irrigation": 71,
+        "crop_production": 46,
+        "fertilizers_nutrition": 17,
+        "plant_diseases": 10,
+        "pest_management": 8,
+        "agricultural_technology": 4,
+        "harvesting_storage": 1
+      },
+      "question_types": {
+        "numerical": 87,
+        "factual": 61,
+        "procedural": 30,
+        "causal": 18,
+        "identification": 16,
+        "temporal": 12,
+        "conditional": 10,
+        "benefit": 9
+      },
+      "difficulty": {
+        "easy": 130,
+        "medium": 105,
+        "hard": 8
+      },
+      "mean_context_words": 108.3,
+      "mean_context_chars": 914.3,
+      "mean_question_words": 7.6,
+      "mean_answer_words": 3.4,
+      "funnel": {
+        "contexts": 85,
+        "contexts_sent_to_llm": 85,
+        "candidates_generated": 267,
+        "passed_automatic_validation": 259,
+        "after_deduplication": 243,
+        "final": 243
+      },
+      "review_agreement": {
+        "method": "single_reviewer"
+      }
+    }
+  },
+  "total_qa_pairs": 2351,
+  "plots": []
+}

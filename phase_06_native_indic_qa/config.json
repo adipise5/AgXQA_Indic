@@ -1,6 +1,6 @@
 {
   "phase": 6,
-  "status": "pending",
+  "status": "partial_generated_unreviewed",
   "seed": 42,
   "languages": [
     "hi",
@@ -8,10 +8,12 @@
     "bn",
     "ta"
   ],
-  "inputs": [],
-  "output_dir": "outputs/phase_06_native_indic_qa",
-  "model_id": null,
+  "inputs": [
+    "phase_06_native_indic_qa/sources/{hindi,marathi,bengali,tamil}_sources.csv"
+  ],
+  "output_dir": "data/native_indic_qa",
+  "model_id": "gemini-3.5-flash-lite",
   "model_revision": null,
   "dataset_revision": null,
-  "notes": "Starter only. Resolve inputs and hyperparameters before execution."
+  "notes": "QA generation run 2026-11-18 (prompt v2, temperature 0.2). Settings: configs/generation_config.yaml. 2,351 QA pairs, unreviewed; passages withheld pending licence."
 }

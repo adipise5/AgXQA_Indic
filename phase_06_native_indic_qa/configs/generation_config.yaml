@@ -1,0 +1,64 @@
+# Phase 6 - IndicAgriQA-Native pipeline configuration.
+# Every value actually used for generation is copied into each raw generation
+# record and into results/generation_report.json, so runs stay reproducible.
+
+generation:
+  provider: gemini                 # same Google GenAI client as Phase 2
+  model: gemini-3.5-flash-lite     # record the exact model actually used; change if you upgrade
+  api_keys:                        # read from .env at repo root; tried in this order
+    - env: GEMINI_API_KEY          # new key, 500 calls/day quota
+      max_calls_per_pacific_day: 485
+    - env: GEMINI_API_KEY_2        # older key, ~420 calls left on 2026-11-18 (27 already used by the trial)
+      max_calls_per_pacific_day: 440
+  temperature: 0.2
+  questions_per_context: 3         # the prompt asks for 2-3; this is the upper bound kept per context
+  response_format: json
+  max_retries: 3
+  rate_limit_delay_seconds: 4.5    # Phase 2 used 4.5 s to stay under 15 RPM
+  prompt_version: v2               # bump whenever prompts/qa_generation_prompt.txt changes
+                                   # v2 (2026-11-18): asks for minimal answer spans; v1 trial gave whole-sentence answers
+
+extraction:
+  min_page_script_ratio: 0.35      # below this a PDF page is treated as legacy-font / non-Unicode text
+  ocr_dpi: 300
+
+cleaning:
+  repeated_line_page_fraction: 0.4 # a short line on >= 40% of pages is a header/footer
+  repeated_line_max_words: 12
+  near_duplicate_threshold: 92     # rapidfuzz ratio for near-duplicate paragraphs
+  min_paragraph_words: 8
+  min_paragraph_script_ratio: 0.6
+
+chunking:
+  target_min_words: 100
+  target_max_words: 200
+  hard_max_words: 260              # a single long paragraph is split at sentence ends above this
+  min_words: 60                    # shorter chunks are merged into the previous chunk of the same section
+  min_standalone_words: 40         # a short section that cannot merge is kept if at least this long
+  overlap_words: 0                 # 0-20 per the plan; overlap makes duplicate QA more likely
+  min_context_script_ratio: 0.7
+  tokenizer: xlm-roberta-base      # token counts only if `transformers` is installed
+  max_tokens: 384                  # flag contexts longer than the QA model's max_seq_length
+
+validation:
+  min_question_script_ratio: 0.6
+  min_answer_chars: 2
+  max_answer_words: 20             # hard reject
+  long_answer_words: 10            # warning for reviewers above this
+  max_answer_context_fraction: 0.5
+  min_question_words: 3
+  max_question_words: 40
+  evidence_match_threshold: 85     # rapidfuzz partial_ratio for evidence sentence grounding
+
+deduplication:
+  fuzzy_question_threshold: 90     # token_sort_ratio on normalised questions, within a language
+  max_questions_per_context: 3
+
+leakage:
+  shingle_size: 5                  # word n-grams on normalised text
+  containment_threshold: 0.5       # share of a context's 5-grams also found in the Phase 4 corpus
+  title_similarity_threshold: 90
+
+targets:                           # per language; used by dataset_statistics.py for progress
+  qa_pairs: 250
+  minimum_viable: 100

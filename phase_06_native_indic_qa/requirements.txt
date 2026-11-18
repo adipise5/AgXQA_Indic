@@ -1,0 +1,17 @@
+# Phase 6 - IndicAgriQA-Native. The repo uses uv (pyproject.toml); this file is for pip users.
+google-genai>=2.29.0
+python-dotenv>=1.2.4
+pymupdf>=1.28
+pdfplumber>=0.11
+beautifulsoup4>=4.12
+trafilatura>=2.0
+requests>=2.32
+rapidfuzz>=3.9
+regex>=2024.0
+pyyaml>=6.0
+tzdata>=2024.1
+transformers>=4.40   # XLM-R tokenizer only (no PyTorch): token counts in chunk_documents.py
+sentencepiece>=0.2
+# Optional
+# pytesseract>=0.3.13 pillow  # OCR for scanned / legacy-font PDFs (also install the Tesseract binary + hin/mar/ben/tam)
+# matplotlib>=3.8             # plots in dataset_statistics.py

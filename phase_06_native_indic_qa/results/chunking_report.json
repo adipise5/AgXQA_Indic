@@ -1,0 +1,76 @@
+{
+  "hi": {
+    "contexts": 393,
+    "documents": 21,
+    "mean_words": 122.4,
+    "min_words": 41,
+    "max_words": 260,
+    "exceeds_max_tokens": 9,
+    "domain_hints": {
+      "crop_production": 130,
+      "pest_management": 121,
+      "plant_diseases": 39,
+      "irrigation": 35,
+      "fertilizers_nutrition": 26,
+      "harvesting_storage": 20,
+      "soil_management": 14,
+      "agricultural_technology": 8
+    },
+    "dropped": {}
+  },
+  "mr": {
+    "contexts": 203,
+    "documents": 20,
+    "mean_words": 121.8,
+    "min_words": 40,
+    "max_words": 251,
+    "exceeds_max_tokens": 42,
+    "domain_hints": {
+      "irrigation": 54,
+      "fertilizers_nutrition": 44,
+      "crop_production": 36,
+      "pest_management": 26,
+      "soil_management": 22,
+      "plant_diseases": 15,
+      "harvesting_storage": 5,
+      "agricultural_technology": 1
+    },
+    "dropped": {}
+  },
+  "bn": {
+    "contexts": 146,
+    "documents": 18,
+    "mean_words": 100.7,
+    "min_words": 40,
+    "max_words": 226,
+    "exceeds_max_tokens": 11,
+    "domain_hints": {
+      "crop_production": 61,
+      "fertilizers_nutrition": 25,
+      "irrigation": 17,
+      "plant_diseases": 17,
+      "harvesting_storage": 10,
+      "soil_management": 7,
+      "pest_management": 7,
+      "agricultural_technology": 2
+    },
+    "dropped": {}
+  },
+  "ta": {
+    "contexts": 85,
+    "documents": 11,
+    "mean_words": 106.9,
+    "min_words": 40,
+    "max_words": 221,
+    "exceeds_max_tokens": 19,
+    "domain_hints": {
+      "irrigation": 33,
+      "soil_management": 31,
+      "crop_production": 14,
+      "fertilizers_nutrition": 4,
+      "pest_management": 2,
+      "harvesting_storage": 1
+    },
+    "dropped": {}
+  }
+}

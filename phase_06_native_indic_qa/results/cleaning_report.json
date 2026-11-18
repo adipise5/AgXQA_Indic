@@ -1,0 +1,473 @@
+{
+  "hi": {
+    "documents": 21,
+    "paragraphs_seen": 1877,
+    "paragraphs_kept": 1188,
+    "dropped_too_short": 111,
+    "dropped_credit_line": 20,
+    "merged_short_sentence": 41,
+    "dropped_garbled_text": 1,
+    "dropped_exact_duplicate": 3,
+    "dropped_near_duplicate": 11,
+    "per_document": [
+      {
+        "document_id": "HI_DOC_001",
+        "paragraphs": 10,
+        "words": 270,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_002",
+        "paragraphs": 5,
+        "words": 140,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_003",
+        "paragraphs": 24,
+        "words": 950,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_004",
+        "paragraphs": 20,
+        "words": 982,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_005",
+        "paragraphs": 24,
+        "words": 1558,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_006",
+        "paragraphs": 46,
+        "words": 1542,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_007",
+        "paragraphs": 5,
+        "words": 339,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_008",
+        "paragraphs": 52,
+        "words": 1625,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_009",
+        "paragraphs": 145,
+        "words": 7751,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_010",
+        "paragraphs": 47,
+        "words": 1927,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_011",
+        "paragraphs": 250,
+        "words": 11618,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_012",
+        "paragraphs": 14,
+        "words": 511,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_013",
+        "paragraphs": 42,
+        "words": 1150,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_014",
+        "paragraphs": 24,
+        "words": 673,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_015",
+        "paragraphs": 32,
+        "words": 1765,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_016",
+        "paragraphs": 126,
+        "words": 3545,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_017",
+        "paragraphs": 32,
+        "words": 920,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_018",
+        "paragraphs": 20,
+        "words": 2065,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_019",
+        "paragraphs": 120,
+        "words": 4754,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_020",
+        "paragraphs": 43,
+        "words": 1085,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "HI_DOC_021",
+        "paragraphs": 107,
+        "words": 5665,
+        "possible_language_mislabel": false
+      }
+    ]
+  },
+  "mr": {
+    "documents": 20,
+    "paragraphs_seen": 1205,
+    "paragraphs_kept": 769,
+    "merged_short_sentence": 45,
+    "dropped_too_short": 76,
+    "dropped_script_ratio": 7,
+    "dropped_credit_line": 19,
+    "dropped_exact_duplicate": 13,
+    "dropped_near_duplicate": 14,
+    "per_document": [
+      {
+        "document_id": "MR_DOC_001",
+        "paragraphs": 63,
+        "words": 3153,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_002",
+        "paragraphs": 11,
+        "words": 483,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_003",
+        "paragraphs": 110,
+        "words": 3940,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_004",
+        "paragraphs": 26,
+        "words": 642,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_005",
+        "paragraphs": 27,
+        "words": 675,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_006",
+        "paragraphs": 59,
+        "words": 1718,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_007",
+        "paragraphs": 51,
+        "words": 2626,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_008",
+        "paragraphs": 21,
+        "words": 394,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_009",
+        "paragraphs": 40,
+        "words": 1578,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_010",
+        "paragraphs": 32,
+        "words": 886,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_011",
+        "paragraphs": 123,
+        "words": 3746,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_012",
+        "paragraphs": 28,
+        "words": 624,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_013",
+        "paragraphs": 32,
+        "words": 918,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_014",
+        "paragraphs": 7,
+        "words": 422,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_015",
+        "paragraphs": 11,
+        "words": 905,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_016",
+        "paragraphs": 14,
+        "words": 1137,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_017",
+        "paragraphs": 27,
+        "words": 548,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_018",
+        "paragraphs": 27,
+        "words": 436,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_019",
+        "paragraphs": 42,
+        "words": 959,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "MR_DOC_020",
+        "paragraphs": 18,
+        "words": 524,
+        "possible_language_mislabel": false
+      }
+    ]
+  },
+  "bn": {
+    "documents": 18,
+    "paragraphs_seen": 629,
+    "paragraphs_kept": 341,
+    "dropped_too_short": 55,
+    "dropped_credit_line": 18,
+    "merged_short_sentence": 6,
+    "dropped_script_ratio": 2,
+    "dropped_near_duplicate": 1,
+    "dropped_exact_duplicate": 2,
+    "per_document": [
+      {
+        "document_id": "BN_DOC_001",
+        "paragraphs": 32,
+        "words": 1861,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_002",
+        "paragraphs": 6,
+        "words": 455,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_003",
+        "paragraphs": 13,
+        "words": 485,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_004",
+        "paragraphs": 24,
+        "words": 1773,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_005",
+        "paragraphs": 36,
+        "words": 909,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_006",
+        "paragraphs": 27,
+        "words": 649,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_007",
+        "paragraphs": 21,
+        "words": 1014,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_008",
+        "paragraphs": 21,
+        "words": 1713,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_009",
+        "paragraphs": 6,
+        "words": 847,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_010",
+        "paragraphs": 16,
+        "words": 1078,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_011",
+        "paragraphs": 19,
+        "words": 966,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_012",
+        "paragraphs": 19,
+        "words": 1271,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_013",
+        "paragraphs": 10,
+        "words": 493,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_014",
+        "paragraphs": 19,
+        "words": 560,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_015",
+        "paragraphs": 20,
+        "words": 784,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_016",
+        "paragraphs": 8,
+        "words": 337,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_017",
+        "paragraphs": 17,
+        "words": 540,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "BN_DOC_018",
+        "paragraphs": 27,
+        "words": 507,
+        "possible_language_mislabel": false
+      }
+    ]
+  },
+  "ta": {
+    "documents": 11,
+    "paragraphs_seen": 896,
+    "paragraphs_kept": 392,
+    "merged_short_sentence": 51,
+    "dropped_too_short": 114,
+    "dropped_credit_line": 11,
+    "dropped_script_ratio": 36,
+    "dropped_near_duplicate": 2,
+    "per_document": [
+      {
+        "document_id": "TA_DOC_001",
+        "paragraphs": 45,
+        "words": 846,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "TA_DOC_002",
+        "paragraphs": 8,
+        "words": 343,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "TA_DOC_003",
+        "paragraphs": 61,
+        "words": 1383,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "TA_DOC_004",
+        "paragraphs": 14,
+        "words": 378,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "TA_DOC_005",
+        "paragraphs": 12,
+        "words": 450,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "TA_DOC_006",
+        "paragraphs": 95,
+        "words": 2086,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "TA_DOC_007",
+        "paragraphs": 73,
+        "words": 1935,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "TA_DOC_008",
+        "paragraphs": 20,
+        "words": 448,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "TA_DOC_009",
+        "paragraphs": 31,
+        "words": 831,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "TA_DOC_010",
+        "paragraphs": 21,
+        "words": 1341,
+        "possible_language_mislabel": false
+      },
+      {
+        "document_id": "TA_DOC_011",
+        "paragraphs": 12,
+        "words": 178,
+        "possible_language_mislabel": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "hi": {
+    "contexts_with_responses": 393,
+    "context_status": {
+      "ok": 393
+    },
+    "candidates": 1181,
+    "passed": 1167,
+    "failed": 14,
+    "pass_rate": 0.988,
+    "failure_reasons": {
+      "answer_not_in_context": 9,
+      "answer_too_long": 4,
+      "answer_is_most_of_context": 1,
+      "answer_in_question": 1
+    },
+    "warnings_on_all_candidates": {
+      "answer_occurs_multiple_times": 69,
+      "no_question_word_possible_yes_no": 35,
+      "long_answer": 29,
+      "answer_outside_evidence": 5,
+      "answer_is_full_sentence": 5,
+      "question_copies_context_wording": 4,
+      "invalid_question_type": 1
+    }
+  },
+  "mr": {
+    "contexts_with_responses": 203,
+    "context_status": {
+      "ok": 203
+    },
+    "candidates": 612,
+    "passed": 595,
+    "failed": 17,
+    "pass_rate": 0.972,
+    "failure_reasons": {
+      "answer_not_in_context": 8,
+      "answer_too_short": 6,
+      "question_language:garbled_text": 3
+    },
+    "warnings_on_all_candidates": {
+      "answer_occurs_multiple_times": 47,
+      "long_answer": 7,
+      "answer_outside_evidence": 6,
+      "answer_is_full_sentence": 4,
+      "no_question_word_possible_yes_no": 2,
+      "question_copies_context_wording": 2
+    }
+  },
+  "bn": {
+    "contexts_with_responses": 146,
+    "context_status": {
+      "ok": 146
+    },
+    "candidates": 446,
+    "passed": 439,
+    "failed": 7,
+    "pass_rate": 0.984,
+    "failure_reasons": {
+      "answer_not_in_context": 5,
+      "answer_in_question": 1,
+      "empty_answer": 1
+    },
+    "warnings_on_all_candidates": {
+      "answer_occurs_multiple_times": 27,
+      "no_question_word_possible_yes_no": 24,
+      "long_answer": 6,
+      "question_copies_context_wording": 6,
+      "answer_outside_evidence": 3
+    }
+  },
+  "ta": {
+    "contexts_with_responses": 85,
+    "context_status": {
+      "ok": 85
+    },
+    "candidates": 267,
+    "passed": 259,
+    "failed": 8,
+    "pass_rate": 0.97,
+    "failure_reasons": {
+      "answer_not_in_context": 6,
+      "answer_too_long": 1,
+      "answer_too_short": 1
+    },
+    "warnings_on_all_candidates": {
+      "answer_occurs_multiple_times": 24,
+      "no_question_word_possible_yes_no": 20,
+      "answer_outside_evidence": 8,
+      "long_answer": 5,
+      "question_copies_context_wording": 3,
+      "answer_is_full_sentence": 2
+    }
+  }
+}

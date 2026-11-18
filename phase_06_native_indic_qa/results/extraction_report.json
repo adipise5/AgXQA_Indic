@@ -1,0 +1,772 @@
+[
+  {
+    "document_id": "BN_DOC_001",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 11694,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_002",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 2658,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_003",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 2880,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_004",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 10267,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_005",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 6115,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_006",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3907,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_007",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 6182,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_008",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 9717,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_009",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 4842,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_010",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 6120,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_011",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 6241,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_012",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 7382,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_013",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 2862,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_014",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3738,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_015",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 5204,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_016",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 1955,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_017",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3545,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "BN_DOC_018",
+    "language": "bn",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3678,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_001",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 1570,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_002",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 765,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_003",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 5955,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_004",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 5038,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_005",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 8590,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_006",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 9141,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_007",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 2108,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_008",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 10318,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_009",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 40570,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_010",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 10169,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_011",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 60000,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_012",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 2902,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_013",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 6153,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_014",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3718,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_015",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 8991,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_016",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 19638,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_017",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 5462,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_018",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 10724,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_019",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 25322,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_020",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 6955,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "HI_DOC_021",
+    "language": "hi",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 29218,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_001",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 21840,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_002",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3303,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_003",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 27619,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_004",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 5560,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_005",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 4380,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_006",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 15504,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_007",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 16577,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_008",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 2818,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_009",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 10727,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_010",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 6127,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_011",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 22954,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_012",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 4323,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_013",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 6330,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_014",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3075,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_015",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 6245,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_016",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 7564,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_017",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 4276,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_018",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3245,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_019",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 6821,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "MR_DOC_020",
+    "language": "mr",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3869,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "TA_DOC_001",
+    "language": "ta",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 7829,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "TA_DOC_002",
+    "language": "ta",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3097,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "TA_DOC_003",
+    "language": "ta",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 14871,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "TA_DOC_004",
+    "language": "ta",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3378,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "TA_DOC_005",
+    "language": "ta",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 4444,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "TA_DOC_006",
+    "language": "ta",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 20605,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "TA_DOC_007",
+    "language": "ta",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 19882,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "TA_DOC_008",
+    "language": "ta",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 3740,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "TA_DOC_009",
+    "language": "ta",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 7440,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "TA_DOC_010",
+    "language": "ta",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 11259,
+    "methods": [
+      "embedded_article_html"
+    ]
+  },
+  {
+    "document_id": "TA_DOC_011",
+    "language": "ta",
+    "status": "ok",
+    "pages": 1,
+    "pages_needing_ocr": 0,
+    "characters": 1503,
+    "methods": [
+      "embedded_article_html"
+    ]
+  }
+]

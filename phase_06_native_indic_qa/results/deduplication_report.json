@@ -1,0 +1,38 @@
+{
+  "hi": {
+    "passed_validation": 1167,
+    "kept": 1107,
+    "removed": {
+      "over_per_context_cap": 23,
+      "fuzzy_duplicate_question": 16,
+      "exact_duplicate_question": 20,
+      "same_answer_same_context": 1
+    }
+  },
+  "mr": {
+    "passed_validation": 595,
+    "kept": 581,
+    "removed": {
+      "over_per_context_cap": 12,
+      "exact_duplicate_question": 1,
+      "fuzzy_duplicate_question": 1
+    }
+  },
+  "bn": {
+    "passed_validation": 439,
+    "kept": 420,
+    "removed": {
+      "over_per_context_cap": 17,
+      "exact_duplicate_question": 1,
+      "fuzzy_duplicate_question": 1
+    }
+  },
+  "ta": {
+    "passed_validation": 259,
+    "kept": 243,
+    "removed": {
+      "over_per_context_cap": 15,
+      "fuzzy_duplicate_question": 1
+    }
+  }
+}
