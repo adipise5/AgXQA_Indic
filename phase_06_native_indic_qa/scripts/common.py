@@ -31,10 +31,15 @@ EXTRACTED_DIR = CONTEXTS_DIR / "extracted"
 CLEANED_DIR = CONTEXTS_DIR / "cleaned"
 GENERATED_DIR = DATA_DIR / "generated_qa"
 VALIDATED_DIR = DATA_DIR / "validated_qa"
+# final/ holds the publishable release: questions, answers and offsets, but no passage
+# text (Vikaspedia redistribution needs permission). full/ holds the same records with
+# contexts; it is git-ignored and rebuilt by build_dataset.py or hydrate_dataset.py.
 FINAL_DIR = DATA_DIR / "final"
+FULL_DIR = DATA_DIR / "full"
 
 SOURCES_DIR = _WORK / "sources"
-REVIEW_DIR = _WORK / "human_review"
+REVIEW_DIR = _WORK / "human_review"            # public sheets (no context text)
+REVIEW_PRIVATE_DIR = REVIEW_DIR / "private"     # reviewer sheets with context (git-ignored)
 RESULTS_DIR = _WORK / "results"
 CONFIG_PATH = PHASE_DIR / "configs" / "generation_config.yaml"
 PROMPT_PATH = PHASE_DIR / "prompts" / "qa_generation_prompt.txt"

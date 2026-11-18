@@ -37,24 +37,32 @@ def main() -> None:
         rows.sort(key=lambda r: (order[r["context_id"]], len(r["warnings"]), r["candidate_id"]))
 
         kept, kept_keys, removed = [], [], Counter()
+        removed_rows: list[dict] = []
         seen_exact: set[str] = set()
         spans_by_context: dict[str, set] = defaultdict(set)
         per_context: Counter = Counter()
+
+        def drop(row: dict, reason: str) -> None:
+            removed[reason] += 1
+            removed_rows.append({"candidate_id": row["candidate_id"], "language": lang, "reason": reason,
+                                 "question": row["question"], "answer": row["answers"]["text"][0],
+                                 "domain": row.get("domain"), "question_type": row.get("question_type")})
+
         for row in rows:
             key = norm_for_match(row["question"])
             span = (row["answers"]["answer_start"][0], row["answers"]["text"][0])
             if key in seen_exact:
-                removed["exact_duplicate_question"] += 1
+                drop(row, "exact_duplicate_question")
                 continue
             if kept_keys and process.extractOne(key, kept_keys, scorer=fuzz.token_sort_ratio,
                                                 score_cutoff=cfg["fuzzy_question_threshold"]):
-                removed["fuzzy_duplicate_question"] += 1
+                drop(row, "fuzzy_duplicate_question")
                 continue
             if span in spans_by_context[row["context_id"]]:
-                removed["same_answer_same_context"] += 1
+                drop(row, "same_answer_same_context")
                 continue
             if per_context[row["context_id"]] >= cfg["max_questions_per_context"]:
-                removed["over_per_context_cap"] += 1
+                drop(row, "over_per_context_cap")
                 continue
             seen_exact.add(key)
             kept_keys.append(key)
@@ -63,6 +71,7 @@ def main() -> None:
             kept.append(row)
 
         write_jsonl(VALIDATED_DIR / f"{lang}_dedup.jsonl", kept)
+        write_jsonl(VALIDATED_DIR / f"{lang}_dedup_removed.jsonl", removed_rows)
         report[lang] = {"passed_validation": len(rows), "kept": len(kept), "removed": dict(removed)}
         print(f"[{lang}] kept {len(kept)} of {len(rows)} validated candidates; removed {dict(removed)}")
     write_json(RESULTS_DIR / "deduplication_report.json", report)

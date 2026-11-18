@@ -17,12 +17,13 @@ checkpoints/
 phase_01_original_baseline/checkpoints/*
 !phase_01_original_baseline/checkpoints/README.md
 
-# Phase 6 native QA: passages are withheld until redistribution is permitted
+# Phase 6 native QA: passage text is withheld until redistribution is permitted.
+# Committed: final/*.jsonl (release without passages), metadata.csv, public review sheets.
 data/native_indic_qa/raw_documents/
 data/native_indic_qa/processed_contexts/
 data/native_indic_qa/generated_qa/
 data/native_indic_qa/validated_qa/
-data/native_indic_qa/final/*.jsonl
+data/native_indic_qa/full/
 data/native_indic_qa/leakage_exclusions.json
 data/native_indic_qa/source_manifest.csv
-phase_06_native_indic_qa/human_review/*.csv
+phase_06_native_indic_qa/human_review/private/

@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-11-18T13:38:44+00:00",
+  "method": {
+    "shingle": "word 5-grams on normalised text",
+    "containment_threshold": 0.5,
+    "title_similarity_threshold": 90
+  },
+  "phase6": {
+    "documents": 70,
+    "contexts": 827
+  },
+  "phase4_manifest": {
+    "path": "C:\\code\\python\\AgXQA-Indic\\phase_04_indic_aec_corpus\\sources.csv",
+    "phase4_documents": 0,
+    "findings": []
+  },
+  "passage_overlap": {
+    "agxqa_indic_train": {
+      "corpus": "train_flat_multilingual_clean.jsonl",
+      "text_field": "context",
+      "text_blocks_scanned": 6520,
+      "contexts_checked": 827,
+      "contexts_over_threshold": 0,
+      "max_containment": 0.041,
+      "contexts_with_any_shared_5gram": 59,
+      "contaminated_contexts": {}
+    },
+    "agxqa_indic_test": {
+      "corpus": "test_flat_multilingual.jsonl",
+      "text_field": "context",
+      "text_blocks_scanned": 1635,
+      "contexts_checked": 827,
+      "contexts_over_threshold": 0,
+      "max_containment": 0.029,
+      "contexts_with_any_shared_5gram": 29,
+      "contaminated_contexts": {}
+    }
+  },
+  "internal_cross_document_duplicates": {
+    "contexts_over_threshold": 0,
+    "contexts": []
+  },
+  "checks_run": [
+    "phase4_manifest",
+    "agxqa_indic_train",
+    "agxqa_indic_test"
+  ],
+  "excluded_documents": [],
+  "contaminated_contexts": {},
+  "leakage_count": 0
+}

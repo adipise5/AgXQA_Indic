@@ -1,0 +1,439 @@
+﻿candidate_id,language,stage,reason,question,answer,question_type,domain
+HI_DOC_021_C012_Q3,hi,automatic_validation,answer_not_in_context,बूंद-बूंद सिंचाई विधि द्वारा प्रतिदिन कितना पानी देने से लीची के फलों का अच्छा विकास होता है?,40-50 लीटर,numerical,irrigation
+HI_DOC_005_C002_Q1,hi,automatic_validation,answer_too_long,किसान किन तकनीकों को अपनाकर उत्पादन में बढ़ोतरी कर सकते हैं?,"उत्तम गुणवत्ता का स्वस्थ बीज, संतुलित पोषर तत्व प्रबंधन, खरपतवार प्रबंधन, समुचित जल, कीट एवं रोग प्रबंधन, उपयुक्त समय पर फसल की कटाई एवं मड़ाई तथा उपयुक्त भंडारण",procedural,crop_production
+HI_DOC_018_C002_Q2,hi,automatic_validation,answer_not_in_context,दीमक और कीड़ों से फसल के बचाव के लिए कौन सी दवा का उपयोग करना चाहिए?,क्िनलफोस 1.5 प्रतिशत,factual,pest_management
+HI_DOC_007_C003_Q1,hi,automatic_validation,answer_too_long,विभागीय मिट्‌टी परीक्षण केंद्र भोपाल के अलावा और कहाँ कार्यरत हैं?,"सीहोर, पवारखेड़ा (जिला होशंगाबाद), उज्जैन, मंदसौर, धार, खरगोन, खंडवा, झाबुआ, इंदौर, बालाघाट, छिंदवाड़ा, नरसिंहपुर, छतरपुर, सागर, रीवा, मुरैना, भिंड, बैतूल, दमोह, जबलपुर, टीकमगढ़, ग्वालियर, सीधी",factual,soil_management
+HI_DOC_007_C003_Q1,hi,automatic_validation,answer_is_most_of_context,विभागीय मिट्‌टी परीक्षण केंद्र भोपाल के अलावा और कहाँ कार्यरत हैं?,"सीहोर, पवारखेड़ा (जिला होशंगाबाद), उज्जैन, मंदसौर, धार, खरगोन, खंडवा, झाबुआ, इंदौर, बालाघाट, छिंदवाड़ा, नरसिंहपुर, छतरपुर, सागर, रीवा, मुरैना, भिंड, बैतूल, दमोह, जबलपुर, टीकमगढ़, ग्वालियर, सीधी",factual,soil_management
+HI_DOC_014_C005_Q2,hi,automatic_validation,answer_not_in_context,हरदा रोग में पत्तियों पर सबसे पहले किस रंग का धब्बा बनता है?,गु गुलाबी,factual,plant_diseases
+HI_DOC_006_C007_Q1,hi,automatic_validation,answer_too_long,पाला या तुषार किसे कहते हैं?,हवा में उपस्थित नमी ओस की छोटी-छोटी बूंदें बर्फ के छोटे-छोटे कणों में बदल जाती है और ये कण पौधों पर जम जाते है,factual,crop_production
+HI_DOC_006_C007_Q2,hi,automatic_validation,answer_not_in_context,पाला ज्यादातर किस महीने में पड़ता है?,दिसंबर या जनवरी माह,temporal,crop_production
+HI_DOC_019_C007_Q2,hi,automatic_validation,answer_not_in_context,टमाटर की रोपाई के लिए कौन सा महीना निर्धारित किया गया है?,सित सितम्बर,temporal,crop_production
+HI_DOC_009_C015_Q3,hi,automatic_validation,answer_in_question,कीट के पिल्लू या मैगट को क्या कहा जाता है?,मैगट,identification,pest_management
+HI_DOC_019_C018_Q2,hi,automatic_validation,answer_not_in_context,फोमोप्सिस अंगमारी रोग के नियंत्रण के लिए गर्म पानी से बीजोपचार कितने तापमान पर करना चाहिए?,52 डि. से.,numerical,plant_diseases
+HI_DOC_016_C019_Q4,hi,automatic_validation,answer_too_long,फसलों में नाशीजीव समन्वित कीट प्रबंधन किसे कहते हैं?,फसल की हानिकारक कीटों के स्तर को आर्थिक क्षति स्तर के नीचे रखने के लिए फसलों में अवरोधिता तथा वातावरण के अनुकूल सभी उपयोगी पद्धतियों का समन्वित प्रयोग,factual,pest_management
+HI_DOC_011_C022_Q1,hi,automatic_validation,answer_not_in_context,पत्ती मोड़क के लार्वे क्या खाते हैं?,पत्तियों के हरे भाग को,factual,pest_management
+HI_DOC_021_C024_Q3,hi,automatic_validation,answer_not_in_context,लीची की अधिकतम फलन वृक्ष के किस भाग में होता है?,छत्रक के निचले एक तिहाई भाग में,factual,crop_production
+HI_DOC_009_C030_Q3,hi,automatic_validation,answer_not_in_context,अंतिम एवं कौन से निर्मोचन के बाद वग का रंग भूरा हो जाता है?,पाँचवें,factual,pest_management
+HI_DOC_021_C036_Q4,hi,deduplication,over_per_context_cap,फल एवं बीज वेधक कीट से बचाव के लिए फल तोड़ाई से कितने दिन पहले छिड़काव करना चाहिए?,लगभग 40-45 दिन पहले,temporal,pest_management
+HI_DOC_011_C028_Q4,hi,deduplication,over_per_context_cap,वेधक शलभों के बड़े पैमाने पर पाश में फंसाने के लिए गंधपाश किस दर से लगाए जाने चाहिए?,100 प्रति हेक्टेयर,numerical,pest_management
+HI_DOC_003_C006_Q4,hi,deduplication,over_per_context_cap,अधिकतम सहायता प्रति लाभार्थी या समूह के लिए कितने हेक्टेयर तक सीमित होगी?,5 हेक्टेयर,factual,agricultural_technology
+HI_DOC_011_C052_Q4,hi,deduplication,over_per_context_cap,बेधक की सक्रियता की निगरानी के लिए कितने गंधपाश प्रति एकड़ लगाने चाहिए?,2 प्रति एकड़,numerical,pest_management
+HI_DOC_007_C002_Q1,hi,deduplication,fuzzy_duplicate_question,मुख्य तत्व विश्लेषण हेतु सामान्य कृषकों के लिये क्या दर निर्धारित की गई है?,5 रूपये प्रति नमूना,numerical,soil_management
+HI_DOC_014_C002_Q4,hi,deduplication,over_per_context_cap,पंक्ति से पंक्ति की दूरी कितनी होनी चाहिए?,30 से.मी.,factual,crop_production
+HI_DOC_017_C002_Q3,hi,deduplication,over_per_context_cap,किस उर्वरक के प्रयोग से 12 प्रतिशत गन्धक की उपलब्धता हो जाती है?,सिंगिल सुपर फास्फेट,benefit,fertilizers_nutrition
+HI_DOC_009_C003_Q4,hi,deduplication,over_per_context_cap,पूर्ण विकसित पिल्लू प्यूपा में बदलने के लिए कहाँ जाती है?,मिट्टी में 7.5 – 10.0 से. मी. नीचे,factual,pest_management
+HI_DOC_015_C003_Q3,hi,deduplication,over_per_context_cap,बीजों को उपचारित करने के लिए कितने ग्राम गुड़ की आवश्यकता होती है?,50 ग्राम,numerical,crop_production
+HI_DOC_005_C004_Q4,hi,deduplication,over_per_context_cap,खेत में पौध की रोपाई कितने सेंटीमीटर की गहराई पर की जाती है?,3 सें.मी.,factual,crop_production
+HI_DOC_003_C005_Q2,hi,deduplication,over_per_context_cap,छोटे/मझले तालाब की मरम्मत या नवीनीकरण के लिए कुल लागत का कितना प्रतिशत दिया जाता है?,कुल लागत का 50%,factual,irrigation
+HI_DOC_016_C005_Q4,hi,deduplication,over_per_context_cap,साफ धुले हुए बीजों को कितने समय तक रसायन घोल में डुबाना चाहिए?,1 मिनट तक,temporal,crop_production
+HI_DOC_009_C006_Q1,hi,deduplication,exact_duplicate_question,मादा कीट अंडे कहाँ देती है?,पत्तियों में छेद करके,procedural,pest_management
+HI_DOC_020_C006_Q4,hi,deduplication,over_per_context_cap,रोपने के समय हल्के सड़न से बचाव के लिए किसका प्रयोग किया जा सकता है?,ट्राईकोडरमा स्पीसीज,factual,plant_diseases
+HI_DOC_013_C007_Q1,hi,deduplication,exact_duplicate_question,लाही कीट का रंग कैसा होता है?,"पीला, हरा या काले भूरे रंग",factual,pest_management
+HI_DOC_013_C008_Q1,hi,deduplication,exact_duplicate_question,नीम आधारित कीटनाशी का कितना घोल प्रति लीटर पानी में मिलाना चाहिए?,5 मिलीलीटर,numerical,pest_management
+HI_DOC_009_C009_Q2,hi,deduplication,fuzzy_duplicate_question,लाही का रंग कैसा होता है?,हरा,factual,pest_management
+HI_DOC_010_C011_Q3,hi,deduplication,same_answer_same_context,कीट नियंत्रण में किसकी अहम भूमिका होती है?,छिपकली,identification,pest_management
+HI_DOC_006_C012_Q5,hi,deduplication,over_per_context_cap,धनिया की कटाई के बाद फसल को कहाँ सुखाना चाहिए?,छाया में,procedural,harvesting_storage
+HI_DOC_006_C012_Q3,hi,deduplication,over_per_context_cap,धनिया की खेती के लिए भूमि कैसी होनी चाहिए?,उपजाऊ भूमि,conditional,soil_management
+HI_DOC_009_C012_Q2,hi,deduplication,exact_duplicate_question,मादा कीट अंडे कहाँ देती है?,"पत्तियों, पत्तियों के डंटल, तना एवं फलियों ओर एक – एक करके",procedural,pest_management
+HI_DOC_011_C012_Q1,hi,deduplication,over_per_context_cap,चूसक कीटों और सफ़ेद मक्खी के नियंत्रण के लिए रोपाई से पहले टमाटर की जड़ों को किस दवा के घोल में डुबोना चाहिए?,इमिडाक्लोप्रिड 17.8 एस एल,factual,pest_management
+HI_DOC_011_C012_Q5,hi,deduplication,over_per_context_cap,"पर्ण सुरंगक, चेपा तथा सफेद मक्खी के नियंत्रण के लिए पौध रोपण के कितने दिन पश्चात नीम अर्क 5 प्रतिशत का छिड़काव करना चाहिए?",25 दिन पश्चात,temporal,pest_management
+HI_DOC_019_C014_Q4,hi,deduplication,over_per_context_cap,बैंगन की बीज उत्पादन फसल के लिए संस्तुत नत्रजन की मात्रा प्रति हेक्टेयर कितनी है?,120,numerical,fertilizers_nutrition
+HI_DOC_009_C015_Q2,hi,deduplication,fuzzy_duplicate_question,मादा मक्खी अंडे कहाँ देती है?,फूलों एवं कोमल हरी कलियों में,factual,pest_management
+HI_DOC_009_C017_Q2,hi,deduplication,exact_duplicate_question,पूर्ण विकसित पिल्लू की लंबाई कितनी होती है?,30-35 मि. मी.,numerical,pest_management
+HI_DOC_009_C017_Q3,hi,deduplication,exact_duplicate_question,मादा कीट अंडे कहाँ देती है?,पत्तियों की निचली सतह पर,factual,pest_management
+HI_DOC_021_C018_Q4,hi,deduplication,over_per_context_cap,फल फटने की समस्या को कम करने के लिए बोरिक अम्ल के घोल की सांद्रता कितनी रखनी चाहिए?,4 ग्रा./ली.,numerical,fertilizers_nutrition
+HI_DOC_019_C019_Q1,hi,deduplication,fuzzy_duplicate_question,जीवाणु जनित मुरझा रोग से बचाव के लिए कौन सी रोग प्रतिरोधी किस्में लगानी चाहिए?,"अर्का आलोक, अर्का आभा, शक्ति, बी.टी.17",factual,plant_diseases
+HI_DOC_021_C020_Q4,hi,deduplication,over_per_context_cap,फल एवं बीज बेधक के प्रकोप से बचाव के लिए फल तोड़ाई से कितने दिन पहले सायपरमेथ्रिन का छिड़काव शुरू करना चाहिए?,40-45 दिन पहले,temporal,pest_management
+HI_DOC_009_C022_Q1,hi,deduplication,exact_duplicate_question,वयस्क कीट का रंग कैसा होता है?,वर्फ जैसे सफेद,factual,pest_management
+HI_DOC_009_C024_Q2,hi,deduplication,exact_duplicate_question,वयस्क कीट का रंग कैसा होता है?,हरापन लिए हुए भूरा,factual,pest_management
+HI_DOC_009_C027_Q4,hi,deduplication,over_per_context_cap,दिन के समय सैनिक कीट कहाँ छिपा रहता है?,पौधों के बीच या ढेलों में,factual,pest_management
+HI_DOC_011_C027_Q4,hi,deduplication,over_per_context_cap,3 किग्रा घूरे की खाद में कितने ग्राम ट्राई कोडर्मा मिलाना चाहिए?,250 ग्रा,numerical,fertilizers_nutrition
+HI_DOC_009_C028_Q2,hi,deduplication,fuzzy_duplicate_question,अंडों से शिशु कितने दिनों में निकलता है?,3-5 दिन,numerical,pest_management
+HI_DOC_009_C028_Q1,hi,deduplication,exact_duplicate_question,मादा कीट अंडे कहाँ देती है?,"कोमल भागों से जैसे छोटी पत्तियाँ, छोटी फलियाँ, फूल की कलियाँ",factual,pest_management
+HI_DOC_009_C029_Q1,hi,deduplication,exact_duplicate_question,मादा कीट अंडे कहाँ देती है?,फली में छेदकर,procedural,pest_management
+HI_DOC_009_C029_Q2,hi,deduplication,fuzzy_duplicate_question,कितने दिनों में अंडे फूट जाते हैं?,3-4 दिनों में,temporal,pest_management
+HI_DOC_009_C030_Q2,hi,deduplication,exact_duplicate_question,मादा कीट अंडे कहाँ देती है?,पत्तियों के निचले सतह में,factual,pest_management
+HI_DOC_009_C031_Q1,hi,deduplication,exact_duplicate_question,पूर्ण विकसित पिल्लू की लंबाई कितनी होती है?,2 सें. मी.,numerical,pest_management
+HI_DOC_009_C033_Q1,hi,deduplication,fuzzy_duplicate_question,पूर्ण विकसित भुआ पिल्लू की लंबाई कितनी होती है?,38 से 40 सें. मि. मी.,numerical,pest_management
+HI_DOC_009_C035_Q2,hi,deduplication,exact_duplicate_question,मादा कीट अंडे कहाँ देती है?,पत्तियों की निचली सतह पर,factual,pest_management
+HI_DOC_009_C038_Q1,hi,deduplication,fuzzy_duplicate_question,पूर्ण विकसित पिल्लू की लम्बाई कितनी होती है?,30-35 मि. मी.,numerical,pest_management
+HI_DOC_021_C038_Q2,hi,deduplication,fuzzy_duplicate_question,नाली की गहराई कितनी होनी चाहिए?,60 सें.मी.,numerical,soil_management
+HI_DOC_011_C039_Q4,hi,deduplication,over_per_context_cap,डेपिंग ऑफ और चुसकनाशी जीवों का प्रबंधन करने के लिए इमिडाक्लोप्रीड 70 डब्ल्यू एस का बीजोंपचार हेतु क्या मात्रा है?,10 ग्रा प्रति किग्रा बीज की दर से,numerical,pest_management
+HI_DOC_009_C040_Q2,hi,deduplication,exact_duplicate_question,पूर्ण विकसित पिल्लू की लंबाई कितनी होती है?,2.5 सें. मी.,numerical,pest_management
+HI_DOC_009_C040_Q1,hi,deduplication,exact_duplicate_question,वयस्क कीट का रंग कैसा होता है?,हल्का पीलापन लिए हुए भूरे रंग का,factual,pest_management
+HI_DOC_009_C042_Q1,hi,deduplication,exact_duplicate_question,मादा कीट अंडे कहाँ देती है?,पत्तियों के दबे हुए भाग में,factual,pest_management
+HI_DOC_009_C042_Q2,hi,deduplication,fuzzy_duplicate_question,अंडों से शिशु कितने दिनों में निकलते हैं?,3-4 दिनों में,numerical,pest_management
+HI_DOC_009_C045_Q1,hi,deduplication,exact_duplicate_question,मादा कीट कुल कितने अंडे देती है?,150,numerical,pest_management
+HI_DOC_009_C047_Q2,hi,deduplication,fuzzy_duplicate_question,मादा मक्खी अंडे कहाँ देती है?,"कलियों, फूलों अथवा कैपसूल में",factual,pest_management
+HI_DOC_009_C048_Q1,hi,deduplication,fuzzy_duplicate_question,गन्ने के अलावा यह कीट किन-किन फसलों पर आक्रमण करता है?,"मक्का, ज्वार, बाजरा, गेहूं, जौ, जई और सूडान घास",factual,pest_management
+HI_DOC_009_C048_Q2,hi,deduplication,fuzzy_duplicate_question,कीट द्वारा विसर्जित लसलसे द्रव को क्या कहा जाता है?,मधु विन्दु,identification,pest_management
+HI_DOC_009_C048_Q3,hi,deduplication,fuzzy_duplicate_question,पूर्ण विकसित निम्फ की लंबाई कितनी होती है?,10 -15 मि. मी.,numerical,pest_management
+HI_DOC_009_C050_Q2,hi,deduplication,exact_duplicate_question,पूर्ण विकसित पिल्लू की लंबाई कितनी होती है?,25-30 मि. मी.,numerical,pest_management
+HI_DOC_009_C055_Q2,hi,deduplication,exact_duplicate_question,पूर्ण विकसित पिल्लू की लंबाई कितनी होती है?,20-25 मि. मी.,numerical,pest_management
+HI_DOC_009_C057_Q4,hi,deduplication,over_per_context_cap,इस कीट का आक्रमण किन स्थानों पर सबसे अधिक होता है?,जिस खेत में पानी भरा रहता है,conditional,pest_management
+HI_DOC_009_C059_Q1,hi,deduplication,fuzzy_duplicate_question,वयस्क मक्खी का आकार कितना होता है?,3.0 मि. मी.,numerical,pest_management
+HI_DOC_009_C059_Q2,hi,deduplication,fuzzy_duplicate_question,अंडो से शिशु (निम्फ) कितने दिनों में निकलते हैं?,एक सप्ताह में,temporal,pest_management
+HI_DOC_009_C063_Q1,hi,deduplication,exact_duplicate_question,वयस्क कीट की लंबाई कितनी होती है?,6-7 मि. मी.,numerical,pest_management
+HI_DOC_005_C008_Q2,hi,review_flag,answer_occurs_multiple_times,धान की फसल में खैरा रोग के लक्षण दिखने पर प्रति हैक्टर जिंक सल्फेट की कितनी मात्रा का प्रयोग करना चाहिए?,5 कि.ग्रा.,numerical,plant_diseases
+HI_DOC_011_C007_Q2,hi,review_flag,answer_occurs_multiple_times,बाद में पत्ती के धब्बे किस रंग के व विकृत रूप के दिखाई देते हैं?,भूरे रंग,factual,plant_diseases
+HI_DOC_011_C007_Q3,hi,review_flag,long_answer,पके हुए फलों पर धब्बे किस रंग के दिखाई देते हैं?,गहरे पानी से भीगे हुए भूरे रंग से काले भूरे रंग,factual,plant_diseases
+HI_DOC_016_C013_Q3,hi,review_flag,answer_outside_evidence,मध्य सितम्बर में सिंचाई करने से क्या लाभ होता है?,गूलर शीघ्र फटते हैं,benefit,irrigation
+HI_DOC_011_C059_Q3,hi,review_flag,answer_is_full_sentence,डाऊनी मिल्ड्यू व ब्लाईट से बचाव के वास्ते जिनेब 75 डब्ल्यूपी की प्रति हेक्टेयर मात्रा कितनी है?,1.5 – 2.0 किग्रा प्रति हे.,numerical,plant_diseases
+HI_DOC_004_C001_Q1,hi,review_flag,answer_occurs_multiple_times,धान की खेती में श्रमिकों की उपलब्धता की समस्या से बचने के लिए किसान कौन सी विधि अपनाने लगे हैं?,छिटकवा विधि,procedural,crop_production
+HI_DOC_004_C001_Q3,hi,review_flag,answer_occurs_multiple_times,धान की छिटकवा विधि की समस्याओं को किस यंत्र से सीधे बुआई करके दूर किया जा सकता है?,ड्रम सीडर,identification,agricultural_technology
+HI_DOC_010_C001_Q2,hi,review_flag,long_answer,जैविक कारकों में कौन-कौन शामिल हैं?,"कीट, रोग, खरपतवार, सूत्रकृमि, विषाणु, फफूंदी, लघु जीवाणु (बैक्टीरिया), सूक्ष्मजीवाणु, ( माइक्रो ऑर्गनिज्म), माइकोप्लाज्मा, इत्यादि",identification,pest_management
+HI_DOC_011_C001_Q1,hi,review_flag,no_question_word_possible_yes_no,फल बेधक की पूरी तरह विकसित इल्लियों का रंग कैसा होता है?,हल्की पीली हरे रंग की,factual,pest_management
+HI_DOC_010_C002_Q1,hi,review_flag,answer_occurs_multiple_times,फसल सुरक्षा करने वाले कीटों को क्या कहा जाता है?,मित्र कीट,factual,pest_management
+HI_DOC_010_C003_Q1,hi,review_flag,answer_outside_evidence,हानिकारक कीटों के अंडे देने के लिए खेत के चारों तरफ उगाई जाने वाली फसल को क्या कहते हैं?,ट्रैप क्रॉप,identification,pest_management
+HI_DOC_013_C003_Q1,hi,review_flag,answer_occurs_multiple_times,आर.ए.यु.टी.एस. 17 किस्म की परिपक्वता अवधि कितने दिनों की होती है?,90-95,numerical,crop_production
+HI_DOC_013_C003_Q2,hi,review_flag,answer_occurs_multiple_times,पाचाली किस्म में तेल की मात्रा कितनी प्रतिशत होती है?,43%,numerical,crop_production
+HI_DOC_016_C003_Q1,hi,review_flag,answer_occurs_multiple_times,उत्तर प्रदेश के लिए संस्तुत प्रजाति कौन सी है?,विकास,factual,crop_production
+HI_DOC_020_C003_Q1,hi,review_flag,long_answer,फसल क्षतिकारक अनुश्रवण का मुख्य उद्देश्य क्या है?,खेतों में फसल क्षतिकारक एवं रोगों के प्रारंभिक विकास का अनुश्रवण करना,factual,pest_management
+HI_DOC_020_C003_Q3,hi,review_flag,long_answer,पौधा संरक्षण के उपाय कब किये जाने की आवश्यकता होती है?,जब खेत की निगरानी के फलस्वरूप फसल क्षतिकारक एंव रोग प्रारंभिक स्तर ( ईटी एल) पार करते हैं,conditional,plant_diseases
+HI_DOC_021_C003_Q2,hi,review_flag,answer_occurs_multiple_times,भारत से लीची निर्यात को बढ़ावा देने के लिए किसकी भूमिका प्रमुख है?,एपीडा,factual,crop_production
+HI_DOC_006_C004_Q3,hi,review_flag,answer_outside_evidence,चेपा की रोकथाम के लिए इमिडाक्लोप्रिड 17.8ईसी की कितनी मात्रा प्रति लीटर पानी में प्रयोग करनी चाहिए?,0.25एमएल/ली.,numerical,pest_management
+HI_DOC_008_C004_Q1,hi,review_flag,long_answer,किसी स्थान पर खरपतवारों की उपस्थिति किस पर निर्भर करती है?,"वहां की जलवायु, भूमि, संरचना, भूमि में नमी की मात्रा, खेतों में बोई गई पिछली फसल आदि",causal,crop_production
+HI_DOC_009_C004_Q2,hi,review_flag,answer_occurs_multiple_times,फलीछेदक को आकर्षित करने के लिए चना फसल के चारों ओर कौन सी फंदाफसल लगाई जाती है?,गेंदा फूल,identification,pest_management
+HI_DOC_010_C004_Q3,hi,review_flag,answer_occurs_multiple_times,कुसुम की किस प्रजाति में काली माहूं आक्रमण नहीं कर पाती है?,कांटेदार,conditional,pest_management
+HI_DOC_011_C004_Q1,hi,review_flag,answer_occurs_multiple_times,शुरूआत में इस रोग के लक्षण कहाँ दिखाई पड़ते हैं?,नर्सरी में,factual,plant_diseases
+HI_DOC_012_C004_Q1,hi,review_flag,no_question_word_possible_yes_no,लाही कीट का रंग कैसा होता है?,"पीला, हरा, काला अथवा भूरे रंग",factual,pest_management
+HI_DOC_012_C004_Q2,hi,review_flag,answer_occurs_multiple_times,नीम आधारित कीटनाशी का कितना घोल प्रति लीटर पानी में मिलाना चाहिए?,5 मिलीलीटर,numerical,pest_management
+HI_DOC_014_C004_Q1,hi,review_flag,no_question_word_possible_yes_no,सेमिलपुर कीट के वयस्क का रंग कैसा होता है?,पीलापन लिए हुए भूरे रंग,factual,pest_management
+HI_DOC_016_C004_Q2,hi,review_flag,no_question_word_possible_yes_no,उत्तम अंकुरण के लिए भूमि का कैसा होना आवश्यक है?,भुरभुरा होना,conditional,crop_production
+HI_DOC_021_C004_Q2,hi,review_flag,no_question_word_possible_yes_no,लीची में अच्छी मंजर आने के लिए जनवरी-फरवरी माह में जलवायु कैसी होनी चाहिए?,शुष्क जलवायु,conditional,crop_production
+HI_DOC_004_C005_Q3,hi,review_flag,answer_occurs_multiple_times,उर्वरकों का प्रयोग मुख्य रूप से किसके आधार पर किया जाना चाहिए?,मृदा परीक्षण,procedural,fertilizers_nutrition
+HI_DOC_008_C005_Q2,hi,review_flag,no_question_word_possible_yes_no,खरपतवार नियंत्रण के लिए गोबर और कम्पोस्ट खाद कैसी होनी चाहिए?,अच्छी सड़ी,conditional,soil_management
+HI_DOC_009_C005_Q1,hi,review_flag,no_question_word_possible_yes_no,वयस्क कीट का स्वरूप कैसा होता है?,काली चमकदार मक्खी,factual,pest_management
+HI_DOC_011_C005_Q1,hi,review_flag,long_answer,अगेती झुलसा रोग का प्रकोप कब होता है?,पौध स्थापना के तुरंत पश्चात नमी वाले मौसम में जब बसंत मौसम प्रारंभ होता है,conditional,plant_diseases
+HI_DOC_018_C005_Q2,hi,review_flag,invalid_question_type,नीम की खल के प्रयोग से मूंगफली की फसल में किस कीट का नियंत्रण हो जाता है?,दीमक,,pest_management
+HI_DOC_021_C005_Q3,hi,review_flag,answer_occurs_multiple_times,कौन सी लीची की किस्म देर से पकने वाली और बौने पौधों वाली है?,चाइना,identification,crop_production
+HI_DOC_011_C006_Q1,hi,review_flag,long_answer,पछेती अंगमारी रोग का प्रकोप कब होता है?,जब लंबे समय के लिए सुहावने मौसम के साथ नमी वाली परिस्थितियां बनी रहती हैं,conditional,plant_diseases
+HI_DOC_011_C006_Q3,hi,review_flag,long_answer,पत्तियों पर दिखाई देने वाले धब्बे किस प्रकार के होते हैं?,"अनियमित, थोड़े बड़े, हरे – काले रंग के तथा जल का अवशोषण करने वाले",factual,plant_diseases
+HI_DOC_016_C006_Q2,hi,review_flag,long_answer,अम्ल द्वारा बीज के ऊपर क्या नष्ट हो जाता है?,"फफूंदी, शाकाणु झुलसा रोग के जीवाणु व गुलाबी कीट के डिम्भ",factual,plant_diseases
+HI_DOC_017_C006_Q2,hi,review_flag,answer_occurs_multiple_times,मैकोजेब 75 प्रतिशत रसायन की कितनी मात्रा प्रति हेक्टर छिड़काव के लिए आवश्यक है?,2 किलोग्राम,numerical,plant_diseases
+HI_DOC_013_C007_Q3,hi,review_flag,answer_occurs_multiple_times,किस भाग पर आक्रमण होने की स्थिति में फलियाँ नहीं बन पाती हैं?,पुष्पक्रम,causal,pest_management
+HI_DOC_015_C007_Q1,hi,review_flag,answer_occurs_multiple_times,मालवीय मटर-२ किस क्षेत्र के लिए अनुशंसित है?,पूर्वी मैदानी क्षेत्र,factual,crop_production
+HI_DOC_015_C007_Q3,hi,review_flag,answer_occurs_multiple_times,पूसा प्रभात किस्म की परिपक्वता अवधि कितने दिनों की है?,100-110,numerical,crop_production
+HI_DOC_016_C007_Q2,hi,review_flag,answer_occurs_multiple_times,बीज शोधन के लिए किस फफूंदनाशक का उपयोग किया जाता है?,कार्बेन्डाजिम,factual,plant_diseases
+HI_DOC_017_C007_Q1,hi,review_flag,answer_occurs_multiple_times,सरसों कुल की फसलों की पत्तियों को छलनी कौन करती हैं?,गिडारें,factual,pest_management
+HI_DOC_020_C007_Q1,hi,review_flag,answer_occurs_multiple_times,ढंकने से किसका प्रकोप कम हो सकता है?,अंकुर छेदक,causal,pest_management
+HI_DOC_011_C008_Q3,hi,review_flag,no_question_word_possible_yes_no,पके फलों पर धब्बों का रंग कैसा हो जाता है?,कालापन लिए गहरे भूरे रंग के,factual,plant_diseases
+HI_DOC_019_C008_Q1,hi,review_flag,answer_occurs_multiple_times,फूलगोभी की बुवाई का उचित समय क्या है?,अगस्त,temporal,crop_production
+HI_DOC_019_C008_Q3,hi,review_flag,answer_occurs_multiple_times,भिन्डी की बुवाई किस महीने में की जाती है?,जुलाई,temporal,crop_production
+HI_DOC_006_C009_Q1,hi,review_flag,long_answer,धनिया का हरा-पीला रंग और सुगंध बनाए रखने के लिए कटाई के बाद सबसे पहले क्या करना चाहिए?,छोटे-छोटे बण्डल बनाकर 1-2 दिन तक खेत में खुली धूप में सूखाना चाहिए,procedural,harvesting_storage
+HI_DOC_010_C009_Q1,hi,review_flag,answer_occurs_multiple_times,इन पक्षियों का प्रिय भोजन क्या होता है?,दीमक,factual,pest_management
+HI_DOC_011_C009_Q3,hi,review_flag,no_question_word_possible_yes_no,रोग का अधिक संक्रमण होने पर संक्रमित पौधा कैसा दिखाई देने लगता है?,बौना और झाड़ीनुमा,factual,plant_diseases
+HI_DOC_016_C009_Q2,hi,review_flag,answer_occurs_multiple_times,देशी व अमेरिकन कपास के लिए फास्फोरस की कितनी मात्रा संस्तुत है?,30,numerical,fertilizers_nutrition
+HI_DOC_008_C010_Q1,hi,review_flag,answer_occurs_multiple_times,आलू की फसल के लिए मेट्रीब्यूजिन की कितनी मात्रा प्रति हेक्टेयर उपयोग की जाती है?,500,numerical,pest_management
+HI_DOC_008_C010_Q2,hi,review_flag,answer_occurs_multiple_times,सोयाबीन में एलाक्लोर का छिड़काव कब किया जाता है?,बुवाई के 3 दिन के अंदर,procedural,pest_management
+HI_DOC_009_C010_Q1,hi,review_flag,no_question_word_possible_yes_no,पंखहीन लाही का रंग कैसा होता है?,गहरा भूरा या काला,factual,pest_management
+HI_DOC_009_C010_Q2,hi,review_flag,answer_occurs_multiple_times,लाही कीट द्वारा विसर्जित द्रव को क्या कहा जाता है?,मधु विन्दु,identification,pest_management
+HI_DOC_010_C010_Q2,hi,review_flag,answer_occurs_multiple_times,सांप का शत्रु कौन सा जीव होता है?,नेवला,factual,pest_management
+HI_DOC_021_C010_Q2,hi,review_flag,question_copies_context_wording,किसके प्रयोग से लीची के फल की गुणवत्ता एवं पैदावार में वृद्धि होती है?,करंज की खली एवं कम्पोस्ट,benefit,fertilizers_nutrition
+HI_DOC_009_C011_Q1,hi,review_flag,no_question_word_possible_yes_no,सरसों की आरा मक्खी के नवजात पिल्लू का रंग कैसा होता है?,हरे रंग,factual,pest_management
+HI_DOC_009_C011_Q2,hi,review_flag,answer_occurs_multiple_times,सरसों की आरा मक्खी के पिल्लू के कितने जोड़ी पैर होते हैं?,8 जोड़ी,numerical,pest_management
+HI_DOC_009_C011_Q3,hi,review_flag,answer_occurs_multiple_times,सरसों की आरा मक्खी के शिशु को क्या कहा जाता है?,ग्रब,identification,pest_management
+HI_DOC_010_C011_Q2,hi,review_flag,answer_occurs_multiple_times,खेतों की मेड़ों पर बैठकर गंधी कीट को कौन खा जाती है?,छिपकली,factual,pest_management
+HI_DOC_016_C011_Q1,hi,review_flag,answer_occurs_multiple_times,पौधों की सामान्यतः ऊंचाई कितनी हो जाती है?,1.5 मीटर से अधिक,numerical,crop_production
+HI_DOC_009_C012_Q1,hi,review_flag,no_question_word_possible_yes_no,वयस्क कीट का रंग कैसा होता है?,चमकीला काला,factual,pest_management
+HI_DOC_010_C012_Q3,hi,review_flag,no_question_word_possible_yes_no,लेडी बर्ड बीटल का रंग कैसा होता है?,लाल रंग की,factual,pest_management
+HI_DOC_013_C012_Q1,hi,review_flag,no_question_word_possible_yes_no,फसल की कटाई के बाद खेत की जुताई कैसी करनी चाहिए?,गहरी जुताई,procedural,pest_management
+HI_DOC_019_C012_Q2,hi,review_flag,answer_occurs_multiple_times,प्याज के लिए पोटाश की कितनी मात्रा देना पर्याप्त होगा?,80 कि.ग्रा./हे.,numerical,fertilizers_nutrition
+HI_DOC_019_C013_Q3,hi,review_flag,answer_occurs_multiple_times,फूलगोभी में पत्तियों की संकरी एवं कटी-फटी होने की समस्या का निदान किस तत्व के प्रयोग से किया जा सकता है?,मोलीब्डेनम,factual,fertilizers_nutrition
+HI_DOC_021_C013_Q1,hi,review_flag,answer_occurs_multiple_times,लीची के पौधों को शुरुआत के कितने वर्षों तक समुचित देख-रेख की आवश्यकता होती है?,3-4 वर्षो,numerical,crop_production
+HI_DOC_009_C014_Q3,hi,review_flag,answer_is_full_sentence,रासायनिक कीटनाशी के रूप में किसका छिड़काव करना चाहिए?,"मिथाइल डिमेटोन 25 ई. सी., डायमेथोयट 30 ई. सी.",factual,pest_management
+HI_DOC_021_C014_Q1,hi,review_flag,long_answer,पूर्ण विकसित पौधों में धूप एवं रोशनी का आवागमन कैसे बढ़ाया जा सकता है?,"सीधा ऊपर के तरफ हो रहा है, को काट देने से",procedural,crop_production
+HI_DOC_009_C016_Q1,hi,review_flag,answer_is_full_sentence,पहला छिड़काव किस दवा से करना चाहिए?,मिशाइल डिमेटोन 25 ई. सी.,factual,pest_management
+HI_DOC_009_C017_Q1,hi,review_flag,answer_occurs_multiple_times,नवजात पिल्लू का रंग कैसा होता है?,हरा,factual,pest_management
+HI_DOC_009_C017_Q1,hi,review_flag,no_question_word_possible_yes_no,नवजात पिल्लू का रंग कैसा होता है?,हरा,factual,pest_management
+HI_DOC_018_C017_Q3,hi,review_flag,long_answer,पौधों की कटाई का संकेत देने वाले मुख्य लक्षण क्या हैं?,पौधे पीले रंग के हो जायें तथा अधिकांश नीचे की पत्तियॉं गिरने लगे,conditional,harvesting_storage
+HI_DOC_019_C017_Q3,hi,review_flag,answer_occurs_multiple_times,रोगग्रस्त फलों से क्या नहीं निकालना चाहिए?,बीज,procedural,plant_diseases
+HI_DOC_021_C019_Q1,hi,review_flag,long_answer,लीची के फल छोटी अवस्था में क्यों झड़ने लगते हैं?,नेत्रजन एवं पानी की कमी तथा गर्म एवं तेज हवाओं के कारण,causal,crop_production
+HI_DOC_011_C020_Q1,hi,review_flag,answer_occurs_multiple_times,हीरक पृष्ठ शलभ के नियंत्रण के लिए साइपरमेथ्रिन 10 ईसी की मात्रा प्रति हेक्टेयर कितनी है?,650 मिली,numerical,pest_management
+HI_DOC_011_C021_Q1,hi,review_flag,no_question_word_possible_yes_no,हद्दा भृंग के वयस्क भृंग का रंग कैसा होता है?,"गोल, पीलापन लिए हुए भूरे रंग",factual,pest_management
+HI_DOC_011_C021_Q3,hi,review_flag,answer_occurs_multiple_times,चेपा कीट पौधों के किस भाग से रस चूस लेते हैं?,पत्तियों,factual,pest_management
+HI_DOC_016_C021_Q2,hi,review_flag,long_answer,वानस्पतिक बढ़वार अवस्था में कोमल फुन्गियों से मुख्य रूप से क्या नुकसान होता है?,रस चूसने वाले माहूँ भुनगे एवं थ्रिप्स से नुकसान होता है,factual,pest_management
+HI_DOC_011_C022_Q3,hi,review_flag,answer_occurs_multiple_times,कौन सा कीट छोटी पत्ती जैसे माइकोप्लाज्मा तथा विषाणु रोगों का वाहक है?,फुदका,identification,plant_diseases
+HI_DOC_016_C023_Q1,hi,review_flag,answer_is_full_sentence,पत्ती खाने वाले सूंड़ी कीटों में बीमारी पैदा करने वाला प्रभावी वाइरस कौन सा है?,न्यूक्लियरपाली हाइड्रोसिस वाइरस अर्थात् एन.पी.वी.,factual,pest_management
+HI_DOC_009_C024_Q1,hi,review_flag,long_answer,वयस्क कीट का आकार कितना होता है?,1.4 से 1.7 से. मी. लंबा 0.3 से 0.4 सें मी. चौड़ा,numerical,pest_management
+HI_DOC_019_C024_Q2,hi,review_flag,answer_occurs_multiple_times,किट्ट (रस्ट) रोग के नियंत्रण के लिए इंडोफिल एम्-45 की कितनी मात्रा प्रति लीटर पानी में मिलाई जाती है?,2 ग्रा./ली.,numerical,plant_diseases
+HI_DOC_009_C025_Q3,hi,review_flag,long_answer,पौधे किसके कारण छोटे एवं पीले हो जाते हैं?,"निम्फ एवं वयस्क दोनों ही पत्तियों, कोमल तनों एवं एवं अन्य कोमल भागों से र्स चूसते हैं",causal,pest_management
+HI_DOC_011_C025_Q2,hi,review_flag,no_question_word_possible_yes_no,छोटी पत्ती रोग के कारण पौधों का आकार कैसा दिखाई देने लगता है?,झाड़ी जैसा,factual,plant_diseases
+HI_DOC_011_C025_Q3,hi,review_flag,answer_occurs_multiple_times,लाल मकड़ी कुटकी के शिशुओं तथा वयस्कों की कॉलोनियाँ कहाँ रहती हैं?,पत्तियों की निचली सतह पर,factual,pest_management
+HI_DOC_019_C027_Q1,hi,review_flag,long_answer,सब्जियों में कौन-कौन से मुख्य कीटों का प्रकोप आम बात है?,"डायमंड बैक मोथ, लीफ वेब्बर, सेमी लूपर, लाही तथा तना छेदक",factual,pest_management
+HI_DOC_019_C029_Q2,hi,review_flag,answer_occurs_multiple_times,एफिड या लाही के नियंत्रण के लिए मोनोक्रोटोफॉस की कितनी मात्रा प्रति लीटर पानी में छिड़काव करनी चाहिए?,मोनोक्रोटोफॉस 1 मि.ली.,numerical,pest_management
+HI_DOC_019_C030_Q1,hi,review_flag,answer_occurs_multiple_times,लीफ हॉपर के कीट पौधों के किस भाग से रस चूसते हैं?,पत्तियों,factual,pest_management
+HI_DOC_019_C030_Q2,hi,review_flag,answer_occurs_multiple_times,लीफ हॉपर की रोकथाम के लिए मोनोक्रोटोफॉस की कितनी मात्रा का छिड़काव करना चाहिए?,1 मि.ली.,numerical,pest_management
+HI_DOC_019_C032_Q1,hi,review_flag,no_question_word_possible_yes_no,बैंगन के बीज पकने पर फल का रंग कैसा हो जाता है?,मटमैला अथवा गाढ़ा पीइला,factual,crop_production
+HI_DOC_011_C033_Q2,hi,review_flag,no_question_word_possible_yes_no,पर्ण चित्ती रोग में पत्तियों पर पाई जाने वाली विक्षति का आकार कैसा होता है?,भूरी और वृत्ताकार,factual,plant_diseases
+HI_DOC_019_C033_Q2,hi,review_flag,answer_occurs_multiple_times,मटर की कटाई किस समय करनी चाहिए?,दिन में,procedural,harvesting_storage
+HI_DOC_019_C033_Q1,hi,review_flag,answer_occurs_multiple_times,भिन्डी के बीज काले होने पर फलियों का रंग कैसा हो जाता है?,भूरे रंग की,factual,crop_production
+HI_DOC_019_C033_Q1,hi,review_flag,no_question_word_possible_yes_no,भिन्डी के बीज काले होने पर फलियों का रंग कैसा हो जाता है?,भूरे रंग की,factual,crop_production
+HI_DOC_011_C035_Q2,hi,review_flag,answer_outside_evidence,चूर्णिल फफूंद रोग तीखी मिर्च में किस प्रकार की जलवायु में पैदा होता है?,गर्म जलवायु,conditional,plant_diseases
+HI_DOC_009_C036_Q2,hi,review_flag,answer_occurs_multiple_times,कीट के सिर पर कितने काले धब्बे होते हैं?,दो,factual,pest_management
+HI_DOC_009_C036_Q3,hi,review_flag,no_question_word_possible_yes_no,पत्तियों के रस चूसने पर उनका रंग कैसा हो जाता है?,पीला,factual,pest_management
+HI_DOC_011_C036_Q3,hi,review_flag,no_question_word_possible_yes_no,विषाणु काम्प्लेक्स के बढ़ने पर पौधे की बढ़वार रुकने के बाद वह कैसा दिखाई देने लगता है?,झाड़ी जैसा,factual,plant_diseases
+HI_DOC_009_C037_Q1,hi,review_flag,answer_occurs_multiple_times,श्वेत मक्खी के नियंत्रण के लिए प्रयोग की जाने वाली कीटनाशी से किस अन्य कीट का नियंत्रण हो जाता है?,इस कीट,factual,pest_management
+HI_DOC_011_C037_Q2,hi,review_flag,answer_occurs_multiple_times,चौड़ी कुटकी के आक्रमण से पौधों के किस भाग की आकृति मुड़ी हुई नौका के रूप में बन जाती है?,पत्तियां,factual,pest_management
+HI_DOC_009_C038_Q2,hi,review_flag,no_question_word_possible_yes_no,पूर्ण विकसित पिल्लू का रंग कैसा होता है?,हल्का पीलापन लिए हुए हरा,factual,pest_management
+HI_DOC_011_C038_Q2,hi,review_flag,no_question_word_possible_yes_no,सूर्य के सीधे संपर्क में आने वाले हिस्से की ऊपरी सतह कैसी हो जाती है?,पतली और सूखी और कागज जैसी,factual,crop_production
+HI_DOC_011_C045_Q3,hi,review_flag,no_question_word_possible_yes_no,भारी संक्रमण होने पर संक्रमित पत्तियों का रंग कैसा हो जाता है?,ईंट जैसे गहरे लाल रंग की,factual,pest_management
+HI_DOC_009_C047_Q1,hi,review_flag,no_question_word_possible_yes_no,वयस्क कीट दिखने में कैसा होता है?,मच्छर के समान,factual,pest_management
+HI_DOC_009_C054_Q2,hi,review_flag,long_answer,छिपी हुई पिल्लू को नष्ट करने के लिए फसल की कटाई के बाद क्या करना चाहिए?,खेतों की गहरी जुताई करनी चाहिए एवं ठूठों को एकत्रित करके जला देना चाहिए,procedural,pest_management
+HI_DOC_011_C054_Q1,hi,review_flag,answer_occurs_multiple_times,प्याज की फसल का सबसे गंभीर कीट कौन सा है?,थ्रिप्स,factual,pest_management
+HI_DOC_011_C054_Q3,hi,review_flag,long_answer,थ्रिप्स कीट प्याज के पौधों पर कहाँ रहकर रस चूसता है?,हरे पत्ते जहाँ यह जल्दी उभरती हुई पत्तियों के बीच पाया जाता है,factual,pest_management
+HI_DOC_009_C057_Q2,hi,review_flag,answer_occurs_multiple_times,यह कीट मुख्य रूप से किस फसल के लिए हानिकारक होता है?,गन्ना,identification,pest_management
+HI_DOC_009_C058_Q3,hi,review_flag,long_answer,शीर्षबेधक (टॉप बोरर) का नियंत्रण किन उपायों से हो जाता है?,इन्डोसल्फान 35 ई. सी. का घोल बनाकर (2.0 लीटर/हेक्टर) कम से कम दो बार छिड़काव करना चाहिए,procedural,pest_management
+HI_DOC_009_C061_Q1,hi,review_flag,question_copies_context_wording,गन्ने का मौजेक रोग किस कीट के द्वारा फैलता है?,इसी कीट के द्वारा,causal,plant_diseases
+HI_DOC_009_C061_Q2,hi,review_flag,answer_occurs_multiple_times,अंडों से निकलने वाले नवजात शिशु यानी निम्फ का रंग कैसा होता है?,गुलाबी,factual,pest_management
+HI_DOC_009_C061_Q2,hi,review_flag,no_question_word_possible_yes_no,अंडों से निकलने वाले नवजात शिशु यानी निम्फ का रंग कैसा होता है?,गुलाबी,factual,pest_management
+HI_DOC_011_C061_Q1,hi,review_flag,answer_occurs_multiple_times,लाल पम्पकिन बीटल का कौन सा चरण मिट्टी में रहता है?,लार्वा,factual,pest_management
+HI_DOC_011_C063_Q1,hi,review_flag,answer_occurs_multiple_times,चूर्णिल आसिता रोग मुख्य रूप से किन सब्जियों में पाया जाता है?,कद्दू वर्गीय सब्जियों,factual,plant_diseases
+HI_DOC_011_C064_Q3,hi,review_flag,answer_occurs_multiple_times,फल मक्खी के प्रबंधन के लिए प्रति एकड़ कितने पीले रंग के चिप चिपे ट्रैप लगाने चाहिए?,10 प्रति एकड़,numerical,pest_management
+HI_DOC_011_C068_Q1,hi,review_flag,long_answer,प्रकंद सड़न रोग का हमला पौधों के किस भाग पर होता है?,मिट्टी की सतह के ठीक ऊपर पौधों की कंठा धरातल पर,factual,plant_diseases
+HI_DOC_011_C071_Q1,hi,review_flag,long_answer,सोनपंखी भृंग किसके परभक्षी होते हैं?,"चेपों, सफेद मक्खी, स्केल कीटों, वॉल वर्म, अन्य कीटों और कुटकियों",factual,pest_management
+HI_DOC_011_C072_Q2,hi,review_flag,no_question_word_possible_yes_no,ग्रीन लेस विंग्स के लार्वा का रंग कैसा होता है?,धूसर या भूरे रंग के,factual,pest_management
+HI_DOC_011_C075_Q3,hi,review_flag,long_answer,मादा ड्रैगन फ्लाई प्राय: अंडे कहाँ देती है?,पानी में तैरने वाले या जलमग्न पौधों पर या उसके आस – पास,factual,pest_management
+HI_DOC_011_C077_Q2,hi,review_flag,no_question_word_possible_yes_no,एन पी वी से संक्रमित होने के बाद लार्वा का रंग कैसा हो जाता है?,काला,factual,pest_management
+MR_DOC_007_C009_Q3,mr,automatic_validation,question_language:garbled_text,लसणाच्या पाकळ्या द्राўणात किती वेळ बुडवून ठेवाव्यात?,दोन तास,temporal,crop_production
+MR_DOC_006_C006_Q2,mr,automatic_validation,answer_too_short,खरीप ज्वारीसाठी पाण्याची एकूण किती पाळ्यांची आवश्यकता असते?,४,numerical,irrigation
+MR_DOC_003_C016_Q1,mr,automatic_validation,answer_too_short,सध्या बाजारात फर्टिलायझर इंजेक्टर पंपचे किती मॉडेल्स उपलब्ध आहेत?,३,numerical,irrigation
+MR_DOC_006_C001_Q4,mr,automatic_validation,answer_too_short,महाराष्ट्रासाठी किती कृषी हवामान विभाग पाडले आहेत?,९,numerical,crop_production
+MR_DOC_009_C002_Q2,mr,automatic_validation,answer_not_in_context,पश्‍चिम महाराष्ट्रासाठी शिफारस केलेले 'फुले कल्याणी' वाण कोणते आहे?,डिएस 228,identification,crop_production
+MR_DOC_020_C002_Q2,mr,automatic_validation,question_language:garbled_text,पेरणीपूर्वी बियाण्याला कॅप्टन किंवा थायरमची किती मात्राாவी?,3 ग्रॅम प्रतिकिलो,numerical,plant_diseases
+MR_DOC_009_C003_Q1,mr,automatic_validation,answer_not_in_context,घरचे बियाणे वापरताना पेरणीवेळी कशाची बीजप्रक्रिया करावी?,थायरम किंवा कार्बेन्डाझीम 50 डब्ल्यू.पी.,procedural,crop_production
+MR_DOC_014_C003_Q3,mr,automatic_validation,answer_not_in_context,कशाच्या योग्य वापरामुळे शेतीसाठी उपयुक्त जिवाणूंची संख्या वाढीस लागते?,सेंद्रिय पदार्थांच्या,causal,soil_management
+MR_DOC_007_C005_Q1,mr,automatic_validation,answer_not_in_context,भीमा ओंकार ही लसणाची जात कोणत्या संस्थेच्या बैठकीमध्ये शिफारस करण्यात आली?,ए.अय.सी.आर.पी. (व्ही.सी.) च्या २६ व्या समूह बैठकीमध्ये,factual,crop_production
+MR_DOC_016_C005_Q3,mr,automatic_validation,answer_too_short,किडींच्या व्यवस्थापनासाठी एकरी किती गंधसापळे शेतात लावावेत?,५,procedural,pest_management
+MR_DOC_018_C005_Q1,mr,automatic_validation,answer_too_short,पिवळ्या रंगाचे चिकट सापळे प्रति एकर किती संख्येने लावावेत?,४,numerical,pest_management
+MR_DOC_007_C006_Q1,mr,automatic_validation,answer_not_in_context,भीमा परपल लसणाच्या एका कंदामध्ये किती कळ्या किंवा पाकळ्या असतात?,१६ ते २० कळ्या/ पाकळ्या,numerical,crop_production
+MR_DOC_011_C012_Q1,mr,automatic_validation,answer_too_short,पहिल्या ते चौथ्या आठवड्यात पालाशची मात्रा किती दिली जाते?,९,numerical,fertilizers_nutrition
+MR_DOC_003_C014_Q3,mr,automatic_validation,answer_not_in_context,खताचे द्रावण ठिबक सिंचनामधून कशाच्या माध्यमातून दिले जाते?,खताची टाकी,procedural,fertilizers_nutrition
+MR_DOC_011_C014_Q3,mr,automatic_validation,question_language:garbled_text,स्फुरदयुक्त खतांसाठी शक्यتو कशाचा वापर करावा?,सिंगल सुपर फॉस्पेट,factual,fertilizers_nutrition
+MR_DOC_003_C015_Q1,mr,automatic_validation,answer_not_in_context,व्हेन्चुरी इंजेक्टर कोणकोणत्या साईजमध्ये उपलब्ध असतात?,"०.७५, १.०, १.५ व २.० इंच",numerical,agricultural_technology
+MR_DOC_003_C020_Q1,mr,automatic_validation,answer_not_in_context,मोनो पोटॅशियम फॉस्फेटचा ग्रेड काय आहे?,०:५२:३४,factual,fertilizers_nutrition
+MR_DOC_019_C004_Q1,mr,deduplication,over_per_context_cap,पाण्याचा निचरा होण्यासाठी काय खोदून तयार करावे?,चर,procedural,soil_management
+MR_DOC_002_C003_Q2,mr,deduplication,over_per_context_cap,द्रवरूप खत ठिबक सिंचनातून दिल्यास खतमात्रेत किती टक्के बचत होते?,३०%,numerical,fertilizers_nutrition
+MR_DOC_001_C018_Q3,mr,deduplication,exact_duplicate_question,पिकाची पाण्याची गरज कशावर अवलंबून असते?,पीक व जमीन या सोबतच त्या त्या भागाच्या हवामानावर,causal,irrigation
+MR_DOC_009_C001_Q2,mr,deduplication,over_per_context_cap,सोयाबीनची पेरणी केव्हापर्यंत पूर्ण करावी?,26 जुलैपर्यंत,temporal,crop_production
+MR_DOC_005_C003_Q4,mr,deduplication,over_per_context_cap,मर रोगाचा प्रादुर्भाव टाळण्यासाठी प्रति किलो बियांना कोणते बुरशीनाशक चोळावे?,थायरम किंवा कार्बेन्डाझिम,procedural,plant_diseases
+MR_DOC_009_C004_Q4,mr,deduplication,over_per_context_cap,बियाणे किती सें.मी.पेक्षा खोल पेरू नये?,चार सें.मी.,factual,crop_production
+MR_DOC_011_C005_Q4,mr,deduplication,over_per_context_cap,अॅसेटोबॅक्टर जीवाणू खताचे प्रमाण प्रति १०० लिटर पाण्यात किती वापरले जाते?,१० किलो,numerical,fertilizers_nutrition
+MR_DOC_011_C005_Q5,mr,deduplication,over_per_context_cap,जीवाणू खतांच्या वापरामुळे कशामध्ये ५० टक्के बचत होते?,नत्राची,benefit,fertilizers_nutrition
+MR_DOC_012_C006_Q4,mr,deduplication,over_per_context_cap,वांग्यामधील बोकड्या किंवा पर्णगुच्छ याचा प्रसार कोणत्या कीडामुळे होतो?,तुडतुडे,causal,plant_diseases
+MR_DOC_015_C006_Q4,mr,deduplication,over_per_context_cap,सन 2015-16 मध्ये जिल्ह्यातील किती गावातून मृद नमुने संकलित करण्यात आले?,423 गावातुन,factual,soil_management
+MR_DOC_009_C007_Q4,mr,deduplication,over_per_context_cap,सोयाबीन पिकावरील कोणत्या किडीसाठी कामगंध सापळे उपलब्ध आहेत?,लष्करी अळी व शेंगा पोखरणारी अळी,factual,pest_management
+MR_DOC_016_C008_Q3,mr,deduplication,fuzzy_duplicate_question,या किडीची अंडी किती दिवसात उबतात?,१३ ते १५ दिवसात,temporal,pest_management
+MR_DOC_009_C010_Q4,mr,deduplication,over_per_context_cap,शेंगा पोखरणारी अळी प्रामुख्याने कोणत्या पिकांवर आढळते?,"कपाशी, तूर, हरभरा",factual,pest_management
+MR_DOC_009_C010_Q5,mr,deduplication,over_per_context_cap,सोयाबीन पिकाच्या विषाणूजन्य रोगांच्या प्रसारास कोणती कीड मदत करते?,हिरवा ढेकूण,causal,pest_management
+MR_DOC_001_C002_Q2,mr,review_flag,answer_occurs_multiple_times,प्रस्तुत लेखात प्रामुख्याने कोणत्या सिंचन पद्धतीने वेगवेगळ्या पिकाची पाण्याची गरज कशी काढावी याविषयी माहिती दिली आहे?,ठिबक सिंचन,factual,irrigation
+MR_DOC_002_C002_Q3,mr,review_flag,answer_occurs_multiple_times,एक सरी पट्टा पद्धतीने उसाच्या सरीला पाणी दिल्यास किती पाणी कमी लागते?,१५ ते २०%,numerical,irrigation
+MR_DOC_002_C002_Q2,mr,review_flag,answer_outside_evidence,पट्टा पद्धत ठिबक सिंचनासाठी वापरल्यास किती टक्के पाणी कमी लागते?,१५ ते २०%,numerical,irrigation
+MR_DOC_002_C002_Q2,mr,review_flag,answer_occurs_multiple_times,पट्टा पद्धत ठिबक सिंचनासाठी वापरल्यास किती टक्के पाणी कमी लागते?,१५ ते २०%,numerical,irrigation
+MR_DOC_004_C004_Q2,mr,review_flag,long_answer,मध्यम क्षारयुक्त पाणी सहन करणारी पिके कोणती आहेत?,"गहू, ज्वारी, बाजरी, लसूण, मका, भात, ऊस, करडई, फुलकोबी, रताळी, कांदा, बटाटा",factual,crop_production
+MR_DOC_005_C005_Q3,mr,review_flag,answer_outside_evidence,ठिबक किंवा तुषार सिंचनावर रोपे तयार केल्यास एकरी किती बियाण्याची बचत होऊ शकते?,1.5 किलो,numerical,irrigation
+MR_DOC_002_C003_Q1,mr,review_flag,answer_outside_evidence,पट्टा पद्धतीने उसाची लागण करून ठिबक सिंचनाद्वारे पाणी दिल्यास पाण्यात किती टक्के बचत होते?,४० ते ५०%,numerical,irrigation
+MR_DOC_003_C013_Q2,mr,review_flag,answer_occurs_multiple_times,सिंचन संचामध्ये कमीतकमी किती प्रेशर गेज असावेत?,दोन,numerical,irrigation
+MR_DOC_006_C009_Q1,mr,review_flag,answer_occurs_multiple_times,उगवलेली पिके वाचविण्याकरिता कोणती सिंचन पद्धत वापरली जाते?,तुषार सिंचन पद्धती,procedural,irrigation
+MR_DOC_001_C006_Q1,mr,review_flag,answer_occurs_multiple_times,महात्मा फुले कृषि विद्यापीठाने कोणते मोबाईल अँप विकसित केले आहे?,फुलें जल,identification,agricultural_technology
+MR_DOC_001_C012_Q1,mr,review_flag,answer_occurs_multiple_times,ठिबक सिंचन पद्धतीने पिकाची पाण्याची गरज काढण्यासाठी कोणता घटक महत्वाचा आहे?,ओलीत गुणांक,factual,irrigation
+MR_DOC_001_C013_Q1,mr,review_flag,long_answer,फळझाडांसाठी झाडांनी व्यापलेले क्षेत्र काढण्याचे सूत्र काय आहे?,दोन ओळींमधील अंतर (मीटर) x एका ओळीतील दोन झाडांमधील अंतर (मीटर),procedural,irrigation
+MR_DOC_001_C016_Q2,mr,review_flag,answer_occurs_multiple_times,ठिबक सिंचन पद्धत अवलंबण्यासाठी संगणकीय प्रारुपे कोणत्या विद्यापीठाने विकसित केली आहेत?,महात्मा फुले कृषि विद्यापीठाने,factual,agricultural_technology
+MR_DOC_001_C017_Q2,mr,review_flag,answer_occurs_multiple_times,हारग्रीव्ह समानी पद्धतीमध्ये कोणकोणते घटक वापरले जातात?,दिवसाचे कमाल व किमान तापमान,factual,irrigation
+MR_DOC_001_C018_Q1,mr,review_flag,answer_occurs_multiple_times,पाणी व्यवस्थापन या विषयावर कोणी तंत्रज्ञान विकसित केले आहे?,महात्मा फुले कृषि विद्यापीठाने,factual,irrigation
+MR_DOC_001_C019_Q1,mr,review_flag,answer_occurs_multiple_times,महात्मा फुले कृषि विद्यापीठाने संदर्भिय बाष्पपणोंत्सर्जन काढण्यासाठी कोणते मोबाईल अॅप विकसित केले आहे?,फुले जल,identification,agricultural_technology
+MR_DOC_010_C001_Q1,mr,review_flag,answer_occurs_multiple_times,सोयाबीन बियाण्याची उगवणक्षमता किमान किती टक्के असावी?,70 टक्के,numerical,crop_production
+MR_DOC_010_C001_Q2,mr,review_flag,answer_is_full_sentence,सोयाबीनची पेरणी करण्यासाठी दोन ओळींमधील अंतर किती शिफारसीय आहे?,45 x 5 सें.मी. किंवा 30 x 7.5 सें.मी.,procedural,crop_production
+MR_DOC_003_C002_Q1,mr,review_flag,long_answer,मुख्य अन्नद्रव्यांमध्ये कोणकोणत्या घटकांचा समावेश होतो?,"कर्ब (C), हायड्रोजन (H), प्राणवायू (O), नत्र (N), स्फुरद (P), पालाश (K)",factual,fertilizers_nutrition
+MR_DOC_007_C002_Q1,mr,review_flag,answer_occurs_multiple_times,महाराष्ट्रामध्ये लसणाची लागवड कोणत्या महिन्यात करणे योग्य आहे?,ऑक्टोबर,factual,crop_production
+MR_DOC_010_C002_Q1,mr,review_flag,answer_occurs_multiple_times,सोयाबीन पेरणीपूर्वी कार्बेन्डाझिम ५० डब्ल्यूपी किती प्रमाणात वापरले जाते?,तीन ग्रॅम प्रति किलो,numerical,crop_production
+MR_DOC_011_C002_Q1,mr,review_flag,long_answer,कोणत्या संस्थेच्या माध्यमातून ऊसाच्या जाती प्रसारित केल्या आहेत?,"महात्मा फुले कृषि विद्यापीठ, राहुरी अंतर्गत ऊस संशोधन केंद्र पाडेगाव आणि वसंतदादा साखर संस्था (व्ही.एस.आय) मांजरी, पुणे",factual,crop_production
+MR_DOC_006_C003_Q2,mr,review_flag,answer_occurs_multiple_times,मान्सून उशिरा सुरू झाल्यास काय लांबते?,पेरणी,causal,crop_production
+MR_DOC_012_C003_Q1,mr,review_flag,answer_outside_evidence,वांगी लागवडीसाठी मल्चिंग पेपरचा वापर केल्यामुळे कशाचा खर्च कमी होतो?,तण नियंत्रणाचा,benefit,crop_production
+MR_DOC_015_C003_Q2,mr,review_flag,answer_occurs_multiple_times,कशाच्या असमतोल वापरामुळे जमिनीत काही मुलद्रव्यांची कमतरता जाणवू लागली?,रासायनिक खतांच्या,causal,fertilizers_nutrition
+MR_DOC_020_C003_Q1,mr,review_flag,long_answer,कांद्याच्या रोपवाटिकेत रोपांची उगवण झाल्यानंतर कोणती बुरशीनाशक व कीटकनाशक फवारावे?,मॅकोझेंब 25 ग्रॅम + कार्बोसल्फॉन 10 मिली + स्टीकर 10 मिली,procedural,plant_diseases
+MR_DOC_003_C004_Q2,mr,review_flag,answer_occurs_multiple_times,१९:१९:१९ या खतामध्ये नत्र व स्फुरदाचे शेकडा प्रमाण किती असते?,१९ टक्के,numerical,fertilizers_nutrition
+MR_DOC_007_C004_Q3,mr,review_flag,answer_occurs_multiple_times,कोणती जात जांभळा करपा व तपकिरी करपा या रोगांचा प्रादुर्भाव नसणा-या क्षेत्रात चांगले उत्पादन देते?,जी-४१,conditional,plant_diseases
+MR_DOC_007_C004_Q3,mr,review_flag,question_copies_context_wording,कोणती जात जांभळा करपा व तपकिरी करपा या रोगांचा प्रादुर्भाव नसणा-या क्षेत्रात चांगले उत्पादन देते?,जी-४१,conditional,plant_diseases
+MR_DOC_013_C004_Q3,mr,review_flag,question_copies_context_wording,धैचाचे हिरवळीचे खत वापरल्यामुळे भात उत्पादनात किती टक्के वाढ दिसून आली आहे?,२० टक्के,numerical,crop_production
+MR_DOC_017_C004_Q1,mr,review_flag,answer_occurs_multiple_times,व्हर्टिसिलीयम लिकॅनी हे बुरशीवर आधारित कीटकनाशक किती प्रमाणात वापरावे?,40 ग्रॅम प्रति 10 लिटर पाण्यात,numerical,pest_management
+MR_DOC_017_C004_Q3,mr,review_flag,answer_occurs_multiple_times,कोणत्या किडींच्या व्यवस्थापनासाठी नोमूरिया रिलाई हा घटक वापरला जातो?,तंबाखूवरील पाने खाणारी अळी (स्पोडोप्टेरा),identification,pest_management
+MR_DOC_003_C005_Q3,mr,review_flag,answer_occurs_multiple_times,अमोनियम पॉली फॉस्फेट कोणत्या स्वरूपात असते?,द्रव,factual,fertilizers_nutrition
+MR_DOC_010_C005_Q1,mr,review_flag,answer_occurs_multiple_times,सोयाबीनसाठी प्रति हेक्‍टरी किती किलो नत्र द्यावे?,30 किलो,numerical,fertilizers_nutrition
+MR_DOC_009_C006_Q1,mr,review_flag,long_answer,उन्हाळ्यात शेताची खोल नांगरट केल्याने कशाचा नाश होतो?,जमिनीतील किडींच्या सुप्त अळ्या व कोषांचा नाश होतो तसेच बुरशीजन्य रोगांच्या बुरशीचा नाश होतो,causal,pest_management
+MR_DOC_010_C006_Q1,mr,review_flag,answer_occurs_multiple_times,दुसऱ्या क्रमांकाच्या पर्यायात गंधकाचे प्रमाण किती दिले आहे?,20 कि. ग्रॅ.,numerical,fertilizers_nutrition
+MR_DOC_010_C006_Q2,mr,review_flag,answer_occurs_multiple_times,तिसऱ्या पर्यायात म्युरेट ऑफ पोटॅशचे प्रमाण किती आहे?,50 कि. ग्रॅ.,numerical,fertilizers_nutrition
+MR_DOC_012_C006_Q2,mr,review_flag,answer_occurs_multiple_times,रोपासाठी तयार केलेल्या वाफ्यात किती ग्रॅम कार्बोफ्युरॉन टाकावे?,30 ग्रॅम,numerical,pest_management
+MR_DOC_003_C008_Q2,mr,review_flag,answer_is_full_sentence,पाण्यात पूर्णतः विद्राव्य असणाऱ्या दाणेदार खतांची कोणती उदाहरणे आहेत?,"युरिया, म्युरेट ऑफ पोटॅश इ.",factual,fertilizers_nutrition
+MR_DOC_007_C008_Q3,mr,review_flag,answer_occurs_multiple_times,लसणाची लागवड प्रामुख्याने कशात केली जाते?,सपाट वाफ्यात,factual,crop_production
+MR_DOC_009_C009_Q1,mr,review_flag,answer_occurs_multiple_times,सोयाबीन पिकावरील महत्त्वाची कीड कोणती आहे?,खोडमाशी,factual,pest_management
+MR_DOC_011_C009_Q1,mr,review_flag,answer_occurs_multiple_times,"लागणीच्या वेळी आडसाली पिकासाठी स्फुरद (सिं,सु.फॉ) ची मात्रा किती दिली जाते?",८५ (५३१),numerical,fertilizers_nutrition
+MR_DOC_011_C009_Q2,mr,review_flag,answer_occurs_multiple_times,सुरूपिकासाठी लागणीनंतर ६ ते ८ आठवड्यांनी किती युरिया खत दिले जाते?,१०० (२१७),numerical,fertilizers_nutrition
+MR_DOC_019_C010_Q1,mr,review_flag,answer_occurs_multiple_times,पपईच्या बागेत विषाणू रोगाची बाधा झालेले झाड आढळल्यास प्रथम कशाची फवारणी करावी?,किटकनाशकाची,procedural,plant_diseases
+MR_DOC_019_C010_Q3,mr,review_flag,answer_occurs_multiple_times,पर्यायी पिके किंवा तणे काढण्यापूर्वी त्यावर कशाची फवारणी करावी?,किटकनाशकाची,procedural,plant_diseases
+MR_DOC_001_C014_Q3,mr,review_flag,answer_is_full_sentence,केळीची लागवड सामान्यतः कोणत्या अंतरावर केली जाते?,१८o x १५0 सें.मी. किंवा १५o x १५0 सें.मी.,factual,crop_production
+MR_DOC_011_C014_Q2,mr,review_flag,answer_occurs_multiple_times,बोरॅक्स प्रति हेक्टर किती प्रमाणात वापरावे?,५ किलो,numerical,fertilizers_nutrition
+MR_DOC_001_C015_Q1,mr,review_flag,answer_occurs_multiple_times,हलक्या जमिनीत उसासाठी स-यांची रुंदी किती ठेवली जाते?,७५ सें.मी.,numerical,crop_production
+MR_DOC_007_C016_Q2,mr,review_flag,answer_occurs_multiple_times,एक हेक्टर करिता सायपरमेथ्रीन औषधाचे किती प्रमाण लागते?,४५० मी.ली.,numerical,pest_management
+MR_DOC_007_C016_Q3,mr,review_flag,answer_occurs_multiple_times,डायकोफॉल औषध कोणत्या जिवाच्या नियंत्रणासाठी वापरले जाते?,लाल कोळी,factual,pest_management
+MR_DOC_007_C017_Q3,mr,review_flag,answer_occurs_multiple_times,तपकिरी करपा रोगाच्या उपचारासाठी डायथेन एम-४५ किती प्रमाणात वापरावे?,२५ ते ३0 ग्रॅम,numerical,plant_diseases
+MR_DOC_007_C019_Q3,mr,review_flag,answer_occurs_multiple_times,काढलेला लसूण शतात किती दिवस तसाच ठेवावा?,दोन दिवस,temporal,harvesting_storage
+MR_DOC_011_C020_Q3,mr,review_flag,answer_occurs_multiple_times,पांढरी माशीच्या नियंत्रणासाठी मेलॅथिऑन ५० टक्के प्रवाही किती वापरावे?,२० मि.ली,numerical,pest_management
+MR_DOC_003_C021_Q1,mr,review_flag,answer_outside_evidence,१९:१९:११ या खताला दुसरे काय म्हणतात?,स्टार्टर ग्रेड,identification,fertilizers_nutrition
+MR_DOC_011_C021_Q3,mr,review_flag,long_answer,दोन डोळ्यांच्या टिपऱ्यांना कशाचे प्रक्रिया करावी लागते?,०.१ टक्का बुरशीजनक कार्बनडेंझिम) + १०० पीपीएम जिब्रॅलिक आम्ल या संजीवकाच्या द्रावणात,procedural,crop_production
+MR_DOC_011_C024_Q3,mr,review_flag,answer_occurs_multiple_times,पश्चिम महाराष्ट्रात पूर्वहंगामी ऊस लागवड किफायतशीर होण्यासाठी कशाची आंतरपीक म्हणून शिफारस केली आहे?,हरभ-यांची,factual,crop_production
+MR_DOC_011_C025_Q3,mr,review_flag,no_question_word_possible_yes_no,सुधारित तंत्रज्ञानाबाबत प्रात्यक्षिके व प्रशिक्षण देण्यासाठी राज्य शासनाने केव्हा शिफारस केली आहे?,२०१३,temporal,crop_production
+BN_DOC_010_C003_Q2,bn,automatic_validation,answer_in_question,পলিথিন ট্যাংকের গর্তের নিচ থেকে চার দিকের দেয়াল কি দিয়ে ঢাকতে হয়?,পলিথিন,factual,crop_production
+BN_DOC_012_C004_Q2,bn,automatic_validation,answer_not_in_context,গাছ-পানের পাতা কেমন প্রকৃতির হয়?,মোটা ও ফলকটি সংকীর্ণ ও কটু স্বাদযুক্ত,factual,crop_production
+BN_DOC_017_C007_Q3,bn,automatic_validation,answer_not_in_context,আক্রান্ত গাছগুলির সাথে কী করা উচিত?,বাগান থেকে তুলে মাটির ভিতরে পুঁতে ফেলতে হবে,procedural,plant_diseases
+BN_DOC_004_C008_Q2,bn,automatic_validation,answer_not_in_context,আঁচড়া দেয়ার ফলে মাটির কী পরিবর্তন ঘটে?,মাটি আলগা হয়,causal,soil_management
+BN_DOC_005_C009_Q3,bn,automatic_validation,answer_not_in_context,বীজ হিসেবে মোচার কোন অংশ থেকে দানা সংগ্রহ করতে হবে?,মাঝামঝি অংশ,procedural,crop_production
+BN_DOC_006_C009_Q3,bn,automatic_validation,answer_not_in_context,আবর্জনা পচা সার তৈরি করতে বাড়ির আশে-পাশে কী করতে হবে?,"গর্ত করে সেখানে আবর্জনা, ঝরা পাতা ইত্যাদি স্তুপ করে রাখতে হবে",procedural,fertilizers_nutrition
+BN_DOC_007_C009_Q3,bn,automatic_validation,empty_answer,এডমায়ার প্রতি লিটারে কত মিলি গাছে স্প্রে করতে হবে?,,numerical,pest_management
+BN_DOC_014_C001_Q4,bn,deduplication,over_per_context_cap,প্রতি ১০-১৫টি স্ত্রী গাছের জন্য কয়টি পুরুষ গাছ রাখতে হবে?,একটি মাত্র পুরুষ গাছ,factual,crop_production
+BN_DOC_009_C002_Q2,bn,deduplication,over_per_context_cap,জমি থেকে সাধারণত কোন মাসে ওল তোলা শুরু হয়?,কার্তিক-অগ্রহায়ণ মাসে,temporal,crop_production
+BN_DOC_011_C002_Q4,bn,deduplication,over_per_context_cap,কোন মাসে বারি লেবু-১ খাওয়ার উপযুক্ত হয়?,জুলাই-আগস্ট মাসে,temporal,harvesting_storage
+BN_DOC_011_C003_Q4,bn,deduplication,over_per_context_cap,কী করলে বছরে দু’বার ফল পাওয়া যায়?,সার ও জলর ব্যবস্থা করলে,conditional,crop_production
+BN_DOC_014_C003_Q4,bn,deduplication,over_per_context_cap,পেঁপের কোন উপাদান আমিষকে সহজে হজম করে?,পেপেইন,factual,crop_production
+BN_DOC_015_C003_Q1,bn,deduplication,over_per_context_cap,শসা চাষের জন্য কোন ধরনের মাটি সবচেয়ে উপযোগী?,দোআঁশ মাটি,factual,soil_management
+BN_DOC_009_C004_Q5,bn,deduplication,over_per_context_cap,গর্তের মধ্যে বৃষ্টির জল জমে চাকি পচে যাওয়ার সম্ভাবনা কমানোর জন্য কী করতে হবে?,ঢিবি তৈরি,procedural,crop_production
+BN_DOC_009_C004_Q4,bn,deduplication,over_per_context_cap,জমিতে সালফারের অভাব থাকলে প্রতি একরে কত কেজি জিপসাম সার ব্যবহার করতে হবে?,২০ কেজি,numerical,fertilizers_nutrition
+BN_DOC_013_C005_Q1,bn,deduplication,exact_duplicate_question,প্রতি গর্তে কত কেজি পঁচা গোবর মিশাতে হবে?,১০-১৫ কেজি,numerical,fertilizers_nutrition
+BN_DOC_005_C006_Q4,bn,deduplication,over_per_context_cap,কোন ছত্রাকদ্বয় ভুট্টার বীজ পচা রোগ সৃষ্টি করে?,হেলমিনথোসপরিয়াম টারসিকাম ও হেলমিনথোসপরিয়াম মেইডিস,identification,plant_diseases
+BN_DOC_001_C007_Q1,bn,deduplication,over_per_context_cap,ধানের খোসার তলায় চালের পিঠে জড়িয়ে থাকা পাতলা আস্তরণটিকে কী বলা হয়?,ব্র্যান,identification,crop_production
+BN_DOC_012_C007_Q2,bn,deduplication,fuzzy_duplicate_question,এই জাতটির পাতার বৈশিষ্ট্য কেমন?,"ছোট, মোটা, নরম ও লম্বাটে",factual,crop_production
+BN_DOC_001_C008_Q4,bn,deduplication,over_per_context_cap,ব্র্যান খোল কোন প্রাণীগুলির খাদ্য হিসাবে ব্যবহৃত হয়?,গরু বা শুয়োরের,factual,crop_production
+BN_DOC_005_C008_Q4,bn,deduplication,over_per_context_cap,জমিতে কোন উপাদানের পরিমাণ বেশি হলে ছত্রাকজনিত কান্ড পচা রোগ বেশি হয়?,নাইট্রোজেনের পরিমাণ বেশী এবং পটাশের পরিমাণ কম হলে,conditional,plant_diseases
+BN_DOC_011_C008_Q3,bn,deduplication,over_per_context_cap,গুটিকলমের জন্য কেমন ডাল নির্বাচন করতে হবে?,একবছর বয়সী পেন্সিলের মত মোটা ডাল,factual,crop_production
+BN_DOC_004_C010_Q4,bn,deduplication,over_per_context_cap,বীজ বোনা থেকে গম পাকা পর্যন্ত জাত ভেদে মোট কত দিন সময় লাগে?,১০০-১১২ দিন,temporal,crop_production
+BN_DOC_001_C011_Q2,bn,deduplication,over_per_context_cap,মাশরুম চাষে কিসের ব্যবহার প্রচলিত?,খড়ের,factual,crop_production
+BN_DOC_004_C015_Q4,bn,deduplication,over_per_context_cap,গম কাটার জন্য দিনের কোন সময়টি সবচেয়ে উত্তম?,সকালের দিকে,factual,harvesting_storage
+BN_DOC_008_C015_Q4,bn,deduplication,over_per_context_cap,সঠিকভাবে আবাদ করলে হেক্টর প্রতি কত টন আলু ফলানো সম্ভব?,২৫-৩০ টন,numerical,crop_production
+BN_DOC_003_C001_Q2,bn,review_flag,answer_occurs_multiple_times,এশিয়ার ধান হিসাবে কোনটি পরিচিত?,Oryza sativa,factual,crop_production
+BN_DOC_004_C011_Q1,bn,review_flag,answer_occurs_multiple_times,আমাদের দেশের দ্বিতীয় গুরুত্বপূর্ণ দানাজাতীয় ফসল কোনটি?,গম,factual,crop_production
+BN_DOC_006_C004_Q1,bn,review_flag,answer_occurs_multiple_times,সোনালি সরিষা (এস এস-৭৫) জাতের জীবনকাল কত দিন?,৯০-১০০,numerical,crop_production
+BN_DOC_010_C002_Q1,bn,review_flag,long_answer,পাট পচানোর আগে ছোট ও বড় গাছ বাছাই করা প্রয়োজন কেন?,চিকন গাছের ছাল পাতলা তাই দ্রুত পচে এবং মোটা গাছের ছাল পুরু তাই দেরিতে পচে,causal,crop_production
+BN_DOC_015_C005_Q2,bn,review_flag,question_copies_context_wording,কী খেলে দীর্ঘমেয়াদি কোষ্ঠ-কাঠিন্য দূর হয়?,নিয়মিত শসা খেলে,benefit,crop_production
+BN_DOC_015_C005_Q3,bn,review_flag,answer_occurs_multiple_times,ওজন কমাতে চাওয়া ব্যক্তিরা স্যুপ ও সালাডে কী বেশি ব্যবহার করবেন?,শসা,procedural,crop_production
+BN_DOC_010_C003_Q1,bn,review_flag,long_answer,পলিথিন ট্যাংক পদ্ধতির গর্তের মাপ কত?,৫ মিটার লম্বা ও ২ মিটার চওড়া এবং ১ মিটার গভীর,numerical,crop_production
+BN_DOC_006_C008_Q1,bn,review_flag,long_answer,কোন জাতের সরিষায় জল সেচ দিলে ফলন বেশি হয়?,"সোনালি সরিষা, বারি সরিষা-৬, বারি সরিষা-৭ ও বারি সরিষা-৮ উফশী জাতসমূহে",factual,irrigation
+BN_DOC_004_C001_Q2,bn,review_flag,answer_occurs_multiple_times,আটা-ময়দা মূলত কোন ফসল থেকে আসে?,গম,identification,crop_production
+BN_DOC_009_C001_Q1,bn,review_flag,answer_occurs_multiple_times,ওল মাটির নিচে কী হিসেবে জন্মে?,গুঁড়িকন্দ,factual,crop_production
+BN_DOC_010_C001_Q1,bn,review_flag,no_question_word_possible_yes_no,পাট সংগ্রহের পর পচন প্রক্রিয়া বা জাগ দেয়া কয়ভাবে করা যেতে পারে?,তিনভাবে,numerical,crop_production
+BN_DOC_010_C001_Q2,bn,review_flag,answer_occurs_multiple_times,কোন পদ্ধতিতে কাঁচা পাটের ছাল ছাড়িয়ে বড় চাড়ি বা পাত্রে পাট পচানো হয়?,রিবন রেটিং পদ্ধতিতে,procedural,crop_production
+BN_DOC_010_C001_Q3,bn,review_flag,answer_occurs_multiple_times,মিনি পুকুর বা গর্ত তৈরি করে কোন পদ্ধতিতে পাট থেকে ছাড়ানো ছাল পচানো হয়?,রিবন রেটিং পদ্ধতিতে,procedural,crop_production
+BN_DOC_001_C002_Q3,bn,review_flag,question_copies_context_wording,কোন মরশুমে ধান কাটার সময় ঝড়বৃষ্টির সম্ভাবনা প্রবল থাকে?,বোরো মরশুমে,conditional,crop_production
+BN_DOC_004_C002_Q1,bn,review_flag,no_question_word_possible_yes_no,গম বীজ বোনার উপযুক্ত সময় কবে?,কার্তিক মাসের শেষ থেকে অগ্রহায়ণের তৃতীয় সপ্তাহ,temporal,crop_production
+BN_DOC_006_C002_Q1,bn,review_flag,no_question_word_possible_yes_no,সরিষার খৈল কাদের জন্য খুব পুষ্টিকর খাদ্য?,গরু ও মহিষের,factual,crop_production
+BN_DOC_006_C002_Q2,bn,review_flag,answer_occurs_multiple_times,মাটির জন্য সরিষার খৈল কী হিসেবে কাজ করে?,জৈব সার,factual,soil_management
+BN_DOC_007_C002_Q2,bn,review_flag,long_answer,রসুনের ঔষধি ব্যবহার কোন কোন রোগ নিরাময়ে সাহায্য করে?,"অজীণর্তা, পেটফাঁপা, শুলবেদনা, হৃদরোগ, অর্শ, ক্রিমি, সর্দি, কাশি, টাইফয়েড, ডিপথেরিয়া, বাতরোগ, গুরুপাক, বলবর্ধক, শুক্রবর্ধক ও যে কোন প্রকার চর্মরোগ",factual,crop_production
+BN_DOC_008_C002_Q3,bn,review_flag,question_copies_context_wording,ডিসেম্বরের কত তারিখ পর্যন্ত বিরনা চাষ পদ্ধতিতে আলু আবাদ সম্ভব?,১০ তারিখ পর্যন্ত,numerical,crop_production
+BN_DOC_008_C002_Q1,bn,review_flag,no_question_word_possible_yes_no,আলু চাষের জন্য কেমন জমি নির্বাচন করতে হবে?,যেখানে বৃষ্টিপাত হলে জল জমে না,conditional,crop_production
+BN_DOC_008_C002_Q1,bn,review_flag,question_copies_context_wording,আলু চাষের জন্য কেমন জমি নির্বাচন করতে হবে?,যেখানে বৃষ্টিপাত হলে জল জমে না,conditional,crop_production
+BN_DOC_012_C002_Q1,bn,review_flag,answer_occurs_multiple_times,পান চাষের বিশেষ ঘরটি কী নামে পরিচিত?,বরজ,identification,crop_production
+BN_DOC_018_C002_Q2,bn,review_flag,no_question_word_possible_yes_no,ফিউজারিয়াম দ্বারা আক্রান্ত গাছের কান্ড লম্বালম্বিভাবে কাটালে ভিতরের অংশ দেখতে কেমন হয়?,কালো দেখায়,factual,plant_diseases
+BN_DOC_002_C003_Q2,bn,review_flag,no_question_word_possible_yes_no,প্রতি গোছায় কয়টি সুস্থ ও সবল চারা রোপণ করতে হবে?,দু-তিনটি,factual,crop_production
+BN_DOC_004_C003_Q2,bn,review_flag,question_copies_context_wording,কত ডিগ্রি সেন্টিগ্রেড তাপমাত্রায় গম চাষ করা যায়?,২১-২৪ ডিগ্রি সেন্টিগ্রেড,numerical,crop_production
+BN_DOC_008_C003_Q1,bn,review_flag,answer_outside_evidence,আলু পশ্চিমবঙ্গের কী ধরনের ফসল?,অর্থকরী ফসল,factual,crop_production
+BN_DOC_012_C003_Q3,bn,review_flag,answer_occurs_multiple_times,মিঠা পানের জন্য কোন ধরনের মাটি সর্বোৎকৃষ্ট?,দোঁয়াশ মাটি,factual,soil_management
+BN_DOC_013_C003_Q1,bn,review_flag,no_question_word_possible_yes_no,পেয়ারা উৎপাদনের জন্য সাধারণত কেমন জলবায়ু উপযোগী?,উষ্ণ ও অবউষ্ণ মন্ডলের জলবায়ু,factual,crop_production
+BN_DOC_017_C003_Q2,bn,review_flag,question_copies_context_wording,কোন জাতের কলাতে এই রোগের প্রাদুর্ভাব বেশি হয়?,মর্তমান বা লম্বা জাতের কলাতে,factual,plant_diseases
+BN_DOC_004_C004_Q2,bn,review_flag,no_question_word_possible_yes_no,কেমন মাটিতে গমের ফলন কম হয়?,লোনা মাটিতে,causal,crop_production
+BN_DOC_008_C004_Q3,bn,review_flag,no_question_word_possible_yes_no,আলু চাষের জন্য কেমন জমি নির্বাচন করা উচিত?,উঁচু বা মাঝারি উঁচু জমি,factual,crop_production
+BN_DOC_011_C004_Q1,bn,review_flag,answer_occurs_multiple_times,চারা রোপণের জন্য উপযুক্ত সময় কোনটি?,মধ্য বৈশাখ থেকে মধ্য আশ্বিন মাস,temporal,crop_production
+BN_DOC_001_C005_Q1,bn,review_flag,answer_outside_evidence,ধানের লেম্মার মাথায় কী থাকে?,শুঁড়,factual,crop_production
+BN_DOC_001_C005_Q2,bn,review_flag,answer_outside_evidence,পেরিকার্প কয়টি স্তরে বিস্তৃত?,ছয়টি স্তরে,numerical,crop_production
+BN_DOC_012_C005_Q2,bn,review_flag,no_question_word_possible_yes_no,এই জাতের পাতার বৈশিষ্ট্য কেমন?,"বড়, পাতলা, গোলাকার ও পাতাগ্র ছোট",factual,crop_production
+BN_DOC_001_C006_Q2,bn,review_flag,answer_occurs_multiple_times,চালের শর্করাসমৃদ্ধ মূল অংশকে কী বলা হয়?,এন্ডোস্পার্ম,factual,crop_production
+BN_DOC_004_C006_Q2,bn,review_flag,answer_occurs_multiple_times,সেচসহ শেষ চাষের সময় প্রতি শতাংশে কত গ্রাম টিএসপি সার প্রয়োগ করতে হয়?,৬০০-৭০০ গ্রাম,numerical,fertilizers_nutrition
+BN_DOC_006_C006_Q1,bn,review_flag,no_question_word_possible_yes_no,সরিষা চাষের জন্য জমি কয়বার চাষ করতে হবে?,৫-৬ বার,numerical,crop_production
+BN_DOC_010_C006_Q2,bn,review_flag,no_question_word_possible_yes_no,জলতে জাগ তৈরির সময় ওপর-নিচে কয়টির বেশি সারি করা ঠিক নয়?,তিন থেকে চারটির বেশি,numerical,crop_production
+BN_DOC_012_C006_Q2,bn,review_flag,no_question_word_possible_yes_no,এই জাতটির ফলের স্বাদ কেমন?,ঝাল ও কটু,factual,crop_production
+BN_DOC_012_C006_Q3,bn,review_flag,no_question_word_possible_yes_no,এই জাতটির পাতা দেখতে কেমন?,"ছোট, পাতলা, নরম ও ডিম্বাকৃতি",identification,crop_production
+BN_DOC_015_C007_Q1,bn,review_flag,answer_occurs_multiple_times,মাড়ির দুর্গন্ধযুক্ত সংক্রমণে কোন সবজি দারুণ কাজ করে?,শসা,factual,crop_production
+BN_DOC_017_C007_Q1,bn,review_flag,long_answer,জাব পোকা নিয়ন্ত্রণের জন্য কী করতে হবে?,ইমিডাক্লোপ্রিড ১.০ মিলি প্রতি ৫ লিটার জলে গুলে স্প্রে করতে হবে,procedural,pest_management
+BN_DOC_007_C008_Q1,bn,review_flag,no_question_word_possible_yes_no,স্ত্রী পোকা পাতার কোষের মধ্যে কয়টি ডিম পাড়ে?,৪৫-৫০ টি,numerical,pest_management
+BN_DOC_007_C008_Q3,bn,review_flag,no_question_word_possible_yes_no,এরা বছরে কয়বার বংশ বিস্তার করে?,৮ বার,numerical,pest_management
+BN_DOC_001_C009_Q2,bn,review_flag,answer_occurs_multiple_times,খড়ে কোন উপাদানের পরিমাণ খুব বেশি থাকে?,সিলিকার,factual,crop_production
+BN_DOC_005_C009_Q1,bn,review_flag,no_question_word_possible_yes_no,ভুট্টা সংগ্রহের জন্য মোচার রং কেমন হওয়া উচিত?,চক্‌চক্‌ খড়ের রং ধারণ করলে,factual,harvesting_storage
+BN_DOC_006_C009_Q1,bn,review_flag,answer_occurs_multiple_times,সরিষা চাষের জমিতে কী প্রয়োগ করতে হবে?,জৈব সার,procedural,fertilizers_nutrition
+BN_DOC_007_C009_Q2,bn,review_flag,no_question_word_possible_yes_no,ক্ষেতে কাদের সংখ্যা বৃদ্ধি করে পোকা দমন করা যায়?,মাকড়সার,procedural,pest_management
+BN_DOC_001_C010_Q1,bn,review_flag,answer_occurs_multiple_times,জ্বালানি হিসাবে কয়লার বিকল্প কী হয়ে উঠেছে?,খড়ের গুল,factual,crop_production
+BN_DOC_001_C010_Q2,bn,review_flag,answer_occurs_multiple_times,পাওয়ার প্ল্যান্টের মূল জ্বালানি হিসাবে কী ব্যবহার করা যায়?,তাপে শুষ্ক খড়ের গুল,procedural,crop_production
+BN_DOC_007_C011_Q1,bn,review_flag,no_question_word_possible_yes_no,আক্রান্ত গাছের পাতা কেমন রঙ ধারণ করে?,হলদে হয়ে যায়,factual,plant_diseases
+BN_DOC_012_C011_Q1,bn,review_flag,answer_occurs_multiple_times,লতা বসানোর আগে প্রতি কাঠায় কত কেজি খোল প্রয়োগ করতে হবে?,৬ কেজি,numerical,crop_production
+BN_DOC_012_C011_Q3,bn,review_flag,no_question_word_possible_yes_no,পান বরজে সাধারণত বছরে কয়বার সার ব্যবহার করা হয়?,৪ থেকে ৫ বার,factual,fertilizers_nutrition
+BN_DOC_001_C013_Q2,bn,review_flag,answer_occurs_multiple_times,ধানের খোসা ব্যবহার করে কী তৈরি করলে তার অপরিবাহী ক্ষমতা বহুগুণ বৃদ্ধি পায়?,ইট,procedural,crop_production
+TA_DOC_010_C007_Q1,ta,automatic_validation,answer_not_in_context,கிழங்கை விதைத்தவுடனும் எவ்வளவு நாட்கள் இடைவெளியிலும் நீர் பாய்ச்ச வேண்டும்?,3 நாட்கள் இடைவெளியில்,procedural,irrigation
+TA_DOC_003_C004_Q1,ta,automatic_validation,answer_not_in_context,பாசன நீரின் தன்மையானது எதனைப் பொறுத்து அமைகிறது?,அதில் கரைந்துள்ள உப்புக்களின் அளவு,factual,irrigation
+TA_DOC_003_C005_Q1,ta,automatic_validation,answer_too_long,பரவல் பாசனம் என்றால் என்ன?,நிலத்தைச் சுற்றிலும் வரப்புகள் அமைத்து நிலப் பரப்பினைச் சமப்படுத்தி வாய்க்காலின் மூலம் வரும் நீரை ஒரு வாய்மடையின் வழியாக நிலத்திற்குள் பாய்ச்சி நிலம் முழுவதும் பரவச் செய்யும் முறை,factual,irrigation
+TA_DOC_007_C004_Q2,ta,automatic_validation,answer_not_in_context,இரும்புச்சத்து நிறைந்த மண் என்ன நிறத்தில் இருக்கும்?,சிவப்பு நிறத்தில்,factual,soil_management
+TA_DOC_009_C004_Q1,ta,automatic_validation,answer_too_short,இனக் கவர்ச்சிப் பொறிகள் ஏக்கருக்கு எத்தனை அளவில் பயன்படுத்தப்பட வேண்டும்?,5,numerical,pest_management
+TA_DOC_010_C004_Q4,ta,automatic_validation,answer_not_in_context,கிழங்கு அழுகல் நோய் ஏற்படாமல் தடுக்க என்ன செய்ய வேண்டும்?,கார்பண்டாசிம் பூஞ்சாண கரைசலில் முப்பது நிமிடம் நனைத்த பிறகு நடவு செய்யலாம்,causal,plant_diseases
+TA_DOC_010_C006_Q2,ta,automatic_validation,answer_not_in_context,சவுக்கு மரத்துண்டுகள் எவ்வளவு உயரத்தில் நடப்பட வேண்டும்?,3 ½ அடி உயரத்தில்,numerical,crop_production
+TA_DOC_006_C015_Q1,ta,automatic_validation,answer_not_in_context,களர் நிலத்தை சீரமைக்கப் பயன்படும் கனிமத் தன்மையுடைய பொருட்கள் யாவை?,"ஜிப்சம், பாஸ்போஜிப்சம், இரும்பு பைரைட்டுகள் மற்றும் கந்தகம்",factual,soil_management
+TA_DOC_002_C001_Q4,ta,deduplication,over_per_context_cap,தென்னந்தோப்பில் நீர் பாய்ச்ச எந்தக் கால்வாய்களைப் பயன்படுத்த வேண்டும்?,முதன்மை மற்றும் துணைக் கால்வாய்கள்,procedural,irrigation
+TA_DOC_001_C002_Q3,ta,deduplication,over_per_context_cap,பார்களைக் குறுக்கு நெடுக்குமாக அமைப்பதால் எத்தனை சதவீத நீரின் இழப்பு குறைக்கப்படுகிறது?,5 சதவீத,numerical,irrigation
+TA_DOC_003_C003_Q4,ta,deduplication,over_per_context_cap,இந்தியாவிற்கு தேவையான 60 சதம் மின் இறைப்பான்களை உற்பத்தி செய்து தனித்தன்மை வகிக்கும் மாவட்டம் எது?,கோயமுத்துார் மாவட்டம்,identification,agricultural_technology
+TA_DOC_010_C001_Q3,ta,deduplication,over_per_context_cap,மூட்டுவலி நிவாரணத்திற்காக அலோபதி மருந்து தயாரிக்க செங்காந்தளின் எதைப் பயன்படுத்துகின்றனர்?,கோல்ச்சிசின்,procedural,crop_production
+TA_DOC_011_C001_Q4,ta,deduplication,over_per_context_cap,கடைசி உழவின் போது ஒரு எக்டருக்கு இட வேண்டிய மக்கிய தொழு உரம் எவ்வளவு?,25 டன்,numerical,fertilizers_nutrition
+TA_DOC_009_C002_Q4,ta,deduplication,over_per_context_cap,இலை வழி உரமாக அளிக்க 1 கிலோ துத்தநாக சல்பேட்டை எவ்வளவு தண்ணீரில் கலக்க வேண்டும்?,200 லிட்டர்,numerical,fertilizers_nutrition
+TA_DOC_010_C004_Q2,ta,deduplication,fuzzy_duplicate_question,விதைக் கிழங்குகளை எந்தக் கரைசலில் நனைக்க வேண்டும்?,கார்பண்டாசிம் பூஞ்சாண கரைசலில்,procedural,plant_diseases
+TA_DOC_006_C005_Q4,ta,deduplication,over_per_context_cap,ஆய்வுக்கு எவ்வளவு எடையில் மண் மாதிரி எடுக்க வேண்டும்?,12 கிலோ,numerical,soil_management
+TA_DOC_007_C006_Q4,ta,deduplication,over_per_context_cap,எந்த மின் கடத்தும் திறன் மதிப்பு விதை முளைப்புத்திறனை பாதிக்கும்?,1.1 - 3.0,numerical,soil_management
+TA_DOC_007_C006_Q5,ta,deduplication,over_per_context_cap,களி கூழ்மங்கள் அயனிகளை வெளியிடும் செயலுக்கு என்ன பெயர்?,அயனிப் பரிமாற்றம்,factual,soil_management
+TA_DOC_007_C007_Q5,ta,deduplication,over_per_context_cap,குறைந்த நீர் ஊடுருவும் தன்மையுள்ள மண்ணில் களி சதவீதம் எத்தகையதாக இருக்கும்?,அதிகமாக உள்ளதால்,factual,soil_management
+TA_DOC_007_C007_Q6,ta,deduplication,over_per_context_cap,குறைந்த நீர் ஊடுருவும் தன்மையுள்ள மண்ணின் களித் தன்மையை எதன் மூலம் குறைக்கலாம்?,"ஆற்று மணல், அல்லது மணற்பாங்கான செம்மண் இடுவதன் மூலம்",procedural,soil_management
+TA_DOC_007_C007_Q4,ta,deduplication,over_per_context_cap,பயிருக்குத் தேவையான அனைத்து ஊட்டச்சத்துக்களையும் சரியான விகிதத்தில் அளிக்கும் மண்ணின் திறன் எவ்வாறு அழைக்கப்படுகிறது?,ஊட்டத்திறன்,identification,soil_management
+TA_DOC_007_C008_Q2,ta,deduplication,over_per_context_cap,மணலின் அளவு அதிகமாக உள்ள மண்ணை நிவர்த்தி செய்ய எத்தனை கிலோ எடை கொண்ட கல் உருளையைப் பயன்படுத்த வேண்டும்?,400 கிலோ,factual,soil_management
+TA_DOC_007_C008_Q4,ta,deduplication,over_per_context_cap,அடிமண் இறுக்கமடையும் பிரச்சனையை நிவர்த்தி செய்ய எதனைக்கொண்டு உழவு செய்ய வேண்டும்?,உளிக்கலப்பையைக்,procedural,soil_management
+TA_DOC_007_C013_Q3,ta,deduplication,over_per_context_cap,பண்ணைக்குட்டைகள் அமைக்கப்படும் இடத்தை எதன் அடிப்படையில் தெரிவு செய்ய வேண்டும்?,"வழிந்தோடும் நீரின் அளவு, நிலச்சரிவு, மழையளவு, மண்வகை மற்றும் மண்ணின் நீர் ஊடுருவும் திறனைப் பொறுத்து",conditional,soil_management
+TA_DOC_003_C001_Q3,ta,review_flag,no_question_word_possible_yes_no,தாவரத்தில் எதற்காக நீர் தேவைப்படுகிறது?,ஒளிச் சேர்க்கைக்கு,benefit,irrigation
+TA_DOC_004_C001_Q1,ta,review_flag,answer_occurs_multiple_times,"சிறு, குறு விவசாயிகள் எவ்வளவு மானியத்தில் சொட்டு நீர்ப்பாசனம் அமைக்கலாம்?",100 சதவீத மானியத்தில்,numerical,irrigation
+TA_DOC_005_C001_Q1,ta,review_flag,no_question_word_possible_yes_no,வெள்ளம் ஏற்படக் காரணமானவை யாவை?,"தொடர் மழை, சூறாவளி மற்றும் அணைக்கட்டுகள் உடைதல்",causal,crop_production
+TA_DOC_005_C001_Q2,ta,review_flag,answer_occurs_multiple_times,தாழ்வான பகுதிகள் நீரில் மூழ்குவது எவ்வாறு அழைக்கப்படுகிறது?,வெள்ளம்,factual,crop_production
+TA_DOC_004_C002_Q1,ta,review_flag,answer_occurs_multiple_times,சிறு விவசாயிக்கு நன்செய் நிலமாயிருந்தால் சொட்டு நீர்ப்பாசனம் அமைக்க அனுமதிக்கப்படும் பரப்பு எவ்வளவு?,இரண்டரை ஏக்கர் வரைக்கும்,numerical,irrigation
+TA_DOC_004_C002_Q2,ta,review_flag,answer_occurs_multiple_times,குறு விவசாயிக்கு புன்செய் நிலமாக இருந்தால் சொட்டு நீர்ப்பாசனம் அமைக்க அனுமதிக்கப்படும் பரப்பு என்ன?,இரண்டரை ஏக்கர் வரைக்கும்,numerical,irrigation
+TA_DOC_010_C007_Q3,ta,review_flag,question_copies_context_wording,எந்த முறையைப் பயன்படுத்துவதன் மூலம் அதிக விளைச்சல் பெறலாம்?,சொட்டு நீர் முறை,benefit,irrigation
+TA_DOC_001_C004_Q3,ta,review_flag,answer_is_full_sentence,தெளிப்பான் வேலை செய்ய தேவையான அழுத்தம் எவ்வளவு?,1 கி.கி /ஒரு சதுர செ.மீ.,numerical,irrigation
+TA_DOC_001_C005_Q1,ta,review_flag,answer_outside_evidence,பயிர்களை சாகுபடி செய்ய முதன் முதலில் பயன்படுத்தப்பட்ட பாசன முறை எது?,வெள்ளப் பாசன முறை,identification,irrigation
+TA_DOC_003_C005_Q2,ta,review_flag,no_question_word_possible_yes_no,தமிழகத்தில் பரவல் பாசன முறையில் நீர் பாய்ச்சப்படும் பயிர்கள் யாவை?,"நெல், கரும்பு, மஞ்சள்",identification,irrigation
+TA_DOC_005_C005_Q1,ta,review_flag,answer_outside_evidence,வறட்சி எத்தகைய வகையைச் சார்ந்தது?,இயற்கை பேரழிவு,factual,crop_production
+TA_DOC_001_C007_Q3,ta,review_flag,no_question_word_possible_yes_no,சொட்டு குழாய்களுக்கு ஏற்ற அழுத்தமுடைய வகைகள் யாவை?,"2 எல்.பி.எச், 4 எல்.பி.எச், 8 எல்.பி.எச்",factual,irrigation
+TA_DOC_003_C008_Q3,ta,review_flag,no_question_word_possible_yes_no,தெளித்தல் பாசன முறையில் நீர்ப் பாய்ச்சப்படும் பயிர்கள் யாவை?,"கேழ்வரகு, எள் மற்றும் காய்கறிகள்",factual,irrigation
+TA_DOC_003_C010_Q1,ta,review_flag,answer_occurs_multiple_times,பாசன நீரினைப் பயிர்கள் மீது ஒரு குறிப்பிட்ட உயரத்தில் இருந்து தூவும் முறை எவ்வாறு அழைக்கப்படுகிறது?,தூவல் பாசனம்,identification,irrigation
+TA_DOC_003_C011_Q2,ta,review_flag,answer_outside_evidence,நாற்றங்கால்களுக்கு மிகச்சிறந்த பாசனமுறை எது?,தூவல் பாசனம்,identification,irrigation
+TA_DOC_003_C011_Q3,ta,review_flag,no_question_word_possible_yes_no,பயிர்களை எதிலிருந்து காக்க தூவல் பாசனம் உதவுகிறது?,"உறைபனி, கடும் வெப்பம்",benefit,irrigation
+TA_DOC_003_C013_Q3,ta,review_flag,answer_occurs_multiple_times,மண்ணில் உள்ள ஊட்டச்சத்துக்களை கரைத்து பயிரின் வளர்ச்சிக்காகக் கொடுப்பது எது?,நீர்,factual,soil_management
+TA_DOC_006_C001_Q3,ta,review_flag,no_question_word_possible_yes_no,மண் வள மேலாண்மை எதற்காக முக்கியத்துவம் வாய்ந்ததாக அமைகிறது?,"அதிக மகசூல் பெறவும், சுற்றுச்சூழலை பாதுகாப்பதற்கும்",benefit,soil_management
+TA_DOC_007_C001_Q2,ta,review_flag,question_copies_context_wording,"தாவரத்தின் வேர் மண்டலத்தை தாங்கி, சத்துக்களைக் கொடுக்கும் பகுதி எது?",அடிமண்,identification,soil_management
+TA_DOC_009_C001_Q2,ta,review_flag,answer_occurs_multiple_times,கந்தகச்சத்து பற்றாக்குறையால் பயிரின் தோகைகள் என்ன நிறமாக மாறும்?,மஞ்சள் நிறமாக,causal,soil_management
+TA_DOC_006_C002_Q1,ta,review_flag,no_question_word_possible_yes_no,வளமான மண்ணின் கார அமில தன்மை எவ்வளவாக இருக்க வேண்டும்?,6.0 முதல் 6.8 வரை,numerical,soil_management
+TA_DOC_006_C002_Q2,ta,review_flag,no_question_word_possible_yes_no,செடியின் வளர்ச்சிக்கு தேவைப்படும் அடிப்படை ஊட்டச்சத்துக்கள் யாவை?,"தழைச்சத்து, மணிச்சத்து மற்றும் சாம்பல் சத்துக்கள்",factual,soil_management
+TA_DOC_006_C002_Q2,ta,review_flag,question_copies_context_wording,செடியின் வளர்ச்சிக்கு தேவைப்படும் அடிப்படை ஊட்டச்சத்துக்கள் யாவை?,"தழைச்சத்து, மணிச்சத்து மற்றும் சாம்பல் சத்துக்கள்",factual,soil_management
+TA_DOC_007_C002_Q3,ta,review_flag,answer_occurs_multiple_times,தமிழ்நாட்டில் உள்ள முக்கிய மண் வகைகளின் எண்ணிக்கை என்ன?,ஐந்து,factual,soil_management
+TA_DOC_008_C002_Q3,ta,review_flag,answer_occurs_multiple_times,எருதுகளைக் கொண்டு உழவு செய்யும்போது 2-வது மற்றும் 3-வது உழவுக்கு எந்த கலப்பையைப் பயன்படுத்தலாம்?,நாட்டுக் கலப்பையை,procedural,agricultural_technology
+TA_DOC_004_C003_Q1,ta,review_flag,no_question_word_possible_yes_no,"விவசாயிகள் சிறு, குறு விவசாயிகளுக்குரிய சான்றிதழை யாரிடம் பெற்று சமர்ப்பிக்க வேண்டும்?",வருவாய் வட்டாட்சியரிடம்,factual,crop_production
+TA_DOC_007_C003_Q2,ta,review_flag,no_question_word_possible_yes_no,களிமண் எதனை விட வளமுடையதாக இருக்கும்?,மணற்சாரி மண்ணைக் காட்டிலும்,factual,soil_management
+TA_DOC_006_C004_Q1,ta,review_flag,no_question_word_possible_yes_no,மண் பரிசோதனை எதற்காக அவசியமாகும்?,சுற்றுசூழலை பாதுகாப்பதற்கும்,benefit,soil_management
+TA_DOC_009_C004_Q2,ta,review_flag,answer_occurs_multiple_times,டிரைக்கோகிரம்மா ஜப்பானிக்கம் முட்டை ஒட்டுண்ணியை எந்த அளவில் வயலில் வெளியிட வேண்டும்?,2 சிசி (40000 முட்டைகள்),numerical,pest_management
+TA_DOC_009_C004_Q3,ta,review_flag,no_question_word_possible_yes_no,இலைச்சுருட்டுப்புழு தாக்கப்பட்ட வயல்களில் இலைகள் எவ்வாறாகக் காணப்படும்?,நீளவாக்கில் வெள்ளை நிற பட்டையாக காணப்படும்,factual,pest_management
+TA_DOC_006_C005_Q2,ta,review_flag,answer_is_full_sentence,மண் மாதிரி எந்த ஆழத்தில் இருந்து சேகரிக்கப்பட வேண்டும்?,0-15 செ.மீ. அல்லது 0-23 செ.மீ.,numerical,soil_management
+TA_DOC_007_C005_Q3,ta,review_flag,answer_outside_evidence,வேர்களின் சுவாசத்திற்கு மிக அவசியமானது எது?,நிலக்காற்று,factual,soil_management
+TA_DOC_008_C005_Q1,ta,review_flag,long_answer,கரும்பு வளர்ச்சிக்கு ஏற்ற மண் வகைகள் எவை?,"மணல் கலந்த வண்டல் மண்ணிலிருந்து, களி வண்டல் மண் வரை அனைத்து மண் வகையும்",factual,soil_management
+TA_DOC_009_C005_Q1,ta,review_flag,answer_occurs_multiple_times,அசடிராக்டின் ஒரு ஏக்கருக்கு எவ்வளவு பயன்படுத்த வேண்டும்?,500 மிலி,numerical,pest_management
+TA_DOC_006_C006_Q3,ta,review_flag,no_question_word_possible_yes_no,தமிழ்நாட்டில் பயிர் சாகுபடியைப் பாதிக்கும் வேதிப்பெருட்களால் ஏற்படும் பிரச்னைகள் யாவை?,"உவர்தன்மை, களர் தன்மை, அமிலத் தன்மை மற்றும் சத்துகள் அதிகமாதல்",factual,soil_management
+TA_DOC_009_C006_Q3,ta,review_flag,answer_occurs_multiple_times,நோய் அறிகுறிகள் அதிகமாக இருக்கும்போது ஏக்கருக்கு கார்பன்டசிம் 50 டபிள்யூ.பி. மருந்து எவ்வளவு பயன்படுத்த வேண்டும்?,200 கிராம்,numerical,plant_diseases
+TA_DOC_006_C007_Q1,ta,review_flag,answer_occurs_multiple_times,உவர் மண்ணின் மின்கடத்தும் திறன் அளவு என்ன?,> 4,numerical,soil_management
+TA_DOC_010_C008_Q1,ta,review_flag,answer_occurs_multiple_times,செங்காந்தள் பயிருக்கு ஒரு எக்டருக்கு இடவேண்டிய மணிச்சத்தின் அளவு என்ன?,50 கிலோ,numerical,fertilizers_nutrition
+TA_DOC_010_C008_Q3,ta,review_flag,answer_occurs_multiple_times,அங்கக வேளாண்மையில் தொழூ உரத்தோடு சேர்த்து இடப்படும் வேப்பம் புண்ணாக்கின் அளவு எவ்வளவு?,100 கிலோ,numerical,fertilizers_nutrition
+TA_DOC_007_C009_Q2,ta,review_flag,long_answer,அமிலமண்ணை சீர்திருத்தப் பயன்படும் பொருள்கள் யாவை?,கால்சியம் கார்பனேட் (CaCO) அல்லது கால்சியம் ஆக்ஸைடு (CaO) அல்லது கால்சியம் ஹைட்ராக்சைடு (Ca (OH),procedural,soil_management
+TA_DOC_007_C009_Q2,ta,review_flag,no_question_word_possible_yes_no,அமிலமண்ணை சீர்திருத்தப் பயன்படும் பொருள்கள் யாவை?,கால்சியம் கார்பனேட் (CaCO) அல்லது கால்சியம் ஆக்ஸைடு (CaO) அல்லது கால்சியம் ஹைட்ராக்சைடு (Ca (OH),procedural,soil_management
+TA_DOC_007_C010_Q3,ta,review_flag,no_question_word_possible_yes_no,கார்பனேட் மற்றும் பைகார்பனேட் உப்புக்கள் அதிகமாக காணப்படுவதால் கார அமிலத்தன்மை எவ்வளவாக மாறும்?,பத்துக்கும் அதிகமாகும்,causal,soil_management
+TA_DOC_010_C010_Q1,ta,review_flag,answer_occurs_multiple_times,செங்காந்தளில் என்ன வகையான மகரந்தச் சேர்க்கை நடைபெறுகிறது?,அயல் மகரந்தச் சேர்க்கை,factual,crop_production
+TA_DOC_010_C011_Q1,ta,review_flag,answer_outside_evidence,விவசாயிகள் எந்த நேரத்தில் கை வழி அயல் மகரந்தச் சேர்க்கையை செய்கின்றனர்?,காலை நேரத்தில் (7 மணி முதல் 11 மணி வரை),temporal,crop_production
+TA_DOC_007_C012_Q2,ta,review_flag,answer_occurs_multiple_times,மண் அரிமானத்தை தடுக்க என்ன அமைக்கலாம்?,சம உயர வரப்புகள்,procedural,soil_management
+TA_DOC_006_C013_Q3,ta,review_flag,long_answer,"மண்ணின் இயல் தன்மையும், நீர் உள்ளே வடியும் தன்மையும் மேம்படுத்த எதை இட வேண்டும்?","தொழஉரம், மட்கிய தென்னை நார்க் கழிவு (அ) ஆலைக் கழிவு ஒரு எக்டருக்கு 25 டன் என்ற அளவில்",benefit,soil_management
+TA_DOC_007_C013_Q2,ta,review_flag,no_question_word_possible_yes_no,காற்றின் வேகத்தைக் குறைக்க வளர்க்கப்படும் மரங்கள் யாவை?,"சவுக்கு, யூக்லிப்டஸ், அசோகமரம், சீமைக்கருவேல்",factual,soil_management
+TA_DOC_006_C014_Q1,ta,review_flag,answer_outside_evidence,உளிக்கலப்பை மண்ணில் எவ்வளவு ஆழம் வரை சென்று கடினத்தட்டை உடைக்கும்?,45 செ.மீ ஆழம் வரை,numerical,soil_management
+TA_DOC_006_C014_Q3,ta,review_flag,answer_outside_evidence,உளிக் கலப்பை கொண்டு மானாவாரி மண்ணை உழுவதால் பருத்தியில் விளைச்சல் எவ்வளவு சதவீதம் உயரும்?,25%,numerical,crop_production

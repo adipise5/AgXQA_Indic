@@ -1,8 +1,11 @@
 """Step 9 (prep): write human-review sheets for native-language reviewers.
 
-Creates human_review/<language>_review.csv from validated_qa/<lang>_dedup.jsonl.
-Re-running keeps everything reviewers already filled in and only appends new
-candidates. Sheets are UTF-8 with BOM so Excel shows Indic text correctly.
+Creates human_review/private/<language>_review.csv (with the context; git-ignored,
+shared with reviewers privately) and human_review/<language>_review.csv (same rows
+and reviews without passage text; committed). Reviewers fill the private sheet;
+re-running copies their reviews into the public sheet. Re-running keeps everything
+reviewers already filled in and only appends new candidates. Sheets are UTF-8 with
+BOM so Excel shows Indic text correctly.
 
 Reviewer columns (see README for the rubric):
     reviewer, fluency, question_correctness, answer_correctness, terminology (1-5 each),
@@ -21,8 +24,8 @@ from __future__ import annotations
 import argparse
 import random
 
-from common import (LANGUAGES, REVIEW_DIR, VALIDATED_DIR, read_csv, read_jsonl, rel, selected_languages,
-                    write_csv)
+from common import (LANGUAGES, REVIEW_DIR, REVIEW_PRIVATE_DIR, VALIDATED_DIR, read_csv, read_jsonl, rel,
+                    selected_languages, write_csv)
 
 REVIEW_FIELDS = [
     "id", "language", "context", "question", "answer_text", "auto_warnings",
@@ -31,6 +34,8 @@ REVIEW_FIELDS = [
     "evidence_sentence", "question_type", "domain", "difficulty", "context_id", "document_id",
     "source_url", "page_start", "answer_start",
 ]
+# Public sheets (committed) omit passage text: Vikaspedia redistribution needs permission.
+PUBLIC_FIELDS = [f for f in REVIEW_FIELDS if f not in ("context", "evidence_sentence")]
 FILLED_BY_REVIEWER = ["reviewer", "fluency", "question_correctness", "answer_correctness", "terminology",
                       "status", "corrected_question", "corrected_answer", "comments"]
 DEFAULT_REVIEWERS = {"hi": "Aditya Saxena", "mr": "Aditya Pise", "bn": "Saunak", "ta": "Dhiraj"}
@@ -59,8 +64,11 @@ def main() -> None:
     for lang in selected_languages(args.languages):
         folder = LANGUAGES[lang]["folder"]
         rows = read_jsonl(VALIDATED_DIR / f"{lang}_dedup.jsonl")
-        path = REVIEW_DIR / f"{folder}_review.csv"
-        existing = {r["id"]: r for r in read_csv(path)}
+        path = REVIEW_PRIVATE_DIR / f"{folder}_review.csv"
+        public_path = REVIEW_DIR / f"{folder}_review.csv"
+        # Reviews live in the private sheet; an older public-only sheet is read once
+        # so that no review already entered is lost when switching layouts.
+        existing = {r["id"]: r for r in read_csv(path if path.exists() else public_path)}
         sheet = []
         for row in rows:
             fresh = to_sheet_row(row, DEFAULT_REVIEWERS[lang])
@@ -72,11 +80,13 @@ def main() -> None:
         # so no reviewer work is ever lost; build_dataset.py ignores them.
         sheet.extend(existing.values())
         write_csv(path, sheet, REVIEW_FIELDS)
+        write_csv(public_path, sheet, PUBLIC_FIELDS)  # same rows and reviews, no passage text
         reviewed = sum(bool((r.get("status") or "").strip()) for r in sheet)
-        print(f"[{lang}] {len(sheet)} rows ({reviewed} already reviewed) -> {rel(path)}")
+        print(f"[{lang}] {len(sheet)} rows ({reviewed} already reviewed) -> {rel(path)} "
+              f"(+ public copy without context)")
 
         if args.second_sample and rows:
-            second_path = REVIEW_DIR / f"{folder}_review_second.csv"
+            second_path = REVIEW_PRIVATE_DIR / f"{folder}_review_second.csv"
             if second_path.exists():
                 print(f"  {rel(second_path)} exists - not overwritten")
                 continue

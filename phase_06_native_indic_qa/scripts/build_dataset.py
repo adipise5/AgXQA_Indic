@@ -25,8 +25,9 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 
-from common import (DATA_DIR, FINAL_DIR, LANGUAGES, RESULTS_DIR, REVIEW_DIR, VALIDATED_DIR, nfc, read_csv,
-                    read_json, read_jsonl, rel, selected_languages, write_csv, write_json, write_jsonl)
+from common import (DATA_DIR, FINAL_DIR, FULL_DIR, LANGUAGES, RESULTS_DIR, REVIEW_DIR, REVIEW_PRIVATE_DIR,
+                    VALIDATED_DIR, nfc, read_csv, read_json, read_jsonl, rel, selected_languages, sha256_text,
+                    write_csv, write_json, write_jsonl)
 
 METADATA_FIELDS = ["id", "language", "candidate_id", "context_id", "document_id", "domain", "question_type",
                    "difficulty", "source_url", "page_number", "region", "human_validated", "review_status",
@@ -95,7 +96,11 @@ def main() -> None:
     all_rows, metadata, report = [], [], {"leakage_checks_run": exclusions["checks_run"], "languages": {}}
     for lang in selected_languages(args.languages):
         cfg = LANGUAGES[lang]
-        reviews = {r["id"]: r for r in read_csv(REVIEW_DIR / f"{cfg['folder']}_review.csv")}
+        # Reviewers fill the private sheets (they show the context); fall back to the
+        # public sheet when no private copy exists.
+        private = REVIEW_PRIVATE_DIR / f"{cfg['folder']}_review.csv"
+        sheet = private if private.exists() else REVIEW_DIR / f"{cfg['folder']}_review.csv"
+        reviews = {r["id"]: r for r in read_csv(sheet)}
         outcome = Counter()
         final = []
         for row in read_jsonl(VALIDATED_DIR / f"{lang}_dedup.jsonl"):
@@ -155,31 +160,61 @@ def main() -> None:
                 },
             }
             records.append(record)
-        out = FINAL_DIR / f"{cfg['folder']}.jsonl"
+        out = FULL_DIR / f"{cfg['folder']}.jsonl"
         write_jsonl(out, records)
         report["languages"][lang] = {"final_records": len(records), **dict(outcome)}
         print(f"[{lang}] {len(records)} records -> {rel(out)}  {dict(outcome)}")
 
-    # test.jsonl and metadata.csv always cover every language file present, so a
-    # --languages run for one language does not drop the others.
+    # Combined files always cover every language file present, so a --languages run
+    # for one language does not drop the others.
     for lang, cfg in LANGUAGES.items():
-        for record in read_jsonl(FINAL_DIR / f"{cfg['folder']}.jsonl"):
+        for record in read_jsonl(FULL_DIR / f"{cfg['folder']}.jsonl"):
             all_rows.append(record)
             m = record["metadata"]
             metadata.append({"id": record["id"], "language": lang,
                              **{k: m.get(k) for k in METADATA_FIELDS if k in m}})
     previous = read_json(RESULTS_DIR / "build_report.json", {}) or {}
     report["languages"] = {**previous.get("languages", {}), **report["languages"]}
-    write_jsonl(FINAL_DIR / "test.jsonl", all_rows)
-    # Same records in the team repo's shared QA contract (schemas/qa.schema.json in
-    # adipise5/AgXQA-Indic), which shared.validate / shared.evaluate consume in Phase 7:
-    # split + source_document_id required, answers as a list of {text, answer_start}.
-    write_jsonl(FINAL_DIR / "test.shared.jsonl", (to_shared_schema(r) for r in all_rows))
+    write_full_and_release(all_rows)
     write_csv(DATA_DIR / "metadata.csv", metadata, METADATA_FIELDS)
     report["total_records"] = len(all_rows)
     report["include_unreviewed"] = args.include_unreviewed
     write_json(RESULTS_DIR / "build_report.json", report)
-    print(f"Total {len(all_rows)} records -> {rel(FINAL_DIR / 'test.jsonl')}")
+    print(f"Total {len(all_rows)} records -> {rel(FULL_DIR / 'test.jsonl')} (full) and "
+          f"{rel(FINAL_DIR / 'test.jsonl')} (release, no passages)")
+
+
+def to_release(record: dict) -> dict:
+    """Publishable record: everything except passage text. context_sha256 lets
+    hydrate_dataset.py prove that a rebuilt context is byte-identical."""
+    answers = record["answers"]
+    meta = record["metadata"]
+    return {
+        "id": record["id"],
+        "language": record["language"],
+        "split": "test",
+        "source_document_id": meta["document_id"],
+        "context_id": meta["context_id"],
+        "context_sha256": sha256_text(record["context"]),
+        "context_chars": len(record["context"]),
+        "question": record["question"],
+        "answers": [{"text": t, "answer_start": s} for t, s in zip(answers["text"], answers["answer_start"])],
+        "metadata": meta,
+    }
+
+
+def write_full_and_release(all_rows: list[dict]) -> None:
+    """full/ = records with contexts (git-ignored); final/ = release without passages.
+    full/test.shared.jsonl follows the team repo's schemas/qa.schema.json, which
+    shared.validate / shared.evaluate consume in Phase 7."""
+    write_jsonl(FULL_DIR / "test.jsonl", all_rows)
+    write_jsonl(FULL_DIR / "test.shared.jsonl", (to_shared_schema(r) for r in all_rows))
+    for lang, cfg in LANGUAGES.items():
+        rows = [to_release(r) for r in all_rows if r["language"] == lang]
+        write_jsonl(FINAL_DIR / f"{cfg['folder']}.jsonl", rows)
+    write_jsonl(FINAL_DIR / "test.jsonl", (to_release(r) for r in all_rows))
+    for stale in ("test.shared.jsonl",):  # older builds wrote full files into final/
+        (FINAL_DIR / stale).unlink(missing_ok=True)
 
 
 if __name__ == "__main__":
