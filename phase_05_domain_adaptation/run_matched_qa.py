@@ -21,6 +21,46 @@ DEFAULT_AUDIT = PHASE / "results" / "phase3_span_checked_overlap.json"
 EXPERIMENT = "phase_5_adapted"
 
 
+def experiment_name(alpha):
+    return EXPERIMENT if alpha == 1 else f"phase_5_alpha_{alpha:g}"
+
+
+def interpolate_layer(base, adapted, alpha):
+    """Return base + alpha * (adapted - base). The endpoints return exact copies of base or adapted."""
+    if not 0 <= alpha <= 1:
+        raise ValueError("Adaptation strength alpha must be in [0, 1]")
+    if set(base) != set(adapted) or any(base[name].shape != adapted[name].shape
+                                        or base[name].dtype != adapted[name].dtype for name in base):
+        raise ValueError("Adapted layer tensors do not match the base encoder layer")
+    if alpha == 0:
+        return {name: tensor.detach().clone() for name, tensor in base.items()}
+    if alpha == 1:
+        return {name: tensor.detach().clone() for name, tensor in adapted.items()}
+    return {name: (base[name].double() + alpha * (adapted[name].double() - base[name].double())).to(base[name].dtype)
+            for name in base}
+
+
+def tensor_digest(tensors):
+    digest = make_digest()
+    for name in sorted(tensors):
+        tensor = tensors[name].detach().cpu().contiguous()
+        digest.update(f"{name}|{tensor.dtype}|{tuple(tensor.shape)}\n".encode("utf-8"))
+        digest.update(tensor.numpy().tobytes())
+    return digest.hexdigest()
+
+
+def adapted_initializer(adapted, alpha, initialization):
+    """Interpolate only the final encoder layer after the seeded base model and QA head are built."""
+    def initialize(model):
+        layer = model.roberta.encoder.layer[-1]
+        base = {name: tensor.detach().clone() for name, tensor in layer.state_dict().items()}
+        tensors = interpolate_layer(base, adapted, alpha)
+        layer.load_state_dict(tensors, strict=True)
+        return {**initialization, "alpha": alpha, "base_layer_digest": tensor_digest(base),
+                "adapted_layer_digest": tensor_digest(adapted), "initial_layer_digest": tensor_digest(tensors)}
+    return initialize
+
+
 def rebuild_qa_splits(source_dir, export_dir, control_dataset, audit):
     from phase_02_multilingual_benchmark.gemini_audit import ALL_LANGUAGES, validate_parallel
     from phase_02_multilingual_benchmark.gemini_exports import EXPORTS, import_rows, make_candidate
@@ -116,11 +156,8 @@ def run(args):
     import torch
 
     model_runs.get_device(torch, "cuda")
-    adapted_layer = load_file(str(weights), device="cpu")
-
-    def initialize_encoder(model):
-        model.roberta.encoder.layer[-1].load_state_dict(adapted_layer, strict=True)
-        return initialization
+    initialize_encoder = adapted_initializer(load_file(str(weights), device="cpu"), args.alpha, initialization)
+    experiment = experiment_name(args.alpha)
 
     args.output.mkdir(parents=True, exist_ok=False)
     training = args.output / "training"
@@ -134,7 +171,7 @@ def run(args):
         "variant": identity["variant"],
         "split_sha256": {split: identity["split_sha256"][split] for split in ("train", "validation")},
     }
-    model_runs.train_qa(train_args, settings, splits, provenance, EXPERIMENT, settings["languages"],
+    model_runs.train_qa(train_args, settings, splits, provenance, experiment, settings["languages"],
                         initialize_encoder=initialize_encoder)
 
     evaluation = args.output / "evaluation"
@@ -143,13 +180,14 @@ def run(args):
         checkpoint=training / "best_checkpoint", provenance=None, device="cuda", batch_size=8,
         save_window_logits=False, output=evaluation,
     )
-    model_runs.evaluate_qa(eval_args, settings, splits["test"], identity, EXPERIMENT)
+    model_runs.evaluate_qa(eval_args, settings, splits["test"], identity, experiment)
     adapted_predictions = read_jsonl(evaluation / "predictions.jsonl")
     control_groups, _ = compare_inputs(control_predictions, adapted_predictions)
     control, adapted = aggregate(control_predictions), aggregate(adapted_predictions)
+    recorded = read_json(training / "best_checkpoint" / model_runs.PROVENANCE)["adapted_initialization"]
     write_json(args.output / "comparison.json", {
         "protocol": settings["metric_protocol"], "dataset": identity, "seed": 42,
-        "paired_test_groups": len(control_groups), "initialization": initialization,
+        "paired_test_groups": len(control_groups), "initialization": recorded,
         "phase_3b_predictions_sha256": control_hash,
         "phase_5_predictions_sha256": sha256(evaluation / "predictions.jsonl"),
         "phase_3b": control, "phase_5_adapted": adapted,
@@ -168,11 +206,15 @@ def main():
     parser.add_argument("--adaptation-dir", type=Path, required=True, help="Private saved Phase 5 MLM run")
     parser.add_argument("--audit", type=Path, default=DEFAULT_AUDIT)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--alpha", type=float, default=1.0,
+                        help="Adaptation strength for the final encoder layer: base + alpha * (adapted - base)")
     parser.add_argument("--offline", action="store_true", help="Use the already cached XLM-R base")
     parser.add_argument("--check-only", action="store_true", help="Verify pinned files without starting training")
     args = parser.parse_args()
     if (args.export_dir is None) != (args.source_dir is None):
         parser.error("--export-dir and --source-dir must be provided together")
+    if not 0 <= args.alpha <= 1:
+        parser.error("--alpha must be in [0, 1]")
     try:
         run(args)
     except (OSError, ValueError, KeyError, ImportError) as error:

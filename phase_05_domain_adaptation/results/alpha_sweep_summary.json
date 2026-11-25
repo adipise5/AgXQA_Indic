@@ -1,0 +1,575 @@
+{
+  "description": "Text-free summary of the Phase 5 matched QA runs and adaptation-strength sweep. Predictions, datasets and weights stay private.",
+  "protocol": "agxqa-indic-v1",
+  "dataset": {
+    "dataset_version": "gemini-v2",
+    "variant": "span_checked",
+    "bundle_manifest_sha256": "b6f3401c4f79edbcd7db60c5d8c878adac622e11f510c971cbf9a51a5e4e838c",
+    "split_sha256": {
+      "train": "b4064eb9e81ae5b0c9ed446ef771e5f81f8652b52c269007f4090ffcc6b06714",
+      "validation": "9713edf65b962788855ebcdfc2567fb849c033cb9cf4081076005c49d5562334",
+      "test": "3929e4c00f4746b431b4a4574660df70630311f0ecb62f0029a3a9031bae539e"
+    },
+    "coverage": {
+      "train": {
+        "records": 6520,
+        "question_groups": 1304,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      },
+      "validation": {
+        "records": 1735,
+        "question_groups": 347,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      },
+      "test": {
+        "records": 1610,
+        "question_groups": 322,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      }
+    },
+    "reviewed_release": false
+  },
+  "seed": 42,
+  "adaptation_sha256": "1e7122873ee756397f1dc1dbcf6a4e788a429967124c6fc7d9af12ff53e7cd76",
+  "runtime": {
+    "device": "NVIDIA L4",
+    "gpu_uuid": "345e3d2b-ecee-39e3-850f-984b461425cc",
+    "torch_cuda": "12.8",
+    "training_configuration": "phase_03_multilingual_finetuning/configs/cuda_hpc.yaml",
+    "versions_match_phase_3b": true
+  },
+  "first_matched_run_alpha_1": {
+    "test_vs_recorded_phase_3b_delta_pp": {
+      "en": {
+        "exact_match": -4.04,
+        "f1": -3.21
+      },
+      "hi": {
+        "exact_match": 2.48,
+        "f1": 2.58
+      },
+      "mr": {
+        "exact_match": 0.31,
+        "f1": -0.58
+      },
+      "bn": {
+        "exact_match": 0.62,
+        "f1": -0.2
+      },
+      "ta": {
+        "exact_match": -1.55,
+        "f1": -1.46
+      },
+      "indic_macro": {
+        "exact_match": 0.47,
+        "f1": 0.09
+      },
+      "overall_macro": {
+        "exact_match": -0.43,
+        "f1": -0.57
+      }
+    },
+    "phase_5_predictions_sha256": "83450073135e0eed29f340fa0c5a4d145ed31b411ccadc52388b458b349922dd"
+  },
+  "selection": {
+    "rule": "An adapted candidate (alpha > 0) at the control seed qualifies only if, on validation, its English F1 >= the matched alpha-0 control's AND its Indic macro F1 > the control's. Among qualifying candidates pick the highest Indic macro validation F1; ties go to the smaller alpha. If none qualifies, keep the alpha-0 control and skip the extra adaptation runs.",
+    "split": "validation",
+    "decision": "keep_alpha_0_control",
+    "selected_alpha": null,
+    "candidates": [
+      {
+        "alpha": 0.5,
+        "english_f1_at_least_control": false,
+        "indic_macro_f1_above_control": false,
+        "eligible": false
+      },
+      {
+        "alpha": 1.0,
+        "english_f1_at_least_control": false,
+        "indic_macro_f1_above_control": true,
+        "eligible": false
+      }
+    ]
+  },
+  "validation": [
+    {
+      "run": "alpha0-seed42",
+      "alpha": 0.0,
+      "seed": 42,
+      "selected_checkpoint": "checkpoint-896",
+      "checkpoint_model_sha256": "9b2315405fe09376fbd581e41447b7c5c88f6ec9df3b7516fc852e3e508fac3b",
+      "initial_layer_digest": "0bf0a69692627a0d6bb69b7efbd8342336ac46f429afa7f1bf8d7ca09d674d48",
+      "predictions_sha256": "ca87570bc97b3193aae2903c46f94cbcfe987ad7573b0b7732acb1dd3557dbf0",
+      "scores": {
+        "en": {
+          "exact_match": 49.57,
+          "f1": 74.24
+        },
+        "hi": {
+          "exact_match": 43.52,
+          "f1": 69.75
+        },
+        "mr": {
+          "exact_match": 36.6,
+          "f1": 67.11
+        },
+        "bn": {
+          "exact_match": 39.48,
+          "f1": 68.63
+        },
+        "ta": {
+          "exact_match": 40.35,
+          "f1": 67.74
+        },
+        "indic_macro": {
+          "exact_match": 39.99,
+          "f1": 68.31
+        },
+        "overall_macro": {
+          "exact_match": 41.9,
+          "f1": 69.5
+        }
+      }
+    },
+    {
+      "run": "alpha0.5-seed42",
+      "alpha": 0.5,
+      "seed": 42,
+      "selected_checkpoint": "checkpoint-1344",
+      "checkpoint_model_sha256": "1fc370d2484f3a8ae610eeaf3bfb12eca5c4cab118c571ec9b893ca7e7cf2022",
+      "initial_layer_digest": "a1af05916a53f24d4db7f990fdbfaca37b362404d8fb9dbc1640d104feb0f8f9",
+      "predictions_sha256": "e5d500ee9a08a1c5a686b28ac5603c9415c55830cf15075731373d2b19fea045",
+      "scores": {
+        "en": {
+          "exact_match": 48.99,
+          "f1": 74.14
+        },
+        "hi": {
+          "exact_match": 42.94,
+          "f1": 67.95
+        },
+        "mr": {
+          "exact_match": 36.31,
+          "f1": 64.69
+        },
+        "bn": {
+          "exact_match": 38.04,
+          "f1": 67.22
+        },
+        "ta": {
+          "exact_match": 41.21,
+          "f1": 67.53
+        },
+        "indic_macro": {
+          "exact_match": 39.63,
+          "f1": 66.85
+        },
+        "overall_macro": {
+          "exact_match": 41.5,
+          "f1": 68.3
+        }
+      }
+    },
+    {
+      "run": "matched-qa-seed42",
+      "alpha": 1.0,
+      "seed": 42,
+      "selected_checkpoint": "checkpoint-896",
+      "checkpoint_model_sha256": "a4697b9535bfd121a35eafe9828b427c22333b656a2a256212014545be406dc4",
+      "initial_layer_digest": null,
+      "predictions_sha256": "27619d8547102fb9dbe1039e4503c4491b681c951acce39b261fda2a9279ea6b",
+      "scores": {
+        "en": {
+          "exact_match": 42.65,
+          "f1": 69.69
+        },
+        "hi": {
+          "exact_match": 44.96,
+          "f1": 68.4
+        },
+        "mr": {
+          "exact_match": 41.79,
+          "f1": 68.22
+        },
+        "bn": {
+          "exact_match": 40.63,
+          "f1": 67.49
+        },
+        "ta": {
+          "exact_match": 45.24,
+          "f1": 70.4
+        },
+        "indic_macro": {
+          "exact_match": 43.16,
+          "f1": 68.63
+        },
+        "overall_macro": {
+          "exact_match": 43.05,
+          "f1": 68.84
+        }
+      }
+    }
+  ],
+  "test": {
+    "alpha_0_control": {
+      "run": "alpha0-seed42",
+      "alpha": 0.0,
+      "seed": 42,
+      "selected_checkpoint": "checkpoint-896",
+      "checkpoint_model_sha256": "9b2315405fe09376fbd581e41447b7c5c88f6ec9df3b7516fc852e3e508fac3b",
+      "initial_layer_digest": "0bf0a69692627a0d6bb69b7efbd8342336ac46f429afa7f1bf8d7ca09d674d48",
+      "predictions_sha256": "5d41593610fae41405d14d6354abc6e6d7b13640243b34b18831f287a67bd1f8",
+      "scores": {
+        "en": {
+          "exact_match": 41.93,
+          "f1": 70.86
+        },
+        "hi": {
+          "exact_match": 37.27,
+          "f1": 67.13
+        },
+        "mr": {
+          "exact_match": 35.4,
+          "f1": 65.35
+        },
+        "bn": {
+          "exact_match": 36.34,
+          "f1": 65.11
+        },
+        "ta": {
+          "exact_match": 32.61,
+          "f1": 63.05
+        },
+        "indic_macro": {
+          "exact_match": 35.4,
+          "f1": 65.16
+        },
+        "overall_macro": {
+          "exact_match": 36.71,
+          "f1": 66.3
+        }
+      }
+    },
+    "alpha_1_context_seen_before_sweep": {
+      "run": "matched-qa-seed42",
+      "alpha": 1.0,
+      "seed": 42,
+      "selected_checkpoint": "checkpoint-896",
+      "checkpoint_model_sha256": "a4697b9535bfd121a35eafe9828b427c22333b656a2a256212014545be406dc4",
+      "initial_layer_digest": null,
+      "predictions_sha256": "83450073135e0eed29f340fa0c5a4d145ed31b411ccadc52388b458b349922dd",
+      "scores": {
+        "en": {
+          "exact_match": 39.44,
+          "f1": 68.43
+        },
+        "hi": {
+          "exact_match": 40.37,
+          "f1": 68.52
+        },
+        "mr": {
+          "exact_match": 36.02,
+          "f1": 63.33
+        },
+        "bn": {
+          "exact_match": 37.89,
+          "f1": 66.28
+        },
+        "ta": {
+          "exact_match": 31.37,
+          "f1": 61.71
+        },
+        "indic_macro": {
+          "exact_match": 36.41,
+          "f1": 64.96
+        },
+        "overall_macro": {
+          "exact_match": 37.02,
+          "f1": 65.65
+        }
+      }
+    },
+    "recorded_phase_3b": {
+      "predictions_sha256": "21437eea81882a6290df27fcd2d853d97c301c092418a47c32224d2e862d49cb",
+      "scores": {
+        "en": {
+          "exact_match": 43.48,
+          "f1": 71.64
+        },
+        "hi": {
+          "exact_match": 37.89,
+          "f1": 65.94
+        },
+        "mr": {
+          "exact_match": 35.71,
+          "f1": 63.91
+        },
+        "bn": {
+          "exact_match": 37.27,
+          "f1": 66.48
+        },
+        "ta": {
+          "exact_match": 32.92,
+          "f1": 63.17
+        },
+        "indic_macro": {
+          "exact_match": 35.95,
+          "f1": 64.87
+        },
+        "overall_macro": {
+          "exact_match": 37.45,
+          "f1": 66.23
+        }
+      }
+    }
+  },
+  "paired_test_f1_and_em_delta_pp_source_document_95ci": {
+    "note": "[delta, lower, upper]; 10,000 resamples of source documents, seed 42",
+    "alpha_0_rerun_minus_recorded_phase_3b": {
+      "en/exact_match": [
+        -1.55,
+        -5.45,
+        3.03
+      ],
+      "en/f1": [
+        -0.78,
+        -3.97,
+        2.53
+      ],
+      "hi/exact_match": [
+        -0.62,
+        -6.17,
+        4.58
+      ],
+      "hi/f1": [
+        1.19,
+        -1.97,
+        3.91
+      ],
+      "mr/exact_match": [
+        -0.31,
+        -4.46,
+        3.38
+      ],
+      "mr/f1": [
+        1.45,
+        -1.68,
+        4.08
+      ],
+      "bn/exact_match": [
+        -0.93,
+        -5.8,
+        2.87
+      ],
+      "bn/f1": [
+        -1.37,
+        -4.93,
+        1.71
+      ],
+      "ta/exact_match": [
+        -0.31,
+        -2.78,
+        1.85
+      ],
+      "ta/f1": [
+        -0.11,
+        -2.79,
+        2.27
+      ],
+      "indic_macro/exact_match": [
+        -0.54,
+        -3.67,
+        2.05
+      ],
+      "indic_macro/f1": [
+        0.29,
+        -2.18,
+        2.35
+      ],
+      "overall_macro/exact_match": [
+        -0.75,
+        -3.37,
+        1.57
+      ],
+      "overall_macro/f1": [
+        0.07,
+        -2.14,
+        1.97
+      ]
+    },
+    "alpha_1_minus_alpha_0_control_context_only": {
+      "en/exact_match": [
+        -2.48,
+        -5.38,
+        0.71
+      ],
+      "en/f1": [
+        -2.43,
+        -4.82,
+        -0.04
+      ],
+      "hi/exact_match": [
+        3.11,
+        0.0,
+        6.78
+      ],
+      "hi/f1": [
+        1.4,
+        -1.01,
+        4.51
+      ],
+      "mr/exact_match": [
+        0.62,
+        -3.26,
+        4.82
+      ],
+      "mr/f1": [
+        -2.02,
+        -5.11,
+        0.5
+      ],
+      "bn/exact_match": [
+        1.55,
+        -1.95,
+        4.96
+      ],
+      "bn/f1": [
+        1.16,
+        -2.53,
+        5.49
+      ],
+      "ta/exact_match": [
+        -1.24,
+        -5.6,
+        2.34
+      ],
+      "ta/f1": [
+        -1.34,
+        -3.88,
+        1.12
+      ],
+      "indic_macro/exact_match": [
+        1.01,
+        -0.78,
+        2.98
+      ],
+      "indic_macro/f1": [
+        -0.2,
+        -1.66,
+        1.52
+      ],
+      "overall_macro/exact_match": [
+        0.31,
+        -1.1,
+        1.83
+      ],
+      "overall_macro/f1": [
+        -0.65,
+        -1.75,
+        0.63
+      ]
+    }
+  },
+  "alpha_0_rerun_reproduces_phase_3b_predictions": false,
+  "span_cap_check_validation": {
+    "run": "alpha0-seed42",
+    "current_cap": 64,
+    "larger_cap": 160,
+    "rows": 1735,
+    "gold_exceeding_current_cap": {
+      "en": 6,
+      "hi": 7,
+      "mr": 7,
+      "bn": 8,
+      "ta": 7
+    },
+    "gold_exceeding_larger_cap": {
+      "en": 0,
+      "hi": 0,
+      "mr": 0,
+      "bn": 0,
+      "ta": 0
+    },
+    "changed_predictions": {
+      "en": 2,
+      "hi": 8,
+      "mr": 3,
+      "bn": 9,
+      "ta": 4
+    },
+    "delta_pp": {
+      "en": {
+        "exact_match": 0.29,
+        "f1": 0.08
+      },
+      "hi": {
+        "exact_match": 0.0,
+        "f1": -0.25
+      },
+      "mr": {
+        "exact_match": 0.0,
+        "f1": -0.02
+      },
+      "bn": {
+        "exact_match": 0.29,
+        "f1": 0.23
+      },
+      "ta": {
+        "exact_match": 0.0,
+        "f1": -0.01
+      },
+      "indic_macro": {
+        "exact_match": 0.07,
+        "f1": -0.01
+      },
+      "overall_macro": {
+        "exact_match": 0.12,
+        "f1": 0.01
+      }
+    },
+    "decision": "keep cap 64"
+  },
+  "source_sha256": {
+    "outputs/phase_05_domain_adaptation/alpha-sweep/selection.json": "b5421fe0fb5bda424e9a42dcb85ee8f1b4b253e4266222c1d5bb4a4a33c01249",
+    "outputs/phase_05_domain_adaptation/alpha-sweep/comparison/comparison.json": "8e48436b3bbebc35fe4ad9045b1838680215f66e9de161929620bdbbfab78f65",
+    "outputs/phase_05_domain_adaptation/alpha-sweep/span_cap_validation.json": "88f27316d722576e532cb440c44eb5070e7413bf1282c611067570208b6d6454",
+    "outputs/phase_05_domain_adaptation/matched-qa-seed42/comparison.json": "b0b8e6c385c50a0e8ed6fe78042bb6e1d5ba8d8cb425117ee4f081bf908ed8af"
+  },
+  "decisions": {
+    "sweep_selection": {
+      "alpha": 0,
+      "basis": "validation only, seed 42",
+      "reason": "No adapted candidate had English F1 >= control and Indic macro F1 > control"
+    },
+    "retained_model": {
+      "model": "recorded Phase 3B",
+      "basis": "the sweep selected alpha 0, which is the Phase 3B recipe; the recorded model is kept for consistency with the published Phase 3 results"
+    },
+    "matched_control": "alpha0-seed42: a rerun of the Phase 3B recipe on the same GPU type, used as the paired control, not reported as a new model",
+    "decoder_span_cap": 64
+  },
+  "adapted_layer_max_abs_change_from_base": 0.000594,
+  "artifact_locations": {
+    "adaptation_run": "outputs/phase_05_domain_adaptation/mlm_runs/3f3481d6662a2b69-len256-last-layer-1ep-lr2e-05-seed42-cpu",
+    "sweep": "outputs/phase_05_domain_adaptation/alpha-sweep",
+    "first_matched_run_alpha_1": "outputs/phase_05_domain_adaptation/matched-qa-seed42"
+  }
+}

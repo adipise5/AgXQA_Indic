@@ -1,6 +1,6 @@
 {
   "phase": 5,
-  "status": "mlm_pilot_measured_overlap_audited_matched_qa_pending",
+  "status": "complete_seed_42_sweep_selected_alpha_0_phase_3b_retained",
   "seed": 42,
   "languages": [
     "en",
@@ -15,5 +15,5 @@
   "model_revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
   "dataset_revision": "gemini-v2",
   "dataset_contract": "phase_02_multilingual_benchmark/configs/qa_release.json",
-  "notes": "The reviewed Indic-AEC local MLM pilot and literal overlap audit are measured. Matched adapted QA is pending."
+  "notes": "Measured at seed 42: the reviewed Indic-AEC MLM pilot, literal overlap audit, matched adapted QA run (alpha 1) and validation-selected alpha sweep (0, 0.5, 1). The sweep selected alpha 0: no adapted candidate kept English validation F1 and raised Indic macro validation F1 above the control. The project retains the recorded Phase 3B model; the alpha-0 rerun is the matched control. See results/alpha_sweep_summary.json and results/comparison_table.md."
 }
