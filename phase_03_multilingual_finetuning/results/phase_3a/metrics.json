@@ -1,0 +1,136 @@
+{
+  "protocol": "agxqa-indic-v1",
+  "by_language_and_macro": {
+    "en": {
+      "exact_match": 36.95652173913043,
+      "f1": 66.78702804903743,
+      "count": 322
+    },
+    "hi": {
+      "exact_match": 27.95031055900621,
+      "f1": 51.51397146722439,
+      "count": 322
+    },
+    "mr": {
+      "exact_match": 26.70807453416149,
+      "f1": 52.565126388823394,
+      "count": 322
+    },
+    "bn": {
+      "exact_match": 25.465838509316768,
+      "f1": 53.16107514545938,
+      "count": 322
+    },
+    "ta": {
+      "exact_match": 25.77639751552795,
+      "f1": 50.42312069071784,
+      "count": 322
+    },
+    "indic_macro": {
+      "exact_match": 26.475155279503106,
+      "f1": 51.91582342305625,
+      "count": 1288
+    },
+    "overall_macro": {
+      "exact_match": 28.57142857142857,
+      "f1": 54.89006434825249,
+      "count": 1610
+    }
+  },
+  "matched_test_groups": 322,
+  "english_squad_v1": {
+    "exact_match": 38.81987577639752,
+    "f1": 66.35085749167305,
+    "total": 322,
+    "prediction_coverage": 322,
+    "scorer": "SQuAD 1.1; normalized EM; multiset token F1; independent best reference per metric"
+  },
+  "joint": {
+    "complete_groups": 322,
+    "excluded_groups": 0,
+    "correct_in_n_languages": [
+      {
+        "correct_languages": 0,
+        "count": 133,
+        "percent": 41.30434782608695
+      },
+      {
+        "correct_languages": 1,
+        "count": 69,
+        "percent": 21.428571428571427
+      },
+      {
+        "correct_languages": 2,
+        "count": 40,
+        "percent": 12.422360248447205
+      },
+      {
+        "correct_languages": 3,
+        "count": 31,
+        "percent": 9.627329192546584
+      },
+      {
+        "correct_languages": 4,
+        "count": 27,
+        "percent": 8.385093167701863
+      },
+      {
+        "correct_languages": 5,
+        "count": 22,
+        "percent": 6.832298136645963
+      }
+    ],
+    "pairwise_agreement": [
+      {
+        "language_a": "en",
+        "language_b": "hi",
+        "percent_agree": 66.77018633540372
+      },
+      {
+        "language_a": "en",
+        "language_b": "mr",
+        "percent_agree": 67.3913043478261
+      },
+      {
+        "language_a": "en",
+        "language_b": "bn",
+        "percent_agree": 68.63354037267081
+      },
+      {
+        "language_a": "en",
+        "language_b": "ta",
+        "percent_agree": 70.80745341614907
+      },
+      {
+        "language_a": "hi",
+        "language_b": "mr",
+        "percent_agree": 82.6086956521739
+      },
+      {
+        "language_a": "hi",
+        "language_b": "bn",
+        "percent_agree": 78.26086956521739
+      },
+      {
+        "language_a": "hi",
+        "language_b": "ta",
+        "percent_agree": 81.05590062111801
+      },
+      {
+        "language_a": "mr",
+        "language_b": "bn",
+        "percent_agree": 77.63975155279503
+      },
+      {
+        "language_a": "mr",
+        "language_b": "ta",
+        "percent_agree": 77.95031055900621
+      },
+      {
+        "language_a": "bn",
+        "language_b": "ta",
+        "percent_agree": 77.32919254658385
+      }
+    ]
+  }
+}

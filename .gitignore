@@ -30,3 +30,9 @@ data/native_indic_qa/full/
 data/native_indic_qa/leakage_exclusions.json
 data/native_indic_qa/source_manifest.csv
 phase_06_native_indic_qa/human_review/private/
+
+# Raw research datasets stay local; download with the pinned loaders.
+data/agxqa_original/raw/*
+!data/agxqa_original/raw/.gitkeep
+agxqa-gemini-v2-*.tar.gz
+phase3-results*.tar

@@ -1,5 +1,5 @@
 {
-  "status": "pending",
+  "status": "completed_provisional_seed_42",
   "model_id": "FacebookAI/xlm-roberta-base",
   "model_revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
   "dataset_contract": "phase_02_multilingual_benchmark/configs/qa_release.json",
@@ -16,5 +16,5 @@
     "ta"
   ],
   "evaluation_configuration": "phase_03_multilingual_finetuning/configs/evaluation_config.yaml",
-  "notes": "Training settings come from the verified Phase 1 checkpoint provenance."
+  "notes": "Phase 1 English XLM-R was not trained; the Phase 3 fallback trained XLM-R Base on the pinned official English train split (500 optimizer steps) and selected on English validation."
 }

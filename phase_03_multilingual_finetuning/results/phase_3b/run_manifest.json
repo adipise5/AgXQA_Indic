@@ -1,0 +1,153 @@
+{
+  "experiment": "phase_3b",
+  "seed": 42,
+  "dataset": {
+    "dataset_version": "gemini-v2",
+    "variant": "span_checked",
+    "bundle_manifest_sha256": "b6f3401c4f79edbcd7db60c5d8c878adac622e11f510c971cbf9a51a5e4e838c",
+    "split_sha256": {
+      "train": "b4064eb9e81ae5b0c9ed446ef771e5f81f8652b52c269007f4090ffcc6b06714",
+      "validation": "9713edf65b962788855ebcdfc2567fb849c033cb9cf4081076005c49d5562334",
+      "test": "3929e4c00f4746b431b4a4574660df70630311f0ecb62f0029a3a9031bae539e"
+    },
+    "coverage": {
+      "train": {
+        "records": 6520,
+        "question_groups": 1304,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      },
+      "validation": {
+        "records": 1735,
+        "question_groups": 347,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      },
+      "test": {
+        "records": 1610,
+        "question_groups": 322,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      }
+    },
+    "reviewed_release": false
+  },
+  "protocol": "agxqa-indic-v1",
+  "tokenization": {
+    "max_seq_length": 384,
+    "doc_stride": 128,
+    "max_answer_length": 64,
+    "n_best_size": 20
+  },
+  "checkpoint": {
+    "experiment": "phase_3b",
+    "base_model": "FacebookAI/xlm-roberta-base",
+    "base_revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+    "seed": 42,
+    "training_languages": [
+      "en",
+      "hi",
+      "mr",
+      "bn",
+      "ta"
+    ],
+    "selection_languages": [
+      "en",
+      "hi",
+      "mr",
+      "bn",
+      "ta"
+    ],
+    "training_data": {
+      "kind": "phase2_pinned",
+      "bundle_manifest_sha256": "b6f3401c4f79edbcd7db60c5d8c878adac622e11f510c971cbf9a51a5e4e838c",
+      "variant": "span_checked",
+      "split_sha256": {
+        "train": "b4064eb9e81ae5b0c9ed446ef771e5f81f8652b52c269007f4090ffcc6b06714",
+        "validation": "9713edf65b962788855ebcdfc2567fb849c033cb9cf4081076005c49d5562334"
+      }
+    },
+    "training_configuration": {
+      "learning_rate": 3e-05,
+      "num_train_epochs": 5,
+      "per_device_train_batch_size": 1,
+      "per_device_eval_batch_size": 1,
+      "gradient_accumulation_steps": 16,
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.1,
+      "lr_scheduler_type": "linear",
+      "optim": "adamw_torch",
+      "max_grad_norm": 1.0,
+      "eval_strategy": "epoch",
+      "save_strategy": "epoch",
+      "metric_for_best_model": "macro_f1",
+      "load_best_model_at_end": true,
+      "greater_is_better": true,
+      "save_total_limit": 2,
+      "logging_steps": 20,
+      "report_to": [
+        "tensorboard"
+      ],
+      "gradient_checkpointing": false,
+      "dataloader_pin_memory": true
+    },
+    "tokenization": {
+      "max_seq_length": 384,
+      "doc_stride": 128,
+      "max_answer_length": 64,
+      "n_best_size": 20
+    },
+    "computational_statistics": {
+      "parameters": 277454594,
+      "device": "cuda",
+      "device_name": "NVIDIA L4",
+      "platform": "Linux-6.12.107+deb13-amd64-x86_64-with-glibc2.41",
+      "versions": {
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.6",
+        "accelerate": "1.16.0",
+        "tokenizers": "0.22.2",
+        "numpy": "2.4.6"
+      },
+      "training_rows": 6520,
+      "tokenized_training_features": 7163,
+      "optimizer_steps": 2240,
+      "training_input_tokens": 7200135,
+      "training_seconds": 1564.3066639453173,
+      "peak_gpu_memory_bytes": 5577190400,
+      "validation_best_macro_f1": 68.48288303841343,
+      "mps_memory_limit": null,
+      "selected_epoch_checkpoint": "checkpoint-1792"
+    },
+    "checkpoint_file_sha256": {
+      "config.json": "4f728f0636914d16d9566c2fb257f321cfa544e6d8d3c81e63f7856adacc45e3",
+      "model.safetensors": "34441b90ad42829eb6779c3ed82690da278c8bd39a5d20d2b8273aa5a3017915",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+      "special_tokens_map.json": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f",
+      "tokenizer.json": "8ed2321636c1d1ce7e5a8fbbe853a0d5665225a48338f5927f4ec3da30b457ed",
+      "tokenizer_config.json": "ccf223ba3d5b3cc7fa6c3bf451f3bb40557a5c92b0aa33f63d17802ff1a96fd9",
+      "training_args.bin": "725090c5b33b230b5dfa28e1180a578bfc8fb2d0ca4915f6c873dcdb5a553b7c"
+    }
+  },
+  "output_file_sha256": {
+    "computational_statistics.json": "f0534bd7aa16f09f34a6aa85b13862db4c89c264d8659c44dc535dd9fe240711",
+    "language_wise_results.csv": "f9d08f6915294b8a3a8ddb27d5b857db9feb3427df61eefbac3b59e0f074a791",
+    "metrics.json": "4962b727d759f659cd05150356fafdad28632fec208dbab6bc13ba66a944df0c",
+    "predictions.jsonl": "21437eea81882a6290df27fcd2d853d97c301c092418a47c32224d2e862d49cb"
+  }
+}

@@ -250,6 +250,7 @@ def train_qa(args, settings, splits, provenance, experiment, training_languages,
             "mode": "memory_pilot", "optimizer_steps": trainer.state.global_step, "elapsed_seconds": elapsed,
             "training_configuration": runtime_settings, "mps_memory_limit": mps_limit, "training_data": provenance,
             "mps_driver_bytes_at_completion": torch.mps.driver_allocated_memory() if device.type == "mps" else None,
+            "cuda_peak_allocated_bytes": torch.cuda.max_memory_allocated(device) if device.type == "cuda" else None,
             "checkpoint_saved": False, "evaluation_performed": False,
         })
         write_json(args.output / "trainer_log_history.json", trainer.state.log_history)

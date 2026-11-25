@@ -1,0 +1,204 @@
+{
+  "dataset": {
+    "dataset_version": "gemini-v2",
+    "variant": "span_checked",
+    "bundle_manifest_sha256": "b6f3401c4f79edbcd7db60c5d8c878adac622e11f510c971cbf9a51a5e4e838c",
+    "split_sha256": {
+      "train": "b4064eb9e81ae5b0c9ed446ef771e5f81f8652b52c269007f4090ffcc6b06714",
+      "validation": "9713edf65b962788855ebcdfc2567fb849c033cb9cf4081076005c49d5562334",
+      "test": "3929e4c00f4746b431b4a4574660df70630311f0ecb62f0029a3a9031bae539e"
+    },
+    "coverage": {
+      "train": {
+        "records": 6520,
+        "question_groups": 1304,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      },
+      "validation": {
+        "records": 1735,
+        "question_groups": 347,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      },
+      "test": {
+        "records": 1610,
+        "question_groups": 322,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      }
+    },
+    "reviewed_release": false
+  },
+  "protocol": "agxqa-indic-v1",
+  "seeds": {
+    "phase_3a": 42,
+    "phase_3b": 42
+  },
+  "provisional": true,
+  "devices": {
+    "phase_3a": "NVIDIA L4",
+    "phase_3b": "NVIDIA L4"
+  },
+  "files": {
+    "phase_3a/metrics.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/phase_3a-cuda-span-checked-42/metrics.json",
+      "sha256": "1ac47f1e251033c27c593156d8c9d6b34d92aa1ddbb42a2145b540c81934810f"
+    },
+    "phase_3b/metrics.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/phase_3b-cuda-span-checked-42/metrics.json",
+      "sha256": "4962b727d759f659cd05150356fafdad28632fec208dbab6bc13ba66a944df0c"
+    },
+    "phase_3a/language_wise_results.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/phase_3a-cuda-span-checked-42/language_wise_results.csv",
+      "sha256": "727eda30eeafc53f7effa2dd6faa27f3a85f91e5600c5ccd49eb60bd51f32d69"
+    },
+    "phase_3b/language_wise_results.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/phase_3b-cuda-span-checked-42/language_wise_results.csv",
+      "sha256": "f9d08f6915294b8a3a8ddb27d5b857db9feb3427df61eefbac3b59e0f074a791"
+    },
+    "phase_3a/predictions.jsonl": {
+      "source": "outputs/phase_03_multilingual_finetuning/phase_3a-cuda-span-checked-42/predictions.jsonl",
+      "sha256": "13023a5436473178590c2ea0f094c6ea8e706e60e89be1847fa0dbcf7fdecc77"
+    },
+    "phase_3b/predictions.jsonl": {
+      "source": "outputs/phase_03_multilingual_finetuning/phase_3b-cuda-span-checked-42/predictions.jsonl",
+      "sha256": "21437eea81882a6290df27fcd2d853d97c301c092418a47c32224d2e862d49cb"
+    },
+    "phase_3a/computational_statistics.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/phase_3a-cuda-span-checked-42/computational_statistics.json",
+      "sha256": "a6c0af1bad814908521c7156002b35f6ddb70bc46d7ab941a502232c67d30793"
+    },
+    "phase_3b/computational_statistics.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/phase_3b-cuda-span-checked-42/computational_statistics.json",
+      "sha256": "f0534bd7aa16f09f34a6aa85b13862db4c89c264d8659c44dc535dd9fe240711"
+    },
+    "phase_3a/run_manifest.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/phase_3a-cuda-span-checked-42/run_manifest.json",
+      "sha256": "b3484a5aeabec01442bbed5c21f60c9d38d01023b7a1f602e7c0e779987e020f"
+    },
+    "phase_3b/run_manifest.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/phase_3b-cuda-span-checked-42/run_manifest.json",
+      "sha256": "d63d756b4bf6498178b4d610026180cb56ee2f39090175c5ed5068b2c235310a"
+    },
+    "phase_3b/training_logs.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/training-3b-cuda-span-checked-42/training_logs.csv",
+      "sha256": "8e32e1248e22298c2f889fd4a44892b9e3fdf7132a0e0e53c49354f8c0d32079"
+    },
+    "phase_3a/training_logs.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/english-fallback-cuda-span-checked-42/training_logs.csv",
+      "sha256": "bf2477bb8086a8e5a93ef473b3bfc8ef3ad96df286fca63f5ea88a8e3fa678c1"
+    },
+    "phase_3b/validation_metrics.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/training-3b-cuda-span-checked-42/validation_metrics.csv",
+      "sha256": "ffa456475a5c8430750eb93f40f74132f54f2cc73b8ce98ff259574b6d648619"
+    },
+    "phase_3a/validation_metrics.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/english-fallback-cuda-span-checked-42/validation_metrics.csv",
+      "sha256": "92a1446c4f91eac029a5f442e86def115546715d64d95f59a86099709b0fd29e"
+    },
+    "phase_3b/trainer_log_history.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/training-3b-cuda-span-checked-42/trainer_log_history.json",
+      "sha256": "38f2379ea91243c09a27858f7bc58ade32de4d1b16ee9b958011e6dacf51f9d5"
+    },
+    "phase_3a/trainer_log_history.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/english-fallback-cuda-span-checked-42/trainer_log_history.json",
+      "sha256": "3a726394cabd0f3b4d63ebc6bbda7d32bd79eff8ff55421dbecb525d24f95f3e"
+    },
+    "phase_3a/english_source_validation_metrics.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/english-fallback-cuda-span-checked-42/english_source_validation_metrics.json",
+      "sha256": "2cc9c594e4b262f7ef7af3a3467795711bd967b827ee36068c75751fe4d3460e"
+    },
+    "comparative_results.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/comparative_results.csv",
+      "sha256": "89280ca917bbb4a287a80e0b33637c573307f5117287cd22bbc663aceedc346a"
+    },
+    "performance_gap.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/performance_gap.csv",
+      "sha256": "135e56ebba064bfbefafa0113f62149bb1c5bb8216dfc6f287306527ca8585cc"
+    },
+    "cross_lingual_consistency.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/cross_lingual_consistency.csv",
+      "sha256": "fb406b3d53a63c6163e88b399b4c15e7735588c57375fee8fa1719e52467de95"
+    },
+    "pairwise_agreement.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/pairwise_agreement.json",
+      "sha256": "7ce479855adaed79c876e799997ec31d110571f25f7ea0a1e107ef4cfbad650d"
+    },
+    "confidence_intervals.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/confidence_intervals.csv",
+      "sha256": "df3e35001fe24c72d4732f6d86a9239182b18988ab3fb2f256d80dc001382ff7"
+    },
+    "error_analysis.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/error_analysis.csv",
+      "sha256": "a6e367b64038c6f2a8d5d70505ca64d9dde139c34bed6ba740be8afab5f65213"
+    },
+    "matched_slices.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/matched_slices.csv",
+      "sha256": "05e1db4d9280fbf65d697b5af17b28c2a367d53bfacc7083a438f44e0eb72779"
+    },
+    "computational_statistics.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/computational_statistics.json",
+      "sha256": "8ed70384e89d24f6edda05821b9c1a1ccd49a3e62f528eee3fefd9dddf1d0628"
+    },
+    "comparison_manifest.json": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/comparison_manifest.json",
+      "sha256": "4d80a64fd9841201d6e35da5d97954313d396fc819c0c56a96bfba763b02b414"
+    },
+    "plots/em_comparison.png": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/plots/em_comparison.png",
+      "sha256": "c9318a8cacfc06c596a37e8c2cfe79e36c0082f2a5da63190bc15238df2b5c34"
+    },
+    "plots/f1_comparison.png": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/plots/f1_comparison.png",
+      "sha256": "233603f647811d595b760f5e347ccaf47e94d603f7ddd05d6fe22fb354da738a"
+    },
+    "plots/joint_correctness.png": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/plots/joint_correctness.png",
+      "sha256": "f8a9e183604e8661d097acca2f1baa956527a122ea984938c08b4a4766760282"
+    },
+    "plots/language_gap.png": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/plots/language_gap.png",
+      "sha256": "431b410ee3e165aebfcf4f2237af3cb6bafb0e065bf14ce9a3ad2445b984af82"
+    },
+    "plots/macro_f1.png": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/plots/macro_f1.png",
+      "sha256": "8fa51ede00895745767d5a80e68e9087a60f320e3e51df735243f6113848c014"
+    },
+    "plots/multilingual_improvement.png": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/plots/multilingual_improvement.png",
+      "sha256": "3a0f0844668ba23e0d89867d830967667ac9789765dddea62ae28e703b57917a"
+    },
+    "plots/training_loss.png": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/plots/training_loss.png",
+      "sha256": "8ff31de160cc157430116aee788ba812ba2777cabad15ed84a09d4cbdff93f1e"
+    },
+    "plots/validation_f1.png": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/plots/validation_f1.png",
+      "sha256": "54e4c15c5bfa8cdb6ccd6e5a2b19cf5f4453343505092a1d977e8ae837ea16f5"
+    },
+    "plots/validation_loss.png": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-local/plots/validation_loss.png",
+      "sha256": "678cb0012267e9359052d04be80e6618d8b3661f59e38e4ab137d6aaf421c1a7"
+    },
+    "confidence_intervals_context.csv": {
+      "source": "outputs/phase_03_multilingual_finetuning/comparison-cuda-span-checked-42-context-intervals.csv",
+      "sha256": "ac2242b54a2c38da1a91954c2a4d9ee484734f3d93151ac3eb024341556a6fbb"
+    }
+  }
+}

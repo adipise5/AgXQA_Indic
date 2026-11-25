@@ -1,6 +1,6 @@
 {
   "phase": 3,
-  "status": "workflow_prepared_model_execution_pending",
+  "status": "completed_provisional_seed_42",
   "seed": 42,
   "languages": [
     "en",
@@ -9,11 +9,15 @@
     "bn",
     "ta"
   ],
-  "inputs": [],
+  "inputs": [
+    "phase_02_multilingual_benchmark/outputs/gemini-v2 (span_checked)",
+    "data/agxqa_original/raw (official English, Phase 3A fallback)"
+  ],
   "output_dir": "outputs/phase_03_multilingual_finetuning",
   "model_id": "FacebookAI/xlm-roberta-base",
   "model_revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
   "dataset_revision": "gemini-v2",
   "dataset_contract": "phase_02_multilingual_benchmark/configs/qa_release.json",
-  "notes": "Phase 3A and 3B share the pinned evaluation set. Review and model execution are pending."
+  "notes": "Phase 3A and 3B ran once (seed 42) on the provisional span_checked release; human review is pending. No further seeds are planned.",
+  "results": "phase_03_multilingual_finetuning/results/export_manifest.json"
 }

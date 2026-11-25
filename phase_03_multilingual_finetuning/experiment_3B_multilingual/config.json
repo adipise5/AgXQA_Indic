@@ -1,5 +1,5 @@
 {
-  "status": "pending",
+  "status": "completed_provisional_seed_42",
   "model_id": "FacebookAI/xlm-roberta-base",
   "model_revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
   "dataset_contract": "phase_02_multilingual_benchmark/configs/qa_release.json",
@@ -21,5 +21,5 @@
   ],
   "training_configuration": "phase_03_multilingual_finetuning/configs/multilingual_config.yaml",
   "evaluation_configuration": "phase_03_multilingual_finetuning/configs/evaluation_config.yaml",
-  "notes": "Proposed training settings. Model execution is pending."
+  "notes": "Trained with configs/cuda_hpc.yaml (batch 1 x accumulation 16); epoch 4 selected by validation macro-F1."
 }

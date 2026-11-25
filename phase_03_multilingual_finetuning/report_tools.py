@@ -4,6 +4,7 @@ import argparse
 from collections import Counter, defaultdict
 import csv
 from pathlib import Path
+import re
 from statistics import mean, stdev
 
 from shared.metrics import best_scores
@@ -68,23 +69,49 @@ def length_bucket(length, boundaries):
     return f"over_{boundaries[-1]}"
 
 
+QUESTION_TYPE_RULES = (  # Heuristic labels from the English question; first match wins.
+    ("numerical", re.compile(r"\b(how (many|much|long|often|far|large|deep|high)|what (percent(age)?|proportion|"
+                             r"amount|number|rate|unit|fraction|quantity)|how big)\b")),
+    ("temporal", re.compile(r"^(when\b|during what\b|in what (year|month|season)\b|what (year|month|time|season|date)\b)")),
+    ("causal", re.compile(r"^(why\b|what (can |may )?(causes?|contributes?|happens|leads?|affects?|results?)\b)")),
+    ("procedural", re.compile(r"^(how\b|what steps\b)|^what should .*\bdo\b|\b(should|must|needs? to) be done\b")),
+    ("location", re.compile(r"^where\b")),
+    ("entity", re.compile(r"^(who|whom|whose|which (agency|organization|department|group|person))\b")),
+    ("conditional", re.compile(r"^if\b")),
+)
+
+
+def question_type(question):
+    text = " ".join(question.lower().split())
+    return next((name for name, pattern in QUESTION_TYPE_RULES if pattern.search(text)), "factual")
+
+
 def slice_results(by_a, by_b):
+    """Matched F1/EM slices. Group-level labels come from the English row so all languages share them."""
     slices = defaultdict(list)
     for identifier, group in by_a.items():
+        english = group["en"]
+        shared = {
+            "category": english["category"] or "unlabeled",
+            "question_type": question_type(english["question"]),
+            "numeric_answer": str(any(char.isdigit() for char in english["gold_answers"][0])).lower(),
+        }
         for language, row in group.items():
             other = by_b[identifier][language]
             dimensions = {
                 "context_chars": length_bucket(row["context_chars"], (500, 1000, 2000)),
                 "context_tokens": length_bucket(row["context_tokens"], (128, 256, 384)),
                 "first_answer_chars": length_bucket(row["answer_chars"], (16, 32, 64)),
-                "category": row["category"] or "unlabeled",
+                **shared,
                 "human_reviewed": str(row["human_reviewed"]).lower(),
             }
             for name, value in dimensions.items():
-                slices[(language, name, value)].append((row["f1"], other["f1"]))
-    return [{"language": lang, "dimension": name, "value": value, "count": len(scores),
-             "f1_3a": 100 * mean(a for a, _ in scores), "f1_3b": 100 * mean(b for _, b in scores)}
-            for (lang, name, value), scores in sorted(slices.items())]
+                slices[(language, name, value)].append((row, other))
+    return [{"language": lang, "dimension": name, "value": value, "count": len(pairs),
+             "em_3a": 100 * mean(a["exact_match"] for a, _ in pairs),
+             "em_3b": 100 * mean(b["exact_match"] for _, b in pairs),
+             "f1_3a": 100 * mean(a["f1"] for a, _ in pairs), "f1_3b": 100 * mean(b["f1"] for _, b in pairs)}
+            for (lang, name, value), pairs in sorted(slices.items())]
 
 
 def review_categories(path, sample):
