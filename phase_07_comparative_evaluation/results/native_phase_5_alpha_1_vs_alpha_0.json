@@ -1,0 +1,128 @@
+{
+  "comparison": "phase_5_alpha_1 minus phase_5_alpha_0",
+  "control": "phase_5_alpha_0",
+  "candidate": "phase_5_alpha_1",
+  "scorer": "shared.evaluate (agxqa-indic-v1), scores 0-100",
+  "macro": "equal-weight mean of the Native language scores",
+  "resampling": "source documents with replacement within each language; identical draws for both models",
+  "iterations": 10000,
+  "confidence": 0.95,
+  "seed": 42,
+  "input_sha256": {
+    "gold": "7ff7cc154f67ae1b463ce130ed760e583651f440f4cd155d5a945ca2c3b56336",
+    "control": "78e93c6c51a6dcd8346260d76962589c87968c17c4b54a7e08a257fafd9a25f8",
+    "candidate": "dcc80943c97546d3a987e762a5c45b12a5bf9e2c58f76c03f2f7cd1d94b6d1a0"
+  },
+  "rows": [
+    {
+      "language": "hi",
+      "metric": "em",
+      "control": 49.59349593495935,
+      "candidate": 47.60614272809395,
+      "delta_pp": -1.987353206865402,
+      "lower_pp": -4.401928921789895,
+      "upper_pp": -0.0959601149429507,
+      "documents": 21,
+      "questions": 1107
+    },
+    {
+      "language": "hi",
+      "metric": "f1",
+      "control": 75.59030974132723,
+      "candidate": 73.47702893940857,
+      "delta_pp": -2.113280801918644,
+      "lower_pp": -3.5073796462270392,
+      "upper_pp": -0.6844113019361532,
+      "documents": 21,
+      "questions": 1107
+    },
+    {
+      "language": "mr",
+      "metric": "em",
+      "control": 49.397590361445786,
+      "candidate": 46.29948364888124,
+      "delta_pp": -3.098106712564544,
+      "lower_pp": -5.628581577077906,
+      "upper_pp": -0.9446375372393252,
+      "documents": 20,
+      "questions": 581
+    },
+    {
+      "language": "mr",
+      "metric": "f1",
+      "control": 72.20070903847274,
+      "candidate": 69.51877814307318,
+      "delta_pp": -2.681930895399537,
+      "lower_pp": -4.6930653702445,
+      "upper_pp": -0.7633875679562252,
+      "documents": 20,
+      "questions": 581
+    },
+    {
+      "language": "bn",
+      "metric": "em",
+      "control": 52.142857142857146,
+      "candidate": 54.523809523809526,
+      "delta_pp": 2.380952380952381,
+      "lower_pp": -1.6529414063263188,
+      "upper_pp": 5.707762557077626,
+      "documents": 18,
+      "questions": 420
+    },
+    {
+      "language": "bn",
+      "metric": "f1",
+      "control": 78.17306954045823,
+      "candidate": 75.64877440759872,
+      "delta_pp": -2.5242951328595424,
+      "lower_pp": -4.730323600248384,
+      "upper_pp": -0.7206623969597247,
+      "documents": 18,
+      "questions": 420
+    },
+    {
+      "language": "ta",
+      "metric": "em",
+      "control": 48.97119341563786,
+      "candidate": 44.44444444444444,
+      "delta_pp": -4.526748971193416,
+      "lower_pp": -9.748619420156464,
+      "upper_pp": 0.0,
+      "documents": 11,
+      "questions": 243
+    },
+    {
+      "language": "ta",
+      "metric": "f1",
+      "control": 72.2893144097875,
+      "candidate": 68.77220142711239,
+      "delta_pp": -3.5171129826751355,
+      "lower_pp": -6.49109768161443,
+      "upper_pp": -0.02532471940117157,
+      "documents": 11,
+      "questions": 243
+    },
+    {
+      "language": "macro",
+      "metric": "em",
+      "control": 50.026284213725035,
+      "candidate": 48.21847008630729,
+      "delta_pp": -1.8078141274177453,
+      "lower_pp": -3.681842141641512,
+      "upper_pp": -0.201078318607985,
+      "documents": 70,
+      "questions": 2351
+    },
+    {
+      "language": "macro",
+      "metric": "f1",
+      "control": 74.56335068251143,
+      "candidate": 71.85419572929821,
+      "delta_pp": -2.709154953213215,
+      "lower_pp": -3.8356527922185606,
+      "upper_pp": -1.5467303293106562,
+      "documents": 70,
+      "questions": 2351
+    }
+  ]
+}

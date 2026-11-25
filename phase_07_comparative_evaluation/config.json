@@ -1,6 +1,6 @@
 {
   "phase": 7,
-  "status": "pending",
+  "status": "evaluation_complete_native_review_pending",
   "seed": 42,
   "languages": [
     "en",
@@ -9,10 +9,25 @@
     "bn",
     "ta"
   ],
-  "inputs": [],
+  "inputs": [
+    "outputs/phase_07_comparative_evaluation/step1/phase6_test.shared.jsonl (private, SHA-256 7ff7cc154f67ae1b463ce130ed760e583651f440f4cd155d5a945ca2c3b56336)",
+    "outputs/phase_07_comparative_evaluation/step1/manifest.json",
+    "outputs/phase_07_comparative_evaluation/step1/native_overlap_audit.json",
+    "phase_07_comparative_evaluation/configs/checkpoints.json",
+    "phase_03_multilingual_finetuning/results/phase_3a",
+    "phase_03_multilingual_finetuning/results/phase_3b",
+    "phase_01_original_baseline/results/baseline_results.json",
+    "phase_05_domain_adaptation/results/alpha_sweep_summary.json"
+  ],
   "output_dir": "outputs/phase_07_comparative_evaluation",
-  "model_id": null,
-  "model_revision": null,
-  "dataset_revision": null,
-  "notes": "Starter only. Resolve inputs and hyperparameters before execution."
+  "model_id": "FacebookAI/xlm-roberta-base",
+  "model_revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+  "dataset_revision": "native freeze 7ff7cc154f67ae1b463ce130ed760e583651f440f4cd155d5a945ca2c3b56336; translated gemini-v2 span_checked",
+  "notes": "Native run native-20261125T202902Z (NVIDIA L4, base commit f391a37): all four checkpoints hash-verified; 2,351 rows scored per model and rescored independently. Native Indic macro F1: 3A 59.25, 3B 74.47 (3B - 3A +15.22 [+13.48, +17.34]). Diagnostic alpha 1 - alpha 0: -2.71 [-3.84, -1.55]. Provisional: 0 human-reviewed Native records. See results/.",
+  "selected_system": "phase_3b",
+  "native_adaptation_diagnostic": {
+    "declared": "include",
+    "declared_before_native_inference": true,
+    "comparison": "phase_5_alpha_1 minus phase_5_alpha_0 on the same Native rows, secondary"
+  }
 }
