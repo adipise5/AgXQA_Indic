@@ -2,7 +2,12 @@
   "phase": 4,
   "status": "implementation_pilot",
   "seed": 42,
-  "languages": ["hi", "mr", "bn", "ta"],
+  "languages": [
+    "hi",
+    "mr",
+    "bn",
+    "ta"
+  ],
   "sources": "phase_04_indic_aec_corpus/sources.csv",
   "quality_reviews": "phase_04_indic_aec_corpus/quality_reviews.csv",
   "work_dir": "outputs/phase_04_indic_aec_corpus",
@@ -12,8 +17,14 @@
   "max_download_bytes": 157286400,
   "min_document_words": 100,
   "validation_fraction": 0.05,
+  "extraction": {
+    "tesseract_languages": {
+      "bn": "ben+eng"
+    }
+  },
   "tokenizer": {
     "id": "FacebookAI/xlm-roberta-base",
     "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089"
-  }
+  },
+  "indian_government_books_only": true
 }

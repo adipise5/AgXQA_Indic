@@ -91,6 +91,23 @@ def validate_sources(rows):
             raise ValueError(f'Invalid source URL: {ident}')
 
 
+def indian_government_book(row):
+    return (row.get('publisher_country') == 'IN'
+            and row.get('publication_format') in ('book', 'book_chapter')
+            and bool(row.get('government_publisher_reference', '').strip()))
+
+
+def government_book_registry(cfg):
+    rows = read_rows(resolve(cfg['sources']))
+    validate_sources(rows)
+    return {row['document_id']: row for row in rows if indian_government_book(row)}
+
+
+def in_government_book_scope(row, registry):
+    registered = registry.get(row['document_id'])
+    return registered is not None and registered['source_url'] == row['source_url']
+
+
 def acquire(cfg, dry_run=False):
     import requests
     rows = read_rows(resolve(cfg['sources']))
@@ -100,6 +117,8 @@ def acquire(cfg, dry_run=False):
     accepted, report = [], []
     for row in rows:
         reason = guard.check(row['source_url'])
+        if cfg.get('indian_government_books_only') and not indian_government_book(row):
+            reason = reason or 'outside_indian_government_book_scope'
         if row.get('permission_status') != 'approved' or not row.get('permission_reference'):
             reason = reason or 'permission_pending'
         if row.get('language_origin') != 'native_verified':
@@ -117,7 +136,10 @@ def acquire(cfg, dry_run=False):
                 for _ in range(6):
                     if guard.check(url):
                         raise ValueError('Redirect points to an excluded source')
-                    with requests.get(url, timeout=45, allow_redirects=False, stream=True) as response:
+                    with requests.get(
+                        url, timeout=45, allow_redirects=False, stream=True,
+                        headers={'User-Agent': 'AgXQA-Indic/1.0 (https://github.com/adipise5/AgXQA_Indic)'},
+                    ) as response:
                         if response.is_redirect:
                             url = urljoin(url, response.headers['Location'])
                             continue
@@ -150,16 +172,34 @@ def acquire(cfg, dry_run=False):
     return Counter(r['status'] for r in report)
 
 
-def extract(cfg, ocr=False):
+def extract(cfg, ocr=False, selected_ids=None):
     out = resolve(cfg['work_dir'])
     manifest = read_lines(out / 'manifest.jsonl')
     if not manifest:
         raise ValueError('No approved acquired documents')
     records, report = [], []
-    settings = common.load_config()['extraction']
+    document_path = out / 'documents.jsonl'
+    report_path = resolve(cfg['report_dir']) / 'quality_report.json'
+    if selected_ids:
+        acquired = {row['document_id']: row for row in manifest}
+        unknown = set(selected_ids) - acquired.keys()
+        if unknown:
+            raise ValueError('No acquired file for: ' + ', '.join(sorted(unknown)))
+        previous = common.read_jsonl(document_path)
+        records = [
+            {**row, **acquired[row['document_id']]} for row in previous
+            if row['document_id'] in acquired and row['document_id'] not in selected_ids
+            and row['sha256'] == acquired[row['document_id']]['sha256']
+        ]
+        retained_ids = {row['document_id'] for row in records}
+        prior_report = json.loads(report_path.read_text()) if report_path.exists() else []
+        report = [row for row in prior_report if row['document_id'] in retained_ids]
+        manifest = [row for row in manifest if row['document_id'] in selected_ids]
+    settings = {**common.load_config()['extraction'], **cfg.get('extraction', {})}
     cleaning = common.load_config()['cleaning']
     for row in manifest:
         path, lang = resolve(row['file_path']), row['language']
+        print(f"Extracting {row['document_id']}", file=sys.stderr, flush=True)
         if common.sha256_file(path) != row['sha256']:
             raise ValueError(f'Raw input changed: {path}')
         try:
@@ -191,8 +231,10 @@ def extract(cfg, ocr=False):
         records.append(record)
         report.append({'document_id': row['document_id'], 'words': record['word_count'],
                        'rejected': dict(rejected), 'requires_human_quality_review': True})
-    common.write_jsonl(out / 'documents.jsonl', records)
-    common.write_json(resolve(cfg['report_dir']) / 'quality_report.json', report)
+    records.sort(key=lambda row: row['document_id'])
+    report.sort(key=lambda row: row['document_id'])
+    common.write_jsonl(document_path, records)
+    common.write_json(report_path, report)
     return {'documents': len(records)}
 
 
@@ -257,20 +299,20 @@ def load_heldout(directory, report_path=None):
     return rows
 
 
-def audit_documents(documents, heldout, threshold=0.5):
+def audit_documents(documents, heldout, threshold=0.5, *, features=shingles):
     """Return candidate IDs to reject, including distributed corpus overlap."""
-    held = [(row['context_id'], shingles(row['context'])) for row in heldout]
+    held = [(row['context_id'], features(row['context'])) for row in heldout]
     index = defaultdict(list)
     for reference_id, reference in held:
         if not reference:
-            raise ValueError(f'Held-out passage has no 5-grams: {reference_id}')
+            raise ValueError(f'Held-out passage has no comparison features: {reference_id}')
         for gram in reference:
             index[gram].append(reference_id)
     sizes = {reference_id: len(reference) for reference_id, reference in held}
     corpus_hits = defaultdict(set)
     pairs = defaultdict(list)
     for row in documents:
-        candidate = shingles(row['text'])
+        candidate = features(row['text'])
         hits = Counter()
         for gram in candidate:
             for reference_id in index.get(gram, ()):
@@ -315,12 +357,47 @@ def load_candidates(cfg):
     return docs
 
 
-def build(cfg):
+def write_review_packet(cfg, candidates, exclusions, findings, scoped):
+    """Write the exact extracts and hashes for review without producing training splits."""
+    import csv
+
+    out = resolve(cfg['work_dir']) / 'pre_review'
+    out.mkdir(parents=True, exist_ok=True)
+    common.write_jsonl(out / 'candidates.jsonl', candidates)
+    fields = ('document_id', 'clean_text_sha256', 'quality_status', 'reviewer', 'notes')
+    with (out / 'quality-review-queue.csv').open('w', encoding='utf-8', newline='') as stream:
+        writer = csv.DictWriter(stream, fields)
+        writer.writeheader()
+        for row in candidates:
+            writer.writerow({field: row.get(field, '') for field in fields}
+                            | {'reviewer': row.get('quality_reviewer', '')})
+    families = {
+        language: len({row['document_family_id'] for row in candidates if row['language'] == language})
+        for language in cfg['languages']
+    }
+    summary = {
+        'status': 'pre_review_candidates' if candidates else 'blocked_no_eligible_extracts',
+        'audited_documents': len(scoped),
+        'candidate_documents': len(candidates),
+        'families_by_language': families,
+        'languages_short_of_two_families': [lang for lang, count in families.items() if count < 2],
+        'overlap_findings': findings,
+        'exclusions': exclusions,
+    }
+    common.write_json(out / 'status.json', summary)
+    return summary
+
+
+def build(cfg, *, prepare_review=False):
     import jsonschema
     out = resolve(cfg['work_dir'])
     docs = load_candidates(cfg)
     guard = Exclusions()
-    findings = audit(cfg, docs)
+    registry = government_book_registry(cfg) if cfg.get('indian_government_books_only') else None
+    scoped = docs if registry is None else [row for row in docs if in_government_book_scope(row, registry)]
+    if registry is not None and not scoped and not prepare_review:
+        raise ValueError('No extracted Indian government books or chapters match the source registry')
+    findings = audit(cfg, scoped) if scoped else []
     blocked = {r['document_id'] for r in findings}
     review_path = cfg.get('quality_reviews')
     review_rows = read_rows(resolve(review_path)) if review_path else []
@@ -330,6 +407,9 @@ def build(cfg):
     exclusions, kept, seen = [], [], set()
     for row in sorted(docs, key=lambda r: r['document_id']):
         reason = guard.check(row['source_url'], row.get('sha256')) or guard.check(row.get('resolved_url', row['source_url']))
+        if registry is not None and not in_government_book_scope(row, registry):
+            exclusions.append({'document_id': row['document_id'], 'reason': 'outside_indian_government_book_scope'})
+            continue
         if row['document_id'] in blocked:
             reason = reason or 'phase6_passage_overlap'
         if guard.titles_matching(row['title']):
@@ -341,7 +421,13 @@ def build(cfg):
         if review_path:
             accepted = accepted and review.get('reviewer') and review.get('clean_text_sha256') == digest(row['text'])
         if not accepted:
-            reason = reason or 'quality_review_pending'
+            if prepare_review:
+                if review.get('clean_text_sha256') == digest(row['text']):
+                    status = review.get('quality_status')
+                    if status in ('rejected', 'needs_correction'):
+                        reason = reason or f'quality_review_{status}'
+            else:
+                reason = reason or 'quality_review_pending'
         if len(row['text'].split()) < cfg['min_document_words']:
             reason = reason or 'too_short'
         key = common.norm_for_match(row['text'])
@@ -357,8 +443,11 @@ def build(cfg):
             exclusions.append({'document_id': row['document_id'], 'reason': reason})
         else:
             seen.add(key)
-            kept.append({**row, 'quality_status': 'accepted',
-                         'quality_reviewer': review.get('reviewer', '')})
+            kept.append({**row, 'clean_text_sha256': digest(row['text']),
+                         'quality_status': 'accepted' if accepted else 'pending',
+                         'quality_reviewer': review.get('reviewer', '') if accepted else ''})
+    if prepare_review:
+        return write_review_packet(cfg, kept, exclusions, findings, scoped)
     common.write_json(resolve(cfg['report_dir']) / 'leakage_report.json',
                       {'candidate_documents': len(docs),
                        'findings': findings, 'exclusions': exclusions})
@@ -431,10 +520,11 @@ def build(cfg):
 def main(stage=None):
     parser = argparse.ArgumentParser(description=__doc__)
     if stage is None:
-        parser.add_argument('stage', choices=('download', 'extract', 'audit', 'build'))
+        parser.add_argument('stage', choices=('download', 'extract', 'audit', 'prepare-review', 'build'))
     parser.add_argument('--config', default=str(ROOT / 'phase_04_indic_aec_corpus/config.json'))
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('--ocr', action='store_true')
+    parser.add_argument('--document-id', action='append', help='Re-extract only this acquired document (repeatable)')
     args = parser.parse_args()
     cfg = json.loads(Path(args.config).read_text())
     try:
@@ -442,11 +532,11 @@ def main(stage=None):
         if selected == 'download':
             result = acquire(cfg, args.dry_run)
         elif selected == 'extract':
-            result = extract(cfg, args.ocr)
+            result = extract(cfg, args.ocr, args.document_id)
         elif selected == 'audit':
             result = {'overlap_findings': len(audit(cfg, load_candidates(cfg)))}
         else:
-            result = build(cfg)
+            result = build(cfg, prepare_review=selected == 'prepare-review')
         print(json.dumps(result, ensure_ascii=False, indent=2))
     except (ValueError, OSError) as exc:
         parser.exit(2, f'{exc}\n')

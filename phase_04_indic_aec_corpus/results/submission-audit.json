@@ -1,0 +1,463 @@
+{
+  "version": "3f3481d6662a2b69",
+  "documents": 12,
+  "approved_reviews_verified": 12,
+  "families": 8,
+  "publishers": 4,
+  "cross_family_exact_paragraphs_20_words_or_more": 0,
+  "file_sha256": {
+    "corpus.jsonl": "2b3ada5abd4effeacaa31ce42ade531ce1288f2810863466e4f27c6e37e5614b",
+    "train.jsonl": "6919cdb1f1f96bb4a778f53eea24a01089a4fc0e95115537d7717eafbbc319ab",
+    "validation.jsonl": "32ff009340e187e9828c1a24efff95160a68b200ba9126ace6b21d808972a49a",
+    "statistics.json": "cb27caf63cc1de5e6e897b6d2e56581976835f5588d2e357f1dca84cb366ba08"
+  },
+  "tokenizer": {
+    "id": "FacebookAI/xlm-roberta-base",
+    "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+    "file_sha256": "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c"
+  },
+  "coverage": [
+    {
+      "split": "train",
+      "language": "hi",
+      "documents": 1,
+      "words": 629,
+      "tokens": 946
+    },
+    {
+      "split": "train",
+      "language": "mr",
+      "documents": 2,
+      "words": 608,
+      "tokens": 1451
+    },
+    {
+      "split": "train",
+      "language": "bn",
+      "documents": 1,
+      "words": 1325,
+      "tokens": 2898
+    },
+    {
+      "split": "train",
+      "language": "ta",
+      "documents": 2,
+      "words": 1387,
+      "tokens": 3825
+    },
+    {
+      "split": "validation",
+      "language": "hi",
+      "documents": 1,
+      "words": 732,
+      "tokens": 1003
+    },
+    {
+      "split": "validation",
+      "language": "mr",
+      "documents": 1,
+      "words": 116,
+      "tokens": 187
+    },
+    {
+      "split": "validation",
+      "language": "bn",
+      "documents": 1,
+      "words": 975,
+      "tokens": 2140
+    },
+    {
+      "split": "validation",
+      "language": "ta",
+      "documents": 3,
+      "words": 5947,
+      "tokens": 15581
+    }
+  ],
+  "sources": [
+    {
+      "document_id": "AEC_BN_VB_COOP_001",
+      "title": "সমবায়নীতি",
+      "language": "bn",
+      "publisher": "Visva-Bharati Granthana Vibhaga",
+      "domain": "agricultural_economics",
+      "split": "train",
+      "source_url": "https://bn.wikisource.org/w/index.php?title=সমবায়নীতি/সমবায়নীতি&oldid=1627557",
+      "license": "public-domain-in-india",
+      "permission_reference": "https://bn.wikisource.org/wiki/সমবায়নীতি",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "VB_TAGORE_SAMABAYNITI",
+      "word_count": 1325,
+      "token_count": 2898,
+      "clean_text_sha256": "ee12c32266d234459643a20c66072b97e351ab12debb621c4d4aa4686442e2d6",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "44075068f229147b976dab1e2eb8848b5e19a8a6f48bcdce2e539a0e39652230",
+      "origin_reference": "https://bn.wikisource.org/wiki/সমবায়নীতি"
+    },
+    {
+      "document_id": "AEC_BN_VB_PALLI_001",
+      "title": "পল্লীপ্রকৃতি: ভূমিলক্ষ্মী",
+      "language": "bn",
+      "publisher": "Visva-Bharati Granthana Vibhaga",
+      "domain": "agricultural_economics",
+      "split": "validation",
+      "source_url": "https://rabindra-rachanabali.nltr.org/node/7359",
+      "license": "public-domain-in-india",
+      "permission_reference": "https://bn.wikisource.org/wiki/চিত্র:পল্লীপ্রকৃতি_-_রবীন্দ্রনাথ_ঠাকুর.pdf",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "VB_TAGORE_PALLIPRAKRITI",
+      "word_count": 975,
+      "token_count": 2140,
+      "clean_text_sha256": "dd3f6499b0b3a61a0dfbdbb2eb6164b33dd47db7030bbbf9440fdcdb5905d9c0",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "0e93af49fce196b8fd9e872f6d2ddc0fe8295c3975cfcbc0feaa91c3cc93f805",
+      "origin_reference": "https://nltr.itewb.gov.in/projects_sub_02.php"
+    },
+    {
+      "document_id": "AEC_HI_MGAHV_JHARKHAND_KISAN_001",
+      "title": "झारखंड के किसान",
+      "language": "hi",
+      "publisher": "Mahatma Gandhi Antarrashtriya Hindi Vishwavidyalaya (Hindi Samay)",
+      "domain": "agricultural_economics",
+      "split": "train",
+      "source_url": "https://hindisamay.com/vividh/swami-sahjanand-saraswati-rachnavali/Sahjanand-vol-4/Rachnavali4-part12.htm",
+      "license": "Hindi Samay public reuse notice",
+      "permission_reference": "https://www.hindisamay.com/index2.htm",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "SAHAJANAND_JHARKHAND_KE_KISAN",
+      "word_count": 629,
+      "token_count": 946,
+      "clean_text_sha256": "a00d48fb47b7377eaaa230faa0525e7e318ff1b6a2f08a21fe4382ef754ac1a3",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "039eaa24ab0b261068485b3fa6ba9298c6761ea352da064ba901feb86c8d03c1",
+      "origin_reference": "https://hindisamay.com/vividh/swami-sahjanand-saraswati-rachnavali/Index-Sahajanand-Samagra.htm"
+    },
+    {
+      "document_id": "AEC_HI_MGAHV_KHET_MAZDOOR_001",
+      "title": "खेत-मजदूर",
+      "language": "hi",
+      "publisher": "Mahatma Gandhi Antarrashtriya Hindi Vishwavidyalaya (Hindi Samay)",
+      "domain": "agricultural_economics",
+      "split": "validation",
+      "source_url": "https://hindisamay.com/vividh/swami-sahjanand-saraswati-rachnavali/Sahjanand-vol-4/Rachnavali4-part10.htm",
+      "license": "Hindi Samay public reuse notice",
+      "permission_reference": "https://www.hindisamay.com/index2.htm",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "SAHAJANAND_KHET_MAZDOOR",
+      "word_count": 732,
+      "token_count": 1003,
+      "clean_text_sha256": "f38ec2c0c0ae4dd7effb5827d706fa6926d6b38d242fffe9c93181355dad8547",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "03b469e9afad5f2cc1dd04cabb11d958ce8f723f9822ac1a46f314feda5247b0",
+      "origin_reference": "https://hindisamay.com/vividh/swami-sahjanand-saraswati-rachnavali/Index-Sahajanand-Samagra.htm"
+    },
+    {
+      "document_id": "AEC_MR_PHULE_ASUD_001",
+      "title": "शेतकऱ्याचा असूड: प्रकरण २",
+      "language": "mr",
+      "publisher": "Maharashtra State Board for Literature and Culture",
+      "domain": "agricultural_economics",
+      "split": "train",
+      "source_url": "https://mr.wikisource.org/w/index.php?title=शेतकऱ्याचा_असूड/पान_४&oldid=149459",
+      "license": "public-domain-in-india",
+      "permission_reference": "https://www.unipune.ac.in/chairs/mahatma_phule_chair/mphule_webfiles/pdf/Collected_Resource.pdf",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "PHULE_SHETKARYACHA_ASUD",
+      "word_count": 367,
+      "token_count": 845,
+      "clean_text_sha256": "ddd95ee3ccd9e62f233f5171f0aea40478163ed7fcd3e9c99dc499ee05893992",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "22dddf052d2ce02400fb5e194d9362ae1c0f7cebe084fc358a23cd9b53182eb6",
+      "origin_reference": "https://sahitya.marathi.gov.in/ebooks/महात्मा%20फुले%20समग्र%20वाङ्मय.pdf"
+    },
+    {
+      "document_id": "AEC_MR_PHULE_ASUD_WATERSHED_001",
+      "title": "शेतकऱ्याचा असूड: प्रकरण ५, पाणलोट व शेती",
+      "language": "mr",
+      "publisher": "Maharashtra State Board for Literature and Culture",
+      "domain": "irrigation",
+      "split": "train",
+      "source_url": "https://mr.wikisource.org/w/index.php?title=%E0%A4%B6%E0%A5%87%E0%A4%A4%E0%A4%95%E0%A4%B1%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%9A%E0%A4%BE_%E0%A4%85%E0%A4%B8%E0%A5%82%E0%A4%A1/%E0%A4%AA%E0%A4%BE%E0%A4%A8_%E0%A5%A7%E0%A5%AF&oldid=149450",
+      "license": "public-domain-in-india",
+      "permission_reference": "https://www.unipune.ac.in/chairs/mahatma_phule_chair/mphule_webfiles/pdf/Collected_Resource.pdf",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "PHULE_SHETKARYACHA_ASUD",
+      "word_count": 241,
+      "token_count": 606,
+      "clean_text_sha256": "91c779c6f37db48bdb3ae492b79286d86e35d83948ac4deb3e3a184aa38d85ea",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "ebcade71361ad73444edcb7835fb73bc4e98c7231f4facc5436a7ea98f6e0b94",
+      "origin_reference": "https://sahitya.marathi.gov.in/ebooks/महात्मा%20फुले%20समग्र%20वाङ्मय.pdf"
+    },
+    {
+      "document_id": "AEC_MR_PHULE_ISHARA_001",
+      "title": "इशारा: शेतीसाठी पाणी",
+      "language": "mr",
+      "publisher": "Maharashtra State Board for Literature and Culture",
+      "domain": "irrigation",
+      "split": "validation",
+      "source_url": "https://sahitya.marathi.gov.in/ebooks/महात्मा%20फुले%20समग्र%20वाङ्मय.pdf",
+      "license": "public-domain-in-india",
+      "permission_reference": "https://vishwakosh.marathi.gov.in/27756/",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "PHULE_ISHARA",
+      "word_count": 116,
+      "token_count": 187,
+      "clean_text_sha256": "9e74b47553a734994b462c2c641844e5c60bea440b6e503f3839740422b5dafd",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "4fc440242a6f8544f8dc91c869ffa9301ffa2da4039c7794dfb38b6696000258",
+      "origin_reference": "https://sahitya.marathi.gov.in/ebooks/महात्मा%20फुले%20समग्र%20वाङ्मय.pdf"
+    },
+    {
+      "document_id": "AEC_TA_TU_001",
+      "title": "அறிவியல் களஞ்சியம் 14: நூல் புழு",
+      "language": "ta",
+      "publisher": "Tamil University",
+      "domain": "pest_management",
+      "split": "validation",
+      "source_url": "https://ta.wikisource.org/w/index.php?title=அறிவியல்_களஞ்சியம்_14/நூல்_புழு&oldid=1933800",
+      "license": "CC-BY-SA-4.0",
+      "permission_reference": "https://it.tn.gov.in/sites/default/files/2019-07/Policy_Note_2019_2020_English.pdf",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "TU_SCIENCE_ENCYCLOPEDIA",
+      "word_count": 300,
+      "token_count": 907,
+      "clean_text_sha256": "44b90cd350c715dcff86e3a8f9a15868ef56b4eabcb06daf96a81463b6c55f70",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "fbf651e22ac0c16e426358ca229612065f96e31b5af7091bda565c9b0edf7ecd",
+      "origin_reference": "https://ta.wikisource.org/w/index.php?title=அறிவியல்_களஞ்சியம்_14/நூல்_புழு&oldid=1933800"
+    },
+    {
+      "document_id": "AEC_TA_TU_RICE_001",
+      "title": "அறிவியல் களஞ்சியம் 14: நெல்",
+      "language": "ta",
+      "publisher": "Tamil University",
+      "domain": "crop_management",
+      "split": "validation",
+      "source_url": "https://ta.wikisource.org/w/index.php?title=%E0%AE%85%E0%AE%B1%E0%AE%BF%E0%AE%B5%E0%AE%BF%E0%AE%AF%E0%AE%B2%E0%AF%8D_%E0%AE%95%E0%AE%B3%E0%AE%9E%E0%AF%8D%E0%AE%9A%E0%AE%BF%E0%AE%AF%E0%AE%AE%E0%AF%8D_14/%E0%AE%A8%E0%AF%86%E0%AE%B2%E0%AF%8D%E2%80%8C&oldid=1939659",
+      "license": "CC-BY-SA-4.0",
+      "permission_reference": "https://commons.wikimedia.org/wiki/File:GoTN_Tamil_Development_Departments_order_on_creative_commons_cc_by_sa.pdf",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "TU_SCIENCE_ENCYCLOPEDIA",
+      "word_count": 5263,
+      "token_count": 13555,
+      "clean_text_sha256": "b6d437b0d85f3f7ee4bf5e122d26b82691d7ee7fb9af92aa0338f592cc21c884",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "cc51cb61621db2b1bba33148049cbdd546505587cc74d40c90abd021fea8a4d7",
+      "origin_reference": "https://commons.wikimedia.org/wiki/File:%E0%AE%85%E0%AE%B1%E0%AE%BF%E0%AE%B5%E0%AE%BF%E0%AE%AF%E0%AE%B2%E0%AF%8D_%E0%AE%95%E0%AE%B3%E0%AE%9E%E0%AF%8D%E0%AE%9A%E0%AE%BF%E0%AE%AF%E0%AE%AE%E0%AF%8D_14.pdf"
+    },
+    {
+      "document_id": "AEC_TA_TU_SOC_001",
+      "title": "வாழ்வியற் களஞ்சியம் 4: உட்பிரிவும் நிலச் சிதறல்களும்",
+      "language": "ta",
+      "publisher": "Tamil University",
+      "domain": "agricultural_economics",
+      "split": "train",
+      "source_url": "https://ta.wikisource.org/w/index.php?title=வாழ்வியற்_களஞ்சியம்_4/உட்பிரிவும்_நிலச்_சிதறல்களும்&oldid=1948855",
+      "license": "CC-BY-SA-4.0",
+      "permission_reference": "https://commons.wikimedia.org/wiki/File:GoTN_Tamil_Development_Departments_order_on_creative_commons_cc_by_sa.pdf",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "TU_SOCIAL_SCIENCE_ENCYCLOPEDIA",
+      "word_count": 1196,
+      "token_count": 3250,
+      "clean_text_sha256": "435643b8781a249beb45034b210e6d846d4ae58a03c72f93b1d1c1aedb807075",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "0fd2e7384a60e0f38f6374022ef64bebcb18c87c2c6b15003db3b98fa96afbca",
+      "origin_reference": "https://ta.wikisource.org/w/index.php?title=வாழ்வியற்_களஞ்சியம்_4/உட்பிரிவும்_நிலச்_சிதறல்களும்&oldid=1948855"
+    },
+    {
+      "document_id": "AEC_TA_TU_SOC_AGRI_001",
+      "title": "வாழ்வியற் களஞ்சியம் 9: செங்கற்பட்டு மாவட்டத்தின் வேளாண்மை",
+      "language": "ta",
+      "publisher": "Tamil University",
+      "domain": "irrigation",
+      "split": "train",
+      "source_url": "https://ta.wikisource.org/w/index.php?title=%E0%AE%AA%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%AE%E0%AF%8D%3A%E0%AE%B5%E0%AE%BE%E0%AE%B4%E0%AF%8D%E0%AE%B5%E0%AE%BF%E0%AE%AF%E0%AE%B1%E0%AF%8D_%E0%AE%95%E0%AE%B3%E0%AE%9E%E0%AF%8D%E0%AE%9A%E0%AE%BF%E0%AE%AF%E0%AE%AE%E0%AF%8D_9.pdf/878&oldid=1960196",
+      "license": "CC-BY-SA-4.0",
+      "permission_reference": "https://commons.wikimedia.org/wiki/File:GoTN_Tamil_Development_Departments_order_on_creative_commons_cc_by_sa.pdf",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "TU_SOCIAL_SCIENCE_ENCYCLOPEDIA",
+      "word_count": 191,
+      "token_count": 575,
+      "clean_text_sha256": "e7f2bc54fee8f73961545c5fbf494a5ee7a9d60d656ae2ad1e2a66db3fdd1871",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "1b619c42422810a5b0b176bd708c9f27e0e4ae05a4ec01baf89813e2060ea499",
+      "origin_reference": "https://commons.wikimedia.org/wiki/File:%E0%AE%B5%E0%AE%BE%E0%AE%B4%E0%AF%8D%E0%AE%B5%E0%AE%BF%E0%AE%AF%E0%AE%B1%E0%AF%8D_%E0%AE%95%E0%AE%B3%E0%AE%9E%E0%AF%8D%E0%AE%9A%E0%AE%BF%E0%AE%AF%E0%AE%AE%E0%AF%8D_9.pdf"
+    },
+    {
+      "document_id": "AEC_TA_TU_SOILS_001",
+      "title": "அறிவியல் களஞ்சியம் 10: சிக்கலான மண் வகைகள்",
+      "language": "ta",
+      "publisher": "Tamil University",
+      "domain": "soil_management",
+      "split": "validation",
+      "source_url": "https://ta.wikisource.org/w/index.php?title=%E0%AE%85%E0%AE%B1%E0%AE%BF%E0%AE%B5%E0%AE%BF%E0%AE%AF%E0%AE%B2%E0%AF%8D_%E0%AE%95%E0%AE%B3%E0%AE%9E%E0%AF%8D%E0%AE%9A%E0%AE%BF%E0%AE%AF%E0%AE%AE%E0%AF%8D_10/%E0%AE%9A%E0%AE%BF%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%B2%E0%AE%BE%E0%AE%A9_%E0%AE%AE%E0%AE%A3%E0%AF%8D_%E0%AE%B5%E0%AE%95%E0%AF%88%E0%AE%95%E0%AE%B3%E0%AF%8D&oldid=1888830",
+      "license": "CC-BY-SA-4.0",
+      "permission_reference": "https://commons.wikimedia.org/wiki/File:GoTN_Tamil_Development_Departments_order_on_creative_commons_cc_by_sa.pdf",
+      "permission_status": "approved",
+      "language_origin": "native_verified",
+      "document_family_id": "TU_SCIENCE_ENCYCLOPEDIA",
+      "word_count": 384,
+      "token_count": 1119,
+      "clean_text_sha256": "786a9a2b66a4f09cfb52fa1b82fc22a81b61db90004d301bed5203cc2e17b12d",
+      "quality_reviewer": "adipise5",
+      "capture_sha256": "a7bc2dcd762e1e70b00ab77ca8bdaf7c464eaa759e7329a27b080c50093ca0aa",
+      "origin_reference": "https://commons.wikimedia.org/wiki/File:%E0%AE%85%E0%AE%B1%E0%AE%BF%E0%AE%B5%E0%AE%BF%E0%AE%AF%E0%AE%B2%E0%AF%8D_%E0%AE%95%E0%AE%B3%E0%AE%9E%E0%AF%8D%E0%AE%9A%E0%AE%BF%E0%AE%AF%E0%AE%AE%E0%AF%8D_10.pdf"
+    }
+  ],
+  "build_inputs": {
+    "seed": 42,
+    "source_registry_sha256": "fc159f2344f2a64e2ad71ef9bb0e36746086043fbc8fcce9d54c6cc58246d979",
+    "quality_reviews_sha256": "a415c563414a604013631484912ffbb99617f3160dba66a5806615d08fa45fc5",
+    "capture_manifest_sha256": "30f50ef4b6b629fb2a9d8228b7fd8d84d616f42b9c0a8966808790ec798454ee"
+  },
+  "phase6": {
+    "phase6_documents": 70,
+    "raw_byte_matches": 66,
+    "changed_raw_snapshots": [
+      "BN_DOC_018",
+      "HI_DOC_003",
+      "MR_DOC_018",
+      "TA_DOC_005"
+    ],
+    "verified_qa_records": 2351,
+    "qa_contexts": 827,
+    "full_document_windows": 1133,
+    "full_document_reference": "reconstructed public snapshots",
+    "baseline": "e8754e957bcb8da6ddd9fd916e7820d8a334ecb8",
+    "word_5gram": {
+      "thresholds": {
+        "0.3": 0,
+        "0.4": 0,
+        "0.5": 0
+      },
+      "references_compared": 1960,
+      "short_reference_ids": [],
+      "findings": []
+    },
+    "character_10gram": {
+      "thresholds": {
+        "0.3": 0,
+        "0.4": 0,
+        "0.5": 0
+      },
+      "references_compared": 1960,
+      "short_reference_ids": [],
+      "findings": []
+    },
+    "synthetic_positive_controls_at_0_50": {
+      "hi": {
+        "exact": {
+          "word_5gram_flag": true,
+          "character_10gram_flag": true
+        },
+        "spaces_removed": {
+          "word_5gram_flag": false,
+          "character_10gram_flag": true
+        },
+        "spaces_and_periodic_characters_removed": {
+          "word_5gram_flag": false,
+          "character_10gram_flag": true
+        }
+      },
+      "mr": {
+        "exact": {
+          "word_5gram_flag": true,
+          "character_10gram_flag": true
+        },
+        "spaces_removed": {
+          "word_5gram_flag": false,
+          "character_10gram_flag": true
+        },
+        "spaces_and_periodic_characters_removed": {
+          "word_5gram_flag": false,
+          "character_10gram_flag": true
+        }
+      },
+      "bn": {
+        "exact": {
+          "word_5gram_flag": true,
+          "character_10gram_flag": true
+        },
+        "spaces_removed": {
+          "word_5gram_flag": false,
+          "character_10gram_flag": true
+        },
+        "spaces_and_periodic_characters_removed": {
+          "word_5gram_flag": false,
+          "character_10gram_flag": true
+        }
+      },
+      "ta": {
+        "exact": {
+          "word_5gram_flag": true,
+          "character_10gram_flag": true
+        },
+        "spaces_removed": {
+          "word_5gram_flag": false,
+          "character_10gram_flag": true
+        },
+        "spaces_and_periodic_characters_removed": {
+          "word_5gram_flag": false,
+          "character_10gram_flag": true
+        }
+      }
+    }
+  },
+  "rebuild": {
+    "version": "3f3481d6662a2b69",
+    "identical_bytes": {
+      "corpus.jsonl": true,
+      "train.jsonl": true,
+      "validation.jsonl": true,
+      "statistics.json": true
+    },
+    "inputs": "saved source captures and pinned tokenizer"
+  },
+  "phase2": {
+    "retained_multilingual_evaluation": "unavailable_for_this_audit",
+    "preliminary_english": {
+      "revision": "9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c",
+      "scope": "official English validation and test, literal overlap only",
+      "word_5gram": {
+        "thresholds": {
+          "0.3": 0,
+          "0.4": 0,
+          "0.5": 0
+        },
+        "references_compared": 217,
+        "short_reference_ids": [],
+        "findings": []
+      }
+    }
+  },
+  "environment": {
+    "python": "3.14.7",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "dependencies": {
+      "requests": "2.34.2",
+      "regex": "2026.11.18",
+      "PyYAML": "6.0.3",
+      "rapidfuzz": "3.14.6",
+      "beautifulsoup4": "4.15.0",
+      "trafilatura": "2.3.1",
+      "pymupdf": "2.1",
+      "jsonschema": "4.26.0",
+      "tokenizers": "0.23.3",
+      "huggingface-hub": "2.4.0",
+      "pytesseract": "0.3.13",
+      "pillow": "13.0.0"
+    }
+  }
+}

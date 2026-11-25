@@ -36,9 +36,9 @@ def ocr_available() -> bool:
         return False
 
 
-def ocr_image(image, lang: str) -> str:
+def ocr_image(image, lang: str, *, tesseract_language: str | None = None) -> str:
     import pytesseract
-    return pytesseract.image_to_string(image, lang=LANGUAGES[lang]["tesseract"])
+    return pytesseract.image_to_string(image, lang=tesseract_language or LANGUAGES[lang]["tesseract"])
 
 
 def extract_pdf(path: Path, lang: str, cfg: dict, use_ocr: bool) -> list[dict]:
@@ -56,7 +56,9 @@ def extract_pdf(path: Path, lang: str, cfg: dict, use_ocr: bool) -> list[dict]:
                 from PIL import Image
                 pix = page.get_pixmap(dpi=cfg["ocr_dpi"])
                 image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
-                text = nfc(ocr_image(image, lang))
+                ocr_language = cfg.get("tesseract_languages", {}).get(lang)
+                text = nfc(ocr_image(image, lang, tesseract_language=ocr_language)
+                           if ocr_language else ocr_image(image, lang))
                 ratio = script_ratio(text, lang)
                 method, needs_ocr = "tesseract", False
             pages.append({"page_number": index + 1, "text": text, "method": method,

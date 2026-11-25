@@ -1,0 +1,252 @@
+{
+  "status": "source_expansion_before_full_quality_review",
+  "acquisition": [
+    {
+      "document_id": "AEC_HI_001",
+      "status": "permission_pending"
+    },
+    {
+      "document_id": "AEC_HI_002",
+      "status": "permission_pending"
+    },
+    {
+      "document_id": "AEC_BN_001",
+      "status": "permission_pending"
+    },
+    {
+      "document_id": "AEC_TA_001",
+      "status": "permission_pending"
+    },
+    {
+      "document_id": "AEC_HI_KHETI_944",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1856",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1608",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1670",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1628",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_HI_KHETI_952",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_HI_KHETI_935",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1610",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1847",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1535",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_MR_001",
+      "status": "permission_pending"
+    },
+    {
+      "document_id": "AEC_MR_002",
+      "status": "permission_pending"
+    },
+    {
+      "document_id": "AEC_MR_003",
+      "status": "permission_pending"
+    },
+    {
+      "document_id": "AEC_MR_VA_001",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_MR_KSD_001",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_BN_BOU_3202_01",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_BN_BOU_2301_06",
+      "status": "downloaded"
+    },
+    {
+      "document_id": "AEC_TA_CAG_001",
+      "status": "native_origin_unverified"
+    },
+    {
+      "document_id": "AEC_TA_WB_001",
+      "status": "native_origin_unverified"
+    },
+    {
+      "document_id": "AEC_BN_BOU_1204_01",
+      "status": "downloaded"
+    }
+  ],
+  "languages": {
+    "bn": {
+      "documents": 3,
+      "words_before_quality_review": 18169
+    },
+    "hi": {
+      "documents": 10,
+      "words_before_quality_review": 16576
+    },
+    "mr": {
+      "documents": 1,
+      "words_before_quality_review": 14018
+    }
+  },
+  "phase6_reference": {
+    "phase6_documents": 70,
+    "raw_byte_matches": 66,
+    "changed_raw_snapshots": [
+      "BN_DOC_018",
+      "HI_DOC_003",
+      "MR_DOC_018",
+      "TA_DOC_005"
+    ],
+    "verified_qa_records": 2351,
+    "qa_contexts": 827,
+    "full_document_windows": 1133,
+    "full_document_reference": "reconstructed public snapshots"
+  },
+  "overlap": {
+    "candidate_documents": 14,
+    "text_documents_checked": 14,
+    "unscannable_document_ids": [],
+    "reference_windows": 1960,
+    "documents_with_hits": 0,
+    "findings": []
+  },
+  "quality_reviews_accepted": 0,
+  "documents": [
+    {
+      "document_id": "AEC_BN_BOU_1204_01",
+      "language": "bn",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/%E0%A6%AC%E0%A6%BE%E0%A6%89%E0%A6%AC%E0%A6%BF_BAE_1204_-_Soil_Sceince_-_%E0%A6%87%E0%A6%89%E0%A6%A8%E0%A6%BF%E0%A6%9F_%E0%A7%A6%E0%A7%A7_-_%E0%A6%AE%E0%A7%83%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A6%BF%E0%A6%95%E0%A6%BE_%E0%A6%93_%E0%A6%AE%E0%A7%83%E0%A6%A4%E0%A7%8D%E0%A6%A4%E0%A6%BF%E0%A6%95%E0%A6%BE%E0%A6%B0_%E0%A6%AC%E0%A7%88%E0%A6%B6%E0%A6%BF%E0%A6%B7%E0%A7%8D%E0%A6%9F%E0%A7%8D%E0%A6%AF.pdf",
+      "sha256": "5c846983e39cc9d3cc4e93d4319d4b807b50fd3f406891d39091de4d8d75d374",
+      "clean_text_sha256": "71bb0666de627639fe41231d1a3c932055651e4cd0b8b5d95eb90f3a4203d382",
+      "word_count": 9018
+    },
+    {
+      "document_id": "AEC_BN_BOU_2301_06",
+      "language": "bn",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/%E0%A6%AC%E0%A6%BE%E0%A6%89%E0%A6%AC%E0%A6%BF_BAE_2301_-_Techniques_of_Field_Crop_Production_-_%E0%A6%87%E0%A6%89%E0%A6%A8%E0%A6%BF%E0%A6%9F_%E0%A7%A6%E0%A7%AC_-_%E0%A6%86%E0%A6%81%E0%A6%B6_%E0%A6%AB%E0%A6%B8%E0%A6%B2%E0%A7%87%E0%A6%B0_%E0%A6%9A%E0%A6%BE%E0%A6%B7.pdf",
+      "sha256": "bd13425f7d0a620de64eddf3ad47cc7d1f83746cca87bd5a832fb27fbfd885ec",
+      "clean_text_sha256": "7104b87cd45e8414eacabb578ffbf6df4a34ea02a7309704b13856cd828d4452",
+      "word_count": 7173
+    },
+    {
+      "document_id": "AEC_BN_BOU_3202_01",
+      "language": "bn",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/%E0%A6%AC%E0%A6%BE%E0%A6%89%E0%A6%AC%E0%A6%BF_BAE_3202_-_Irrigation_System_and_Management_-_%E0%A6%87%E0%A6%89%E0%A6%A8%E0%A6%BF%E0%A6%9F_%E0%A7%A6%E0%A7%A7_-_%E0%A6%B8%E0%A7%87%E0%A6%9A%E0%A7%87%E0%A6%B0_%E0%A6%B8%E0%A6%82%E0%A6%9E%E0%A7%8D%E0%A6%9C%E0%A6%BE_%E0%A6%93_%E0%A6%97%E0%A7%81%E0%A6%B0%E0%A7%81%E0%A6%A4%E0%A7%8D%E0%A6%AC.pdf",
+      "sha256": "c701d027e3060477cd695dc645eea3c1f1676a6c3a4fddd03e8c7a59a249e99b",
+      "clean_text_sha256": "b5ffb995a2d4299d7bdc7341bf01c36d95bb8e2c36b33ca33dfbae6090718148",
+      "word_count": 1978
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1535",
+      "language": "hi",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1535/1009",
+      "sha256": "94d31dea79382062ebe9c62d04521bb7d8797bc4b64cf3bc474759cffbcc638f",
+      "clean_text_sha256": "1077b2063fd448e25fe05ce8d4709efcd674aa26a550a44d8862604bc9caec6c",
+      "word_count": 1608
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1608",
+      "language": "hi",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1608/1028",
+      "sha256": "ea05d0a6c0456d49193e941eb514401a24bc54c137322607999f7b59cbe8efbd",
+      "clean_text_sha256": "7c2431168c3402eea21382ba491d35cbbecac6dab1358542115572c261fe8ac6",
+      "word_count": 1651
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1610",
+      "language": "hi",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1610/1081",
+      "sha256": "da3939fa9f0ecb5378b443ca0ed5488c1281974e3927c91a9c6ec68419af6734",
+      "clean_text_sha256": "0bdad59b9be55dad081a9a0ace97c3390d58f1031c664f56119509e9ed3c2df4",
+      "word_count": 1683
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1628",
+      "language": "hi",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1628/1085",
+      "sha256": "afe88b8941c25b4616fe463a371fa081a2e67e6048e0069144186a2a027e6508",
+      "clean_text_sha256": "7ef52c32c953bc5e7849b9d44fb890df146ddc03297b2374d4e8d5fda01a4f04",
+      "word_count": 2030
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1670",
+      "language": "hi",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1670/995",
+      "sha256": "4440f736ea133b462a7f6982fa1731cbdd8e11073e418deb7cde1b32a4bf9314",
+      "clean_text_sha256": "2f4e92126697ee3100a8cfdf187774695d579b06add4a59cb3babd5834f47e2c",
+      "word_count": 2322
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1847",
+      "language": "hi",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1847/1025",
+      "sha256": "6e29ba9c99082a7c73428f5772a48584f50023edd2a4937be8f488b17871019a",
+      "clean_text_sha256": "10c77187bf13633f1d7851e7ff4e96ebf6d468a0c650461100a2152e8b752689",
+      "word_count": 1780
+    },
+    {
+      "document_id": "AEC_HI_KHETI_1856",
+      "language": "hi",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/1856/1030",
+      "sha256": "915b02a9f3d3d6e03b345ba129c0a3dd873be88b434177a0fb01a8f1b826b7a4",
+      "clean_text_sha256": "15f200c26fec57b51746579b14a2037fcbb442fb0ec50fae6a571e338bdd5538",
+      "word_count": 1535
+    },
+    {
+      "document_id": "AEC_HI_KHETI_935",
+      "language": "hi",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/935/751",
+      "sha256": "25726db3878701e80decf27043c61f3d17b5692897bae62bc5bd4c53b9229390",
+      "clean_text_sha256": "882f5aa30c6f735e67ac64b848ccab20fd028b6dfce5d9499a61051282a3bdbd",
+      "word_count": 1509
+    },
+    {
+      "document_id": "AEC_HI_KHETI_944",
+      "language": "hi",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/944/759",
+      "sha256": "2fc3761edcffed16a6aa5979ac90b0b4470f29ba086d221a43c97fff5552c57e",
+      "clean_text_sha256": "699fc84f64fc9544a83fa654f07ad0f9bc2c87d7dc3cf54fe99ec154bf3cc8b6",
+      "word_count": 853
+    },
+    {
+      "document_id": "AEC_HI_KHETI_952",
+      "language": "hi",
+      "source_url": "https://epatrika.icar.org.in/index.php/kheti/en/article/download/952/767",
+      "sha256": "46407d9eecab5d35ebc63c43b58d77af57c17562caf6d7d8b194908df42f50a4",
+      "clean_text_sha256": "96fe6ddcee448583872396673c5c10ff41b814b31441e79d4067d03768c57485",
+      "word_count": 1605
+    },
+    {
+      "document_id": "AEC_MR_VA_001",
+      "language": "mr",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/%E0%A4%B6%E0%A5%87%E0%A4%A4%E0%A5%80-%E0%A4%AA%E0%A4%B6%E0%A5%81%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%A8.pdf",
+      "sha256": "7b2528dc53e4e8a3f57d122b888bd365de9b099172bb09a4f7c8e0f33c196228",
+      "clean_text_sha256": "443e5eb00cf0999269920e52f264e8cee4157abb21e48e975f7d39515cda0baf",
+      "word_count": 14018
+    }
+  ]
+}
