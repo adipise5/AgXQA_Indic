@@ -1,0 +1,4 @@
+experiment: phase_3a
+training_languages: [en]
+selection_languages: [en]
+checkpoint: Phase 1 English-only XLM-R QA

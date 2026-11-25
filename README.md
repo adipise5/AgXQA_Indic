@@ -2,7 +2,7 @@
 
 Multilingual agricultural question answering for English, Hindi, Marathi, Bengali and Tamil.
 
-This repository organizes seven experiments to study cross-lingual transfer, multilingual fine-tuning, agricultural domain adaptation and evaluation on native-language QA. It contains working shared utilities and a [measured English AgRoBERTa reimplementation](phase_01_original_baseline/README.md): **54.24% EM / 78.23% F1** under SQuAD-style English scoring on all 330 official test questions. Published reference values are 55.15% / 78.89%. Raw research datasets and model weights are not committed. English XLM-R training and the other phases remain pending.
+This repository organizes seven experiments to study cross-lingual transfer, multilingual fine-tuning, agricultural domain adaptation and evaluation on native-language QA. It contains working shared utilities and a [measured English AgRoBERTa reimplementation](phase_01_original_baseline/README.md): **54.24% EM / 78.23% F1** under SQuAD-style English scoring on all 330 official test questions. Published reference values are 55.15% / 78.89%. Raw research datasets and model weights are not committed. [Phase 3](phase_03_multilingual_finetuning/README.md) has measured English-only and five-language XLM-R results on the provisional translated test set. The other phases remain pending.
 
 ## Research questions
 1. How much does English-trained QA degrade across Indic languages?
@@ -15,8 +15,8 @@ This repository organizes seven experiments to study cross-lingual transfer, mul
 |---|---|---|---|
 | 1 | [Reproduce the Original AgXQA Baseline](phase_01_original_baseline/README.md) | Saunak; review by Dhiraj | Partial: AgRoBERTa measured; English XLM-R pending |
 | 2 | [Create AgXQA-Indic](phase_02_multilingual_benchmark/README.md) | Saunak + language reviewers | Span-checked splits prepared. Human review and English source adjudication pending |
-| 3 | [Multilingual Fine-Tuning and Cross-Lingual Evaluation](phase_03_multilingual_finetuning/README.md) | Saunak | Pending |
-| 4 | [Build Our Own Indic-AEC](phase_04_indic_aec_corpus/README.md#research-submission) | Aditya Pise | Reviewed four-language pilot and reproducibility evidence verified |
+| 3 | [Multilingual Fine-Tuning and Cross-Lingual Evaluation](phase_03_multilingual_finetuning/README.md) | Saunak | 3A and 3B measured (seed 42) on the provisional `span_checked` release; human review pending |
+| 4 | [Build Our Own Indic-AEC](phase_04_indic_aec_corpus/README.md) | Aditya Pise | Pending |
 | 5 | [Domain Adaptation Using Indic-AEC](phase_05_domain_adaptation/README.md) | Aditya Pise | Pending |
 | 6 | [Build a Native Indic Agricultural QA Dataset](phase_06_native_indic_qa/README.md) | Aditya Saxena | Pending |
 | 7 | [Final Comparative Evaluation](phase_07_comparative_evaluation/README.md) | Dhiraj | Pending |
@@ -43,11 +43,11 @@ The tiny example is explicitly synthetic and must never appear in reported resea
 |---|---|---|---|---|---|
 | AgRoBERTa reimplementation (SQuAD-style English) | 78.23 | N/A | N/A | N/A | N/A |
 | Same frozen AgRoBERTa predictions (shared protocol v1) | 78.24 | N/A | N/A | N/A | N/A |
-| XLM-R English-trained | Pending | Pending | Pending | Pending | Pending |
-| XLM-R multilingual | Pending | Pending | Pending | Pending | Pending |
+| XLM-R English-trained (Phase 3A, provisional) | 66.79 | 51.51 | 52.57 | 53.16 | 50.42 |
+| XLM-R multilingual (Phase 3B, provisional) | 71.64 | 65.94 | 63.91 | 66.48 | 63.17 |
 | XLM-R + Indic-AEC | Pending | Pending | Pending | Pending | Pending |
 
-The two English rows use distinct normalizers and must not be conflated. Phase 1 reports SQuAD-style **54.24% EM / 78.23% F1** for comparison with the paper; shared-protocol rescoring yields **51.52% EM / 78.24% F1**. See [actual measurements, provenance and error counts](phase_01_original_baseline/results/baseline_results.json), [all test predictions](phase_01_original_baseline/results/test_predictions.jsonl), and [protocol differences](phase_01_original_baseline/README.md#9-evaluation-metrics). Native QA results, XLM-R, ablations and uncertainty estimates remain pending. `results/status.json` remains a tracker pointing to real artifacts.
+The two English rows use distinct normalizers and must not be conflated. Phase 1 reports SQuAD-style **54.24% EM / 78.23% F1** for comparison with the paper; shared-protocol rescoring yields **51.52% EM / 78.24% F1**. See [actual measurements, provenance and error counts](phase_01_original_baseline/results/baseline_results.json), [all test predictions](phase_01_original_baseline/results/test_predictions.jsonl), and [protocol differences](phase_01_original_baseline/README.md#9-evaluation-metrics). The XLM-R rows use the shared protocol on the same 322 provisional `span_checked` test questions in each language (seed 42). Their paired bootstrap intervals are in the [Phase 3 results](phase_03_multilingual_finetuning/README.md#17-statistical-significance). Native QA results, Indic-AEC adaptation and ablations remain pending. `results/status.json` remains a tracker pointing to real artifacts.
 
 ## Team review and plan
 - Aditya Saxena: Hindi review; phase 6.
