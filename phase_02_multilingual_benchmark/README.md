@@ -1,6 +1,6 @@
 # Phase 2 — AgXQA-Indic Benchmark Construction
 
-**Owner:** Saunak. Phase 2 uses the existing Gemini 3.5 Flash-Lite translations into Hindi, Marathi, Bengali and Tamil. The local `gemini-v1` bundle contains the preserved inputs, span-checked splits, and human-review worksheets. The final benchmark is awaiting human review and English source adjudication. [Draft dataset card](../data/agxqa_indic/dataset_card.md) · [Pinned source audit](results/source_preflight.json)
+**Owner:** Saunak. Phase 2 uses existing Gemini 3.5 Flash-Lite translations into Hindi, Marathi, Bengali and Tamil. The local `gemini-v2` bundle was rebuilt from the three byte-for-byte `gemini-v1` exports and the recovered validation evidence. The final benchmark awaits human review and English source adjudication. [Draft dataset card](../data/agxqa_indic/dataset_card.md) · [Measured data audit](results/gemini_v2_audit.json)
 
 ## Export audit
 
@@ -14,9 +14,27 @@ All exported IDs match the pinned English source split. The audit found no dupli
 
 Checking the exact stored passages found invalid offsets in 135 validation and 132 test rows. Normalizing both passage and answer to NFC makes 131 of those validation rows and 122 of those test rows match at their recorded offsets. Audit the remaining rows individually and version each correction with its source ID and reason.
 
+The original test exports reproduce the study's all-reference substring percentages to one decimal place.
+
+| Language | Raw text | After NFC | Valid stored offsets before repair |
+|---|---:|---:|---:|
+| English | 98.5% | 98.5% | 322/327 |
+| Hindi | 99.7% | 100.0% | 324/327 |
+| Marathi | 99.7% | 99.7% | 325/327 |
+| Bengali | 87.2% | 100.0% | 206/327 |
+| Tamil | 100.0% | 100.0% | 326/327 |
+
+The test exports carry 433 English references. Each Indic language carries only 327 references, one per question. That is 106 fewer than the English source across 58 multi-answer questions per language. The count comparison leaves semantic equivalence for human review.
+
+## Provenance and exclusions
+
+All 353 parsed Gemini validation responses were recovered with the original aligned and repair outputs. The [recovered validation script settings and prompt](configs/gemini_provenance.json) record the requested model alias, JSON response type, four-second successful-request delay, and ten-second exception delay. The script continues after exceptions and declares no retry or model fallback. Server-resolved model versions, sampling defaults, execution logs and original train/test response files remain unavailable. The draft's train/test settings are historical claims with incomplete run evidence.
+
+The reduced benchmark keeps 1,304 train, 347 validation and 327 test groups for comparability with the reported counts. The exclusion ledger records 199 train, 6 validation and 3 test IDs. Train and test exclusions are absent from the exports, so their individual original rejection reasons remain unknown. All six omitted validation IDs have all four languages in the recovered raw responses. All official source rows are labeled Irrigation, so a labeled subtopic comparison is unavailable. Among 39 training citation groups with at least ten questions, exclusion rates range from 0% to 33.3%. The five pending English test groups are tracked within the 327 retained groups, separately from the 208 source exclusions.
+
 ## Prepared dataset
 
-The importer kept the 347 validation IDs shared by all four translated languages and added their English rows. It logged 11 unmatched validation export rows. It normalized translated passages and answers to NFC, mapped confirmed offsets, and used unique exact matches for shifted spans. One Marathi answer was matched ignoring joiners and then copied from the passage with its joiner intact. The correction log records the original and resulting spans. English annotations continue to use their supplied reference counts and translated rows keep their exported reference counts.
+The importer kept the 347 validation IDs shared by all four translated languages and logged 11 unmatched validation export rows. It sources every English row directly from the pinned release, including the 139 train records whose supplied answers were trimmed in the Gemini flat export. It normalizes translated passages and answers to NFC, maps verified positions after trimming boundary whitespace, and accepts unique exact or whitespace-equivalent spans. One Marathi answer was copied with its original joiner intact. Every emitted answer is an exact substring at its stored offset. Translated rows keep their exported reference counts.
 
 | Span-checked subset | Question IDs | Rows |
 |---|---:|---:|
@@ -26,7 +44,9 @@ The importer kept the 347 validation IDs shared by all four translated languages
 
 The five English test records `1170477`, `1174212`, `1183012`, `1181597`, and `481` need source adjudication. Their nine invalid references are inherited from the official English test data. All five languages for those IDs remain in the candidate set and are held out of the span-checked test subset. The final build targets all 327 retained test groups and 9,890 total rows. The provisional test subset should be reported as 322 matched groups if used.
 
-The manifest records zero cross-split question IDs, 39 cross-split reference-document groups, and 205 exact-context groups across the span-checked exports. The original split membership is preserved, so these splits measure performance with inherited context overlap. Match review corrections to the candidate and source hashes. Preserve the original English annotations used for Phase 1.
+The official English train–test overlap is 309 of 330 exact passages by test row. For the retained export IDs, it is 300 of 327, and for the span-checked test it is 295 of 322. In the span-checked test, 318 of 322 groups share a source document group with train. Use the unchanged official split membership for baseline comparability. Claims about unseen passages need the separate document-disjoint comparison.
+
+The document-disjoint subset keeps the same provisional test IDs, removes conflicting official validation and train groups, and assigns 36 questions from surviving train document components to validation using seed 42. It contains 306 train, 36 validation and 322 test groups with no shared normalized-passage or cited-document keys across splits. Performance on this subset remains unmeasured. Phase 3A needs an English checkpoint trained on this disjoint subset to support that comparison.
 
 ## Rebuild the local bundle
 
@@ -34,15 +54,18 @@ From the AgXQA-Indic checkout, use Python 3.10 or later and a fresh output direc
 
 ```sh
 phase=phase_02_multilingual_benchmark
-bundle="$phase/outputs/gemini-v1"
+bundle="$phase/outputs/gemini-v2"
 python3 "$phase/scripts/import_gemini_exports.py" \
-  --source-dir ../../data --export-dir "$HOME/Downloads" --output-dir "$bundle"
+  --source-dir ../../data --export-dir "$phase/outputs/gemini-v1/inputs" \
+  --validation-evidence-dir "$HOME/json_script" --output-dir "$bundle"
 python3 -m shared.validate "$bundle/span_checked/shared/train.jsonl"
 python3 -m shared.validate "$bundle/span_checked/shared/validation.jsonl"
 python3 -m shared.validate "$bundle/span_checked/shared/test.jsonl"
 ```
 
-The bundle contains byte-for-byte originals under `inputs/`, flat and parallel data under `span_checked/`, `candidates.jsonl`, `corrections.jsonl`, `validation_exclusions.jsonl`, and file hashes in `manifest.json`. Reviewers use the language-specific packets under `review_material/` and return the matching CSVs from `human_review/`.
+The bundle contains original exports in `inputs/`, recovered responses and provenance in `evidence/`, flat and parallel splits under `span_checked/` and `document_disjoint/`, and retained IDs, corrections, exclusions, reports and hashes at the bundle root. Reviewers use the packets in `review_material/` and the matching CSVs in `human_review/`. To rebuild from a copy of the bundle, use that copy's `inputs/` and `evidence/` directories and a fresh output path.
+
+The Hugging Face source card displays an MIT dataset tag. The source documentation reviewed lacks passage-by-passage permission records for the original extension material and its translations. Google's output terms leave responsibility for use with the user. Redistribution clearance for the complete bundle remains unverified. The text-bearing artifacts and evidence are stored locally. [AgXQA source card](https://huggingface.co/datasets/msu-ceco/agxqa_v1) · [Gemini API terms](https://ai.google.dev/gemini-api/terms)
 
 After review, run the finalizer with the same source files and review policy. It reads the bundle's worksheets by default and accepts `--review-dir` for a separate set of completed worksheets. It writes `finalization_report.json` and creates `final/` only when all required reviews and all spans pass.
 

@@ -2,6 +2,8 @@
   "status": "pending",
   "model_id": "FacebookAI/xlm-roberta-base",
   "model_revision": null,
+  "dataset_contract": "phase_02_multilingual_benchmark/configs/qa_release.json",
+  "checkpoint_requirement": "Phase 1 English-only XLM-R QA checkpoint and training provenance",
   "seed": 42,
   "train_languages": [
     "en"

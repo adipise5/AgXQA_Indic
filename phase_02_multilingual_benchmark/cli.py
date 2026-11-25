@@ -23,6 +23,7 @@ def run(command):
     if command == "import_gemini_exports":
         parser.add_argument("--export-dir", type=Path, required=True)
         parser.add_argument("--output-dir", type=Path, required=True)
+        parser.add_argument("--validation-evidence-dir", type=Path)
     if command == "finalize_gemini_exports":
         parser.add_argument("--bundle-dir", type=Path, required=True)
     if command == "clean_translations":
@@ -43,7 +44,7 @@ def run(command):
     if command == "import_gemini_exports":
         from .gemini_exports import prepare_bundle
 
-        manifest = prepare_bundle(args.export_dir, args.output_dir, sources, audit, config)
+        manifest = prepare_bundle(args.export_dir, args.output_dir, sources, audit, config, args.validation_evidence_dir)
         print(json.dumps({key: manifest[key] for key in ("status", "span_checked_rows", "unresolved_span_row_ids", "required_review_rows")}, indent=2))
         return
     if command == "finalize_gemini_exports":

@@ -21,7 +21,7 @@ This repository organizes seven experiments to study cross-lingual transfer, mul
 | 6 | [Build a Native Indic Agricultural QA Dataset](phase_06_native_indic_qa/README.md) | Aditya Saxena | Pending |
 | 7 | [Final Comparative Evaluation](phase_07_comparative_evaluation/README.md) | Dhiraj | Pending |
 
-Phase 2 uses the existing Gemini 3.5 Flash-Lite translations. The local bundle includes 1,304 train, 347 validation, and 322 provisional test question groups in all five languages. The final test targets 327 groups after adjudication. [Phase 2 preparation and review](phase_02_multilingual_benchmark/README.md#prepared-dataset)
+Phase 2 uses the existing Gemini 3.5 Flash-Lite translations. The local `gemini-v2` bundle includes 1,304 train, 347 validation, and 322 provisional test groups in all five languages. The final test targets 327 groups after adjudication. The bundle records the 208 source exclusions and provides a separate document-disjoint subset. [Phase 2 preparation and review](phase_02_multilingual_benchmark/README.md#prepared-dataset)
 
 ## Workflow and datasets
 Phase 1 establishes the English baseline. Phase 2 produces aligned AgXQA-Indic records for phase 3 (3A English-only training; 3B multilingual training). Phase 4 builds Indic-AEC for phase 5 adaptation. Phase 6 reserves native documents and constructs native QA. Phase 7 compares frozen predictions. Phase 6 test documents must be excluded from phase 4/5 training.

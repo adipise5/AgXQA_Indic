@@ -7,8 +7,10 @@ import unittest
 from unicodedata import normalize
 
 from phase_02_multilingual_benchmark import pipeline as p
+from phase_02_multilingual_benchmark.gemini_audit import ALL_LANGUAGES, document_disjoint, validate_parallel
 from phase_02_multilingual_benchmark.gemini_exports import repair_span
 from phase_02_multilingual_benchmark.operations import assemble, statistics, validate_candidates
+from shared.qa_release import load_qa_release, sha256
 
 
 def source(identifier="toy", split="test", question="Where is the water?"):
@@ -40,6 +42,17 @@ def judgment(row, status="accept", reviewer="Synthetic reviewer A"):
 
 
 class ImportedSpanTests(unittest.TestCase):
+    def test_boundary_and_internal_whitespace_preserve_exact_passage_offsets(self):
+        context = "one  roots."
+        self.assertEqual(repair_span(context, context, "  roots", 3), ("roots", 5, "nfc_mapped_offset"))
+        self.assertEqual(repair_span(context, context, "one roots", 0),
+                         ("one  roots", 0, "unique_whitespace_equivalent_span"))
+        self.assertEqual(repair_span(context, context, "  ", 3)[2], "unresolved")
+
+    def test_overlapping_whitespace_matches_are_ambiguous(self):
+        context = "a  a  a"
+        self.assertEqual(repair_span(context, context, "a a", -1)[2], "unresolved")
+
     def test_nfc_remaps_offset_to_the_supplied_occurrence(self):
         original = "e\u0301 roots roots"
         normalized = normalize("NFC", original)
@@ -61,6 +74,52 @@ class ImportedSpanTests(unittest.TestCase):
         corrected, issues = p.apply_review(row, [review])
         self.assertFalse(issues)
         self.assertTrue(corrected["human_reviewed"])
+
+
+class GeminiDatasetTests(unittest.TestCase):
+    def test_parallel_coverage_rejects_missing_and_duplicate_rows(self):
+        item = source()
+        rows = [candidate(item, language) for language in ALL_LANGUAGES]
+        validate_parallel(rows, [item])
+        for invalid in (rows[:-1], rows + rows[:1], [dict(rows[0], split="train"), *rows[1:]]):
+            with self.assertRaises(ValueError):
+                validate_parallel(invalid, [item])
+
+    def test_disjoint_subset_filters_shared_urls_and_makes_validation_from_train(self):
+        test = dict(source("test"), references="https://example.org/shared", context="test")
+        dropped = dict(source("drop", "train"), references="https://example.org/shared", context="train")
+        validation = dict(source("val", "validation"), references="", context="test")
+        train = [dict(source(identifier, "train"), references=f"https://example.org/{identifier}",
+                      source_document_id=identifier, context=identifier) for identifier in ("a", "b")]
+        cohort = [test, dropped, validation, *train]
+        kept, excluded, reassigned = document_disjoint(cohort, cohort, seed=42)
+        self.assertEqual({row["original_id"] for row in excluded}, {"drop", "val"})
+        self.assertEqual({row["split"] for row in kept}, {"train", "validation", "test"})
+        self.assertEqual(len(reassigned), 1)
+        self.assertEqual(next(row for row in kept if row["id"] in reassigned)["official_split"], "train")
+
+    def test_release_loader_rejects_changed_test_bytes(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            bundle = Path(temporary)
+            p.write_json(bundle / "manifest.json", {"dataset_version": "fixture"})
+            hashes = {}
+            for split in ("train", "validation", "test"):
+                item = source(split, split)
+                path = bundle / "span_checked" / f"{split}.jsonl"
+                p.write_jsonl(path, [candidate(item, language) for language in ALL_LANGUAGES])
+                hashes[split] = sha256(path)
+            config = bundle / "config.json"
+            p.write_json(config, {"dataset_version": "fixture", "bundle_dir": str(bundle),
+                                  "bundle_manifest_sha256": sha256(bundle / "manifest.json"),
+                                  "primary_variant": "span_checked", "published_evaluation_variant": "final",
+                                  "variant_split_sha256": {"span_checked": hashes}})
+            experiment = {"dataset_contract": str(config)}
+            _, identity = load_qa_release(experiment)
+            self.assertEqual(identity["split_sha256"]["test"], hashes["test"])
+            with (bundle / "span_checked/test.jsonl").open("a") as handle:
+                handle.write("\n")
+            with self.assertRaisesRegex(ValueError, "test checksum"):
+                load_qa_release(experiment)
 
 
 class AlignmentTests(unittest.TestCase):

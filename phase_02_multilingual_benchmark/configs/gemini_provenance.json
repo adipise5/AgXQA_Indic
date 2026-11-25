@@ -1,0 +1,40 @@
+{
+  "evidence_scope": "Local validation-generation script and parsed validation responses. The study draft attributes the other splits to the same model alias.",
+  "validation_requested_model": "gemini-3.5-flash-lite",
+  "resolved_api_model_version": null,
+  "validation_request_config": {
+    "response_mime_type": "application/json"
+  },
+  "validation_prompt_template": "You are an expert multilingual translator specializing in Indic languages: Bengali (bn), Hindi (hi), Tamil (ta), and Marathi (mr).\nTranslate the given English extractive QA JSON sample into all four languages.\n\nRules:\n1. Use natural, everyday vocabulary.\n2. For each language (\"bn\", \"hi\", \"ta\", \"mr\"), answers[\"text\"][0] MUST appear VERBATIM inside that language's translated context.\n3. Do NOT compute \"answer_start\".\n4. Retain \"id\" and \"references\" untouched.\n5. Return ONLY a single JSON object matching this schema:\n{\n  \"id\": \"<id>\",\n  \"references\": \"<references>\",\n  \"translations\": {\n    \"bn\": {\"category\": \"...\", \"context\": \"...\", \"question\": \"...\", \"answers\": {\"text\": [\"...\"]}},\n    \"hi\": {\"category\": \"...\", \"context\": \"...\", \"question\": \"...\", \"answers\": {\"text\": [\"...\"]}},\n    \"ta\": {\"category\": \"...\", \"context\": \"...\", \"question\": \"...\", \"answers\": {\"text\": [\"...\"]}},\n    \"mr\": {\"category\": \"...\", \"context\": \"...\", \"question\": \"...\", \"answers\": {\"text\": [\"...\"]}}\n  }\n}",
+  "validation_prompt_suffix": "\\n\\nInput Record:\\n followed by json.dumps(item, ensure_ascii=False)",
+  "validation_script_behavior": {
+    "requests_per_english_record": 1,
+    "target_languages": [
+      "bn",
+      "hi",
+      "ta",
+      "mr"
+    ],
+    "success_delay_seconds": 4,
+    "exception_delay_seconds": 10,
+    "explicit_retry": "No retry for the failed record in the script. It logs the exception and continues.",
+    "explicit_model_fallback": null,
+    "raw_log_format": "Parsed response.text JSON, before answer offsets. API wrapper metadata is not persisted.",
+    "output_mode": "Append-mode raw and aligned JSONL."
+  },
+  "validation_script_sha256": "2d884e927d528dbb2a7de969881d1b3214832604f9f644264bb61643c075c333",
+  "validation_legacy_repair_script_sha256": "74003eff1bd0ad234350cba53ac92aa0bcccce38d3f4f34fea1604b25386e0da",
+  "study_draft_claims": {
+    "train_unaligned_references": 342,
+    "train_question_groups_removed": 199,
+    "validation_question_groups_removed": 6,
+    "test_question_groups_removed": 3,
+    "historical_repair": "Exact, Unicode and boundary normalization, flexible whitespace, and a 0.65 fuzzy fallback. The importer preserves source files and uses deterministic exact-span checks."
+  },
+  "unrecovered": [
+    "Server-resolved model build and provider defaults, including sampling settings and token budgets",
+    "Train/test original responses, exact prompts, generation settings, retries, fallback behavior and execution logs",
+    "Original API response envelopes, request IDs, usage metadata and stderr/stdout for validation",
+    "Per-question original train/test exclusion decisions and historical fallback trace"
+  ]
+}
