@@ -16,6 +16,9 @@ checkpoints/
 !phase_01_original_baseline/checkpoints/
 phase_01_original_baseline/checkpoints/*
 !phase_01_original_baseline/checkpoints/README.md
+!phase_03_multilingual_finetuning/checkpoints/
+phase_03_multilingual_finetuning/checkpoints/*
+!phase_03_multilingual_finetuning/checkpoints/README.md
 
 # Phase 6 native QA: passage text is withheld until redistribution is permitted.
 # Committed: final/*.jsonl (release without passages), metadata.csv, public review sheets.
@@ -27,3 +30,9 @@ data/native_indic_qa/full/
 data/native_indic_qa/leakage_exclusions.json
 data/native_indic_qa/source_manifest.csv
 phase_06_native_indic_qa/human_review/private/
+
+# Raw research datasets stay local; download with the pinned loaders.
+data/agxqa_original/raw/*
+!data/agxqa_original/raw/.gitkeep
+agxqa-gemini-v2-*.tar.gz
+phase3-results*.tar

@@ -1,0 +1,2 @@
+# Phase 3 results carry SHA-256 manifests; store their exact bytes.
+phase_03_multilingual_finetuning/results/** -text

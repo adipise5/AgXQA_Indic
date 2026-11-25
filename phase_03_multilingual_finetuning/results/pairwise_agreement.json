@@ -1,0 +1,178 @@
+{
+  "phase_3a": {
+    "complete_groups": 322,
+    "excluded_groups": 0,
+    "correct_in_n_languages": [
+      {
+        "correct_languages": 0,
+        "count": 133,
+        "percent": 41.30434782608695
+      },
+      {
+        "correct_languages": 1,
+        "count": 69,
+        "percent": 21.428571428571427
+      },
+      {
+        "correct_languages": 2,
+        "count": 40,
+        "percent": 12.422360248447205
+      },
+      {
+        "correct_languages": 3,
+        "count": 31,
+        "percent": 9.627329192546584
+      },
+      {
+        "correct_languages": 4,
+        "count": 27,
+        "percent": 8.385093167701863
+      },
+      {
+        "correct_languages": 5,
+        "count": 22,
+        "percent": 6.832298136645963
+      }
+    ],
+    "pairwise_agreement": [
+      {
+        "language_a": "en",
+        "language_b": "hi",
+        "percent_agree": 66.77018633540372
+      },
+      {
+        "language_a": "en",
+        "language_b": "mr",
+        "percent_agree": 67.3913043478261
+      },
+      {
+        "language_a": "en",
+        "language_b": "bn",
+        "percent_agree": 68.63354037267081
+      },
+      {
+        "language_a": "en",
+        "language_b": "ta",
+        "percent_agree": 70.80745341614907
+      },
+      {
+        "language_a": "hi",
+        "language_b": "mr",
+        "percent_agree": 82.6086956521739
+      },
+      {
+        "language_a": "hi",
+        "language_b": "bn",
+        "percent_agree": 78.26086956521739
+      },
+      {
+        "language_a": "hi",
+        "language_b": "ta",
+        "percent_agree": 81.05590062111801
+      },
+      {
+        "language_a": "mr",
+        "language_b": "bn",
+        "percent_agree": 77.63975155279503
+      },
+      {
+        "language_a": "mr",
+        "language_b": "ta",
+        "percent_agree": 77.95031055900621
+      },
+      {
+        "language_a": "bn",
+        "language_b": "ta",
+        "percent_agree": 77.32919254658385
+      }
+    ]
+  },
+  "phase_3b": {
+    "complete_groups": 322,
+    "excluded_groups": 0,
+    "correct_in_n_languages": [
+      {
+        "correct_languages": 0,
+        "count": 112,
+        "percent": 34.78260869565217
+      },
+      {
+        "correct_languages": 1,
+        "count": 59,
+        "percent": 18.322981366459626
+      },
+      {
+        "correct_languages": 2,
+        "count": 37,
+        "percent": 11.490683229813664
+      },
+      {
+        "correct_languages": 3,
+        "count": 32,
+        "percent": 9.937888198757763
+      },
+      {
+        "correct_languages": 4,
+        "count": 36,
+        "percent": 11.180124223602485
+      },
+      {
+        "correct_languages": 5,
+        "count": 46,
+        "percent": 14.285714285714286
+      }
+    ],
+    "pairwise_agreement": [
+      {
+        "language_a": "en",
+        "language_b": "hi",
+        "percent_agree": 72.67080745341615
+      },
+      {
+        "language_a": "en",
+        "language_b": "mr",
+        "percent_agree": 69.87577639751552
+      },
+      {
+        "language_a": "en",
+        "language_b": "bn",
+        "percent_agree": 70.80745341614907
+      },
+      {
+        "language_a": "en",
+        "language_b": "ta",
+        "percent_agree": 70.80745341614907
+      },
+      {
+        "language_a": "hi",
+        "language_b": "mr",
+        "percent_agree": 81.05590062111801
+      },
+      {
+        "language_a": "hi",
+        "language_b": "bn",
+        "percent_agree": 77.63975155279503
+      },
+      {
+        "language_a": "hi",
+        "language_b": "ta",
+        "percent_agree": 75.77639751552795
+      },
+      {
+        "language_a": "mr",
+        "language_b": "bn",
+        "percent_agree": 78.57142857142857
+      },
+      {
+        "language_a": "mr",
+        "language_b": "ta",
+        "percent_agree": 77.95031055900621
+      },
+      {
+        "language_a": "bn",
+        "language_b": "ta",
+        "percent_agree": 78.26086956521739
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "dataset": {
+    "dataset_version": "gemini-v2",
+    "variant": "span_checked",
+    "bundle_manifest_sha256": "b6f3401c4f79edbcd7db60c5d8c878adac622e11f510c971cbf9a51a5e4e838c",
+    "split_sha256": {
+      "train": "b4064eb9e81ae5b0c9ed446ef771e5f81f8652b52c269007f4090ffcc6b06714",
+      "validation": "9713edf65b962788855ebcdfc2567fb849c033cb9cf4081076005c49d5562334",
+      "test": "3929e4c00f4746b431b4a4574660df70630311f0ecb62f0029a3a9031bae539e"
+    },
+    "coverage": {
+      "train": {
+        "records": 6520,
+        "question_groups": 1304,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      },
+      "validation": {
+        "records": 1735,
+        "question_groups": 347,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      },
+      "test": {
+        "records": 1610,
+        "question_groups": 322,
+        "languages": [
+          "bn",
+          "en",
+          "hi",
+          "mr",
+          "ta"
+        ]
+      }
+    },
+    "reviewed_release": false
+  },
+  "counts_by_language": {
+    "train": {
+      "en": 1304,
+      "hi": 1304,
+      "mr": 1304,
+      "bn": 1304,
+      "ta": 1304
+    },
+    "validation": {
+      "en": 347,
+      "hi": 347,
+      "mr": 347,
+      "bn": 347,
+      "ta": 347
+    },
+    "test": {
+      "en": 322,
+      "hi": 322,
+      "mr": 322,
+      "bn": 322,
+      "ta": 322
+    }
+  },
+  "test_rows_with_exact_train_context": {
+    "en": 295,
+    "hi": 1,
+    "mr": 0,
+    "bn": 0,
+    "ta": 0
+  },
+  "no_cross_split_question_ids": true,
+  "all_stored_spans_exact": true,
+  "notes": "A successful integrity audit may still describe a provisional release with inherited passage overlap."
+}
