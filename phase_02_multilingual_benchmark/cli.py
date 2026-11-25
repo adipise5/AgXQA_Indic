@@ -1,10 +1,9 @@
-"""Phase 2 command implementations. Inference requires an explicit --run-model."""
+"""Phase 2 data preparation, validation, review and reporting commands."""
 import argparse
-from collections import Counter
 import json
 from pathlib import Path
 
-from .pipeline import (COUNTS, LANGUAGES, PHASE, load_config, load_source, read_jsonl,
+from .pipeline import (PHASE, load_config, load_source, read_jsonl,
                        read_reviews, resolve_path, source_candidate, write_json, write_jsonl)
 from .operations import (assemble, candidate_rows, clean_translations, create_review_worksheets,
                          validate_candidates, write_reports)
@@ -21,16 +20,11 @@ def run(command):
     if command == "prepare_source":
         parser.add_argument("--download",action="store_true")
         parser.add_argument("--output-dir",type=Path,default=PHASE/"outputs/source")
-    if command == "translate":
-        parser.add_argument("--run-model",action="store_true",help="Explicitly load and execute the translation checkpoint")
-        parser.add_argument("--split",choices=["all",*COUNTS],default="validation")
-        parser.add_argument("--limit",type=int,default=5)
-        parser.add_argument("--all-rows",action="store_true")
-        parser.add_argument("--output-dir",type=Path)
-        parser.add_argument("--device",choices=["cpu"],default="cpu")
-        parser.add_argument("--local-model",type=Path)
-        parser.add_argument("--resume",action="store_true")
-        parser.add_argument("--retry-failed",action="store_true")
+    if command == "import_gemini_exports":
+        parser.add_argument("--export-dir", type=Path, required=True)
+        parser.add_argument("--output-dir", type=Path, required=True)
+    if command == "finalize_gemini_exports":
+        parser.add_argument("--bundle-dir", type=Path, required=True)
     if command == "clean_translations":
         parser.add_argument("--output-dir",type=Path)
         parser.add_argument("--skip-language-id",action="store_true",help="Flags every candidate for human language verification")
@@ -46,43 +40,30 @@ def run(command):
     config = load_config(args.config)
     source_dir = args.source_dir or resolve_path(config["source_dir"])
     sources, audit = load_source(source_dir,download=command == "prepare_source" and args.download)
+    if command == "import_gemini_exports":
+        from .gemini_exports import prepare_bundle
+
+        manifest = prepare_bundle(args.export_dir, args.output_dir, sources, audit, config)
+        print(json.dumps({key: manifest[key] for key in ("status", "span_checked_rows", "unresolved_span_row_ids", "required_review_rows")}, indent=2))
+        return
+    if command == "finalize_gemini_exports":
+        from .gemini_exports import finalize_bundle
+
+        review_dir = args.review_dir or args.bundle_dir / "human_review"
+        report = finalize_bundle(args.bundle_dir, review_dir, sources, audit, config)
+        print(json.dumps({key: report[key] for key in ("status", "accepted_records", "human_reviewed_records", "submitted_review_judgments")}, indent=2))
+        if report["status"] != "ready":
+            parser.exit(2, "Final benchmark is blocked. See finalization_report.json in the bundle.\n")
+        return
     raw_dir = args.raw_dir or resolve_path(config["raw_output_dir"])
     candidates_dir = args.candidates_dir or resolve_path(config["candidate_output_dir"])
     review_dir = args.review_dir or resolve_path(config["review_dir"])
     if command == "prepare_source":
         args.output_dir.mkdir(parents=True,exist_ok=True)
         write_jsonl(args.output_dir/"english_source.jsonl",sources)
-        write_json(args.results_dir/"source_preflight.json",{**audit,"translation_model":config["model_id"],
-                   "model_revision":config["model_revision"],"target_tags":config["target_language_tags"],
-                   "planned_translated_qa_rows":len(sources)*4,"planned_all_language_rows":len(sources)*5,
-                   "translation_executed":False,"human_reviews_completed":0})
+        write_json(args.results_dir / "source_preflight.json", audit)
         print(json.dumps({"source_counts":audit["counts"],"unique_contexts":audit["unique_contexts"],
                           "invalid_source_offsets":len(audit["invalid_source_answer_offsets"]),"neural_execution":False}))
-        return
-    if command == "translate":
-        if args.limit < 1:
-            parser.error("--limit must be positive; use --all-rows explicitly for the full selected split(s)")
-        selected = [r for r in sources if args.split == "all" or r["split"] == args.split]
-        if not args.all_rows:
-            selected = selected[:args.limit]
-        plan = {"model":config["model_id"],"model_revision":config["model_revision"],"source_rows":len(selected),
-                "translated_rows":len(selected)*4,"splits":dict(Counter(r["split"] for r in selected)),
-                "languages":config["target_language_tags"],"generation":config["generation"],
-                "backend":config["backend"],"quantization":config["quantization"],"device":args.device,
-                "model_executed":False,"access_requirement":"The selected community ONNX repository is public and ungated at preflight. Download its pinned bundle separately and pass --local-model; no token is required for public access."}
-        if not args.run_model:
-            print(json.dumps(plan,indent=2))
-            return
-        if not args.output_dir:
-            parser.error("--run-model requires an explicit fresh --output-dir; raw outputs are never overwritten")
-        if not args.local_model:
-            parser.error("--run-model requires --local-model from scripts/download_model.py; checkpoint download is a separate step")
-        from .indictrans_backend import Backend
-        from .translation import run_translation
-        manifest = run_translation(selected,audit,config,args.output_dir,
-                       lambda:Backend(config,args.device,args.local_model),resume=args.resume,retry_failed=args.retry_failed)
-        print(json.dumps({"status":manifest["status"],"observed_unique_rows":manifest["observed_unique_rows"],
-                          "successful_unique_rows":manifest["successful_unique_rows"]},indent=2))
         return
     if command == "clean_translations":
         if not (raw_dir/"run_manifest.json").exists():

@@ -1,11 +1,4 @@
-# Direct INT8 ONNX dependencies, Python >=3.11. See requirements-lock.txt for the executed pilot environment.
-onnxruntime==1.27.0
-transformers==4.57.6
-tokenizers==0.22.2
-huggingface-hub==0.36.0
-numpy==2.2.6
-sentencepiece==0.2.1
-indictranstoolkit==1.1.1
+# Optional Phase 2 dependencies for language ID, YAML configuration and plots.
 langid==1.1.6
 PyYAML==6.0.3
 matplotlib==3.10.8

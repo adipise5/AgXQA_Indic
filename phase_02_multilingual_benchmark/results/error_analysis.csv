@@ -1,6 +1,0 @@
-issue,count,origin
-invalid_original_gold_offset_requires_source_review,5,automated_flag
-answer_not_found,17,automated_flag
-context_unit_alias_missing,3,automated_flag
-context_numeric_values_changed,2,automated_flag
-answer_ambiguous_multiple_matches,1,automated_flag

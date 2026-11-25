@@ -64,17 +64,5 @@
     "cross_split_exact_context_groups": 207,
     "document_disjoint": false,
     "note": "Official splits are preserved. Existing document/context overlap is reported, never hidden by split-prefixed document IDs."
-  },
-  "translation_model": "hari31416/indictrans2-en-indic-1B-ONNX-int8",
-  "model_revision": "659294a223583c6bc8686facb8f0dc15d593b2d1",
-  "target_tags": {
-    "hi": "hin_Deva",
-    "mr": "mar_Deva",
-    "bn": "ben_Beng",
-    "ta": "tam_Taml"
-  },
-  "planned_translated_qa_rows": 8744,
-  "planned_all_language_rows": 10930,
-  "translation_executed": false,
-  "human_reviews_completed": 0
+  }
 }

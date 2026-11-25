@@ -1,16 +1,14 @@
 """Synthetic pipeline invariants only: no neural/tokenizer/language model is loaded."""
-import copy
 import csv
 import json
 from pathlib import Path
 import tempfile
 import unittest
+from unicodedata import normalize
 
 from phase_02_multilingual_benchmark import pipeline as p
-from phase_02_multilingual_benchmark.indictrans_backend import Backend, chunk_text, cached_feed, greedy_tokens
-from phase_02_multilingual_benchmark.model_artifacts import MODEL_FILES, record_bundle, verify_bundle
-from phase_02_multilingual_benchmark.operations import assemble, statistics, validate_candidates, clean_translations, candidate_rows
-from phase_02_multilingual_benchmark.translation import run_translation
+from phase_02_multilingual_benchmark.gemini_exports import repair_span
+from phase_02_multilingual_benchmark.operations import assemble, statistics, validate_candidates
 
 
 def source(identifier="toy", split="test", question="Where is the water?"):
@@ -41,6 +39,30 @@ def judgment(row, status="accept", reviewer="Synthetic reviewer A"):
     return result
 
 
+class ImportedSpanTests(unittest.TestCase):
+    def test_nfc_remaps_offset_to_the_supplied_occurrence(self):
+        original = "e\u0301 roots roots"
+        normalized = normalize("NFC", original)
+        self.assertEqual(repair_span(original, normalized, "roots", 9), ("roots", 8, "nfc_mapped_offset"))
+
+    def test_joiner_equivalence_preserves_the_passage_spelling(self):
+        context = "अ\u200dॅप"
+        self.assertEqual(repair_span(context, context, "अॅप", 0), (context, 0, "unique_joiner_equivalent_span"))
+        ambiguous = f"{context} {context}"
+        self.assertEqual(repair_span(ambiguous, ambiguous, "अॅप", 0)[2], "unresolved")
+
+    def test_review_can_correct_a_span_with_the_imported_reference_count(self):
+        row = candidate(source(), language="en")
+        row.update(source_reference_count=2, required_reference_count=1,
+                   answers={"text": ["মূলে"], "answer_start": [0]}, automated_issues=["answer_span_mismatch"])
+        review = judgment(row, status="correct")
+        review.update(corrected_answers_json=json.dumps({"text": ["মূলে"], "answer_start": [3]}),
+                      comments="Select the existing answer span.")
+        corrected, issues = p.apply_review(row, [review])
+        self.assertFalse(issues)
+        self.assertTrue(corrected["human_reviewed"])
+
+
 class AlignmentTests(unittest.TestCase):
     def test_unique_alignment_and_unicode_offsets(self):
         context="জল মূলে যায়।"
@@ -69,14 +91,6 @@ class AlignmentTests(unittest.TestCase):
         self.assertFalse(p.script_report("पाणी मुळांपर्यंत पोहोचते","mr")["issues"])
         self.assertIn("unicode_corruption",p.script_report("জল\ufffd","bn")["issues"])
         self.assertIn("low_expected_script_ratio",p.script_report("Water reaches roots","ta")["issues"])
-
-    def test_chunking_retains_all_words_and_enforces_budget(self):
-        text="One two three. Four five six seven eight nine. Ten eleven."
-        chunks=chunk_text(text,4,lambda value:len(value.split()))
-        self.assertEqual(" ".join(chunks),text)
-        self.assertTrue(all(len(c.split())<=4 for c in chunks))
-        with self.assertRaisesRegex(ValueError,"word exceeds"):
-            chunk_text("oversized",3,len)
 
     def test_malformed_answers_fail_without_crashing(self):
         row=candidate(source())
@@ -206,128 +220,7 @@ class ReviewTests(unittest.TestCase):
         self.assertEqual(result[0]["cohens_kappa"],0)
 
 
-class ONNXBackendTests(unittest.TestCase):
-    def test_selected_configuration_is_pinned_int8_cpu(self):
-        config=p.load_config()
-        self.assertEqual(config["model_id"],"hari31416/indictrans2-en-indic-1B-ONNX-int8")
-        self.assertEqual(config["model_revision"],"659294a223583c6bc8686facb8f0dc15d593b2d1")
-        self.assertEqual(config["runtime"]["device"],"cpu")
-        self.assertEqual(config["generation"]["num_beams"],1)
-
-    def test_greedy_decoder_handles_start_equal_to_eos_and_cached_steps(self):
-        calls=[]
-        def step(previous,first):
-            calls.append((previous,first))
-            return 10 if first else 2
-        tokens,capped=greedy_tokens(step,2,2,256)
-        self.assertEqual(tokens,[2,10,2])
-        self.assertFalse(capped)
-        self.assertEqual(calls,[(2,True),(10,False)])
-
-    def test_greedy_decoder_respects_total_length_and_flags_missing_eos(self):
-        tokens,capped=greedy_tokens(lambda previous,first:10,2,2,4)
-        self.assertEqual(tokens,[2,10,10,10])
-        self.assertTrue(capped)
-        with self.assertRaises(ValueError):
-            greedy_tokens(lambda previous,first:-1,2,2,4)
-
-    def test_decoder_cache_maps_all_four_tensors_per_layer(self):
-        values=list(range(8))
-        feed=cached_feed(values,2)
-        self.assertEqual(feed["past_key_values.0.decoder.key"],0)
-        self.assertEqual(feed["past_key_values.1.encoder.value"],7)
-        self.assertEqual(len(feed),8)
-        with self.assertRaisesRegex(ValueError,"cache layout"):
-            cached_feed(values[:6],2)
-
-    def test_bundle_manifest_requires_external_weights_and_detects_changes(self):
-        config=p.load_config()
-        with tempfile.TemporaryDirectory() as temporary:
-            directory=Path(temporary)
-            for name in MODEL_FILES:
-                (directory/name).write_bytes(b"SYNTHETIC FILE, NOT MODEL WEIGHTS")
-            manifest=record_bundle(directory,config)
-            self.assertEqual(verify_bundle(directory,config),manifest)
-            (directory/"decoder_shared.onnx.data").write_bytes(b"SYNTHETIC CORRUPTION")
-            with self.assertRaisesRegex(ValueError,"checksum mismatch"):
-                verify_bundle(directory,config)
-
-    def test_incomplete_or_wrong_model_bundles_are_rejected(self):
-        config=p.load_config()
-        with tempfile.TemporaryDirectory() as temporary:
-            with self.assertRaisesRegex(ValueError,"incomplete"):
-                record_bundle(temporary,config)
-            p.write_json(Path(temporary)/"source-manifest.json",{"repo":"wrong","revision":config["model_revision"]})
-            with self.assertRaisesRegex(ValueError,"repository/revision"):
-                verify_bundle(temporary,config)
-
-    def test_cpu_and_explicit_local_bundle_are_required_before_loading(self):
-        with self.assertRaisesRegex(ValueError,"CPUExecutionProvider"):
-            Backend(p.load_config(),device="mps")
-        with self.assertRaisesRegex(ValueError,"separately"):
-            Backend(p.load_config())
-        self.assertIn("encoder_model.onnx.data",MODEL_FILES)
-        self.assertFalse(any(name.endswith(".py") for name in MODEL_FILES))
-
-
-class RawRunTests(unittest.TestCase):
-    def test_cached_outputs_resume_without_overwriting_and_changed_config_fails(self):
-        class FakeBackend:
-            metadata={"fixture_only":True}
-            def __init__(self):
-                self.calls=[]
-            def translate(self,text,target):
-                self.calls.append((text,target))
-                return {"text":"SYNTHETIC "+text,"segments":[],"generation_issues":[]}
-        backend=FakeBackend()
-        config=copy.deepcopy(p.load_config());config["runtime"]["retry_attempts"]=1
-        rows=[source("a",question="First question?"),source("b",question="Second question?")]
-        with tempfile.TemporaryDirectory() as temporary:
-            output=Path(temporary)/"raw"
-            audit={"file_sha256":{"fixture":"synthetic"}}
-            result=run_translation(rows,audit,config,output,lambda:backend)
-            self.assertEqual(result["successful_unique_rows"],8)
-            self.assertEqual(len(backend.calls),16)  # Four distinct units per language.
-            hashes=result["raw_files_sha256"]
-            resumed=run_translation(rows,audit,config,output,lambda:backend,resume=True)
-            self.assertEqual(resumed["raw_files_sha256"],hashes)
-            self.assertEqual(len(backend.calls),16)
-            cleaned=Path(temporary)/"candidates"
-            self.assertEqual(clean_translations(rows,output,cleaned,use_langid=False),8)
-            self.assertEqual(len(candidate_rows(cleaned)),10)
-            self.assertTrue(all(not r["human_reviewed"] for r in candidate_rows(cleaned)))
-            self.assertEqual({name:p.file_digest(output/name) for name in hashes},hashes)
-            changed=copy.deepcopy(config);changed["seed"]=43
-            with self.assertRaisesRegex(ValueError,"identical config"):
-                run_translation(rows,audit,changed,output,lambda:backend,resume=True)
-            with (output/"bengali.jsonl").open("a") as stream:
-                stream.write("\n")
-            with self.assertRaisesRegex(ValueError,"hashes changed"):
-                run_translation(rows,audit,config,output,lambda:backend,resume=True)
-
-    def test_failed_records_are_preserved_and_retry_appends_a_new_attempt(self):
-        class FakeBackend:
-            metadata={"fixture_only":True}
-            fail=True
-            def translate(self,text,target):
-                if self.fail and text.endswith("?"):
-                    raise ValueError("Synthetic deliberate failure")
-                return {"text":"SYNTHETIC "+text,"segments":[],"generation_issues":[]}
-        backend=FakeBackend()
-        config=copy.deepcopy(p.load_config());config["runtime"]["retry_attempts"]=1
-        with tempfile.TemporaryDirectory() as temporary:
-            audit={"file_sha256":{"fixture":"synthetic"}}
-            first=run_translation([source()],audit,config,temporary,lambda:backend)
-            self.assertEqual(first["successful_unique_rows"],0)
-            before=(Path(temporary)/"bengali.jsonl").read_text()
-            backend.fail=False
-            second=run_translation([source()],audit,config,temporary,lambda:backend,resume=True,retry_failed=True)
-            self.assertEqual(second["successful_unique_rows"],4)
-            self.assertTrue((Path(temporary)/"bengali.jsonl").read_text().startswith(before))
-            rows=p.read_jsonl(Path(temporary)/"bengali.jsonl")
-            self.assertEqual([r["attempt"] for r in rows],[1,2])
-            self.assertEqual(p.latest_raw(rows)[0]["translation_status"],"complete")
-
+class CandidateValidationTests(unittest.TestCase):
     def test_split_mismatch_and_missing_coverage_are_reported(self):
         row=source()
         item=candidate(row);item["split"]="train"

@@ -110,6 +110,25 @@ def create_review_worksheets(source_rows, candidates, config, directory):
                                      "raw_record_sha256":row["raw_record_sha256"]})
 
 
+def write_dataset_splits(directory, source_rows, rows):
+    from shared.validate import validate
+
+    for split in COUNTS:
+        split_rows = [row for row in rows if row["split"] == split]
+        shared = [as_shared(row) for row in split_rows]
+        validate(shared)  # The manifest reports inherited document overlap across splits.
+        write_jsonl(directory / f"{split}.jsonl", split_rows, exclusive=True)
+        write_jsonl(directory / "shared" / f"{split}.jsonl", shared, exclusive=True)
+
+    groups = defaultdict(dict)
+    for row in rows:
+        groups[row["original_id"]][row["language"]] = row
+    parallel = [{"original_id": source["id"], "split": source["split"],
+                 "source_document_id": source["source_document_id"], "languages": groups[source["id"]]}
+                for source in source_rows]
+    write_jsonl(directory / "parallel_multilingual.jsonl", parallel, exclusive=True)
+
+
 def assemble(source_rows, candidates, reviews, config, output, reviewed_output=None):
     lookup, duplicate = {}, []
     for row in candidates:
@@ -163,19 +182,7 @@ def assemble(source_rows, candidates, reviews, config, output, reviewed_output=N
     if staging.exists():
         raise ValueError("A prior staging directory exists; inspect it before building another version")
     staging.mkdir(parents=True)
-    from shared.validate import validate
-    for split in COUNTS:
-        rows = [r for r in accepted if r["split"] == split]
-        shared = [as_shared(r) for r in rows]
-        validate(shared)  # One official split at a time; source cross-split leakage stays reported.
-        write_jsonl(staging/(split+".jsonl"),rows,exclusive=True)
-        write_jsonl(staging/"shared"/(split+".jsonl"),shared,exclusive=True)
-    groups = defaultdict(dict)
-    for row in accepted:
-        groups[row["original_id"]][row["language"]] = row
-    parallel = [{"original_id":source["id"],"split":source["split"],"source_document_id":source["source_document_id"],
-                 "languages":groups[source["id"]]} for source in source_rows]
-    write_jsonl(staging/"parallel_multilingual.jsonl",parallel,exclusive=True)
+    write_dataset_splits(staging, source_rows, accepted)
     write_json(staging/"build_manifest.json",{**report,"file_sha256":{str(p.relative_to(staging)):digest(p.read_bytes()) for p in staging.rglob("*.jsonl")}})
     if output.exists():
         # Keep an existing tracked .gitkeep; publish complete validated files without overwriting data.

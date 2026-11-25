@@ -14,14 +14,14 @@ This repository organizes seven experiments to study cross-lingual transfer, mul
 | Phase | Experiment | Owner | Status |
 |---|---|---|---|
 | 1 | [Reproduce the Original AgXQA Baseline](phase_01_original_baseline/README.md) | Saunak; review by Dhiraj | Partial: AgRoBERTa measured; English XLM-R pending |
-| 2 | [Create AgXQA-Indic](phase_02_multilingual_benchmark/README.md) | Saunak + language reviewers | Pilot: 20 translations; 2/20 exact gold spans; full generation/review pending |
+| 2 | [Create AgXQA-Indic](phase_02_multilingual_benchmark/README.md) | Saunak + language reviewers | Span-checked splits prepared. Human review and English source adjudication pending |
 | 3 | [Multilingual Fine-Tuning and Cross-Lingual Evaluation](phase_03_multilingual_finetuning/README.md) | Saunak | Pending |
 | 4 | [Build Our Own Indic-AEC](phase_04_indic_aec_corpus/README.md) | Aditya Pise | Pending |
 | 5 | [Domain Adaptation Using Indic-AEC](phase_05_domain_adaptation/README.md) | Aditya Pise | Pending |
 | 6 | [Build a Native Indic Agricultural QA Dataset](phase_06_native_indic_qa/README.md) | Aditya Saxena | Pending |
 | 7 | [Final Comparative Evaluation](phase_07_comparative_evaluation/README.md) | Dhiraj | Pending |
 
-Phase 2 now implements the user-selected IndicTrans2 English→Indic 1B INT8 ONNX CPU workflow, with source auditing, immutable raw logs, answer alignment, native-review worksheets and a gated final build. No earlier Gemma/Gemini files were supplied or verified. The approved INT8 pilot generated 20 records in 42.99 seconds; all language IDs matched, but only 2/20 translated gold answers aligned to unique exact spans. Full generation and native review remain pending; see the measured pilot report. The selected community export is public/ungated at preflight. Dhiraj's Phase 7 assignment follows the prior roadmap's allocation of the otherwise unspecified second phase.
+Phase 2 uses the existing Gemini 3.5 Flash-Lite translations. The local bundle includes 1,304 train, 347 validation, and 322 provisional test question groups in all five languages. The final test targets 327 groups after adjudication. [Phase 2 preparation and review](phase_02_multilingual_benchmark/README.md#prepared-dataset)
 
 ## Workflow and datasets
 Phase 1 establishes the English baseline. Phase 2 produces aligned AgXQA-Indic records for phase 3 (3A English-only training; 3B multilingual training). Phase 4 builds Indic-AEC for phase 5 adaptation. Phase 6 reserves native documents and constructs native QA. Phase 7 compares frozen predictions. Phase 6 test documents must be excluded from phase 4/5 training.
@@ -36,7 +36,7 @@ python -m shared.validate data/examples/qa.jsonl
 python -m shared.evaluate data/examples/qa.jsonl data/examples/predictions.jsonl --output /tmp/agxqa-demo.json
 python -m shared.plan phase_03_multilingual_finetuning/config.json
 ```
-The tiny example is explicitly synthetic and must never appear in reported research results. See [evaluation definitions](docs/evaluation.md). Phase 1 includes a tested, pinned AgRoBERTa workflow; Phase 2 includes a synthetically tested data pipeline and an actual 20-record INT8 pilot; its 10% exact-span alignment rate requires work before scaling. Other training/generation scripts remain explicit starters. The [Phase 1 instructions](phase_01_original_baseline/README.md#16-steps-to-reproduce) explain installation and saved-prediction rescoring; [Phase 2 instructions](phase_02_multilingual_benchmark/README.md#16-reproducibility-instructions) explain source preparation, translation approval, review and dataset construction.
+The tiny example is explicitly synthetic and must never appear in reported research results. See [evaluation definitions](docs/evaluation.md). Phase 1 includes a tested, pinned AgRoBERTa workflow; Phase 2 includes a synthetically tested data pipeline for source preparation, validation and review. Other training/generation scripts remain explicit starters. The [Phase 1 instructions](phase_01_original_baseline/README.md#16-steps-to-reproduce) explain installation and saved-prediction rescoring; [Phase 2 instructions](phase_02_multilingual_benchmark/README.md#source-audit) explain how to audit the pinned English source.
 
 ## Results and remaining experiments
 | Approach | EN F1 | HI F1 | MR F1 | BN F1 | TA F1 |
