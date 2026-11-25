@@ -100,11 +100,28 @@ OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 VECLIB_MAXIMUM_THREADS=4 \
   --output "$run" --resume-from-checkpoint "$run/epoch_checkpoints/checkpoint-448"
 ```
 
-## Continue on a cluster GPU
+## Start a fresh run on a cluster GPU
+
+From the checkout root, extract the privately supplied `gemini-v2` training archive. It provides the pinned manifest and three flat `span_checked` splits under `phase_02_multilingual_benchmark/outputs/gemini-v2`. The validator checks all three hashes before any model loads.
+
+Inside a scheduler allocation with one visible NVIDIA GPU, use a Linux Python 3.11 environment with the cluster-compatible CUDA build of PyTorch 2.8.0 and install the Phase 3 requirements. Run from the checkout root with a fresh output directory.
+
+```sh
+phase=phase_03_multilingual_finetuning
+out=outputs/phase_03_multilingual_finetuning
+python -m pip install -r "$phase/requirements.txt"
+python "$phase/scripts/validate_dataset.py" --variant span_checked \
+  --output "$out/cluster-span-checked-preflight.json"
+python -u "$phase/scripts/train_multilingual.py" --run-model --device cuda \
+  --variant span_checked --seed 42 --training-config "$phase/configs/mac_low_memory.yaml" \
+  --output "$out/cluster-span-checked-42"
+```
+
+This starts at optimizer step zero from the pinned pretrained XLM-R Base weights. It trains for five epochs with batch size 1 and gradient accumulation 16 and saves checkpoints after validation. For a compute node without internet access, make the pinned Hugging Face cache available and add `--offline`.
+
+## Continue from a checkpoint on a cluster GPU
 
 Transfer the complete epoch checkpoint privately to the cluster. Keep the checkout's relative run path so the saved best-checkpoint path also resolves on the cluster. The run's `launch_inputs.json` and the Phase 2 manifest and three flat splits are needed to verify its identity. Use the current Phase 3 source and configurations from the Mac checkout. If a later epoch is transferred, include its previous best checkpoint when it differs from the resume checkpoint.
-
-If a teammate handles cluster access, they can verify the private handoff archive with `sha256sum -c` and extract it into an empty directory with `tar -xf`. The archive includes the checkout files, complete checkpoint, run metadata, and pinned splits. Run the continuation command below from the extracted directory.
 
 Run this from the Mac checkout after the first epoch checkpoint is complete. Set `cluster` to the SSH login or host alias and `cluster_repo` to the cluster checkout's path.
 
