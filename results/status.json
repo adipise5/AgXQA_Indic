@@ -8,13 +8,14 @@
       "f1": 78.22565449019338,
       "test_count": 330
     },
-    "shared_protocol_rescore": "phase_01_original_baseline/results/shared_protocol_results.json"
+    "shared_protocol_rescore": "phase_01_original_baseline/results/shared_protocol_results.json",
+    "phase_4": "phase_04_indic_aec_corpus/results/submission-audit.json"
   },
   "phases": {
     "1": "partial_agroberta_measured_xlmr_pending",
     "2": "gemini_span_checked_subset_prepared_human_review_pending",
     "3": "pending",
-    "4": "pending",
+    "4": "reviewed_pilot_release_submission_evidence_verified",
     "5": "pending",
     "6": "partial_qa_generated_human_review_pending",
     "7": "pending"

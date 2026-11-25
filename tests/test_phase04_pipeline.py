@@ -70,6 +70,97 @@ class Phase4Tests(unittest.TestCase):
             self.assertEqual(len(validation),1)
             self.assertNotEqual(train[0]['document_family_id'],validation[0]['document_family_id'])
 
+    def test_targeted_extraction_keeps_only_unchanged_other_documents(self):
+        from unittest.mock import patch
+
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            raw = root / 'new.html'
+            raw.write_text('<p>Fixture</p>')
+            selected = {
+                'document_id': 'AEC_MR_NEW', 'language': 'mr',
+                'file_path': str(raw), 'sha256': p.common.sha256_file(raw),
+            }
+            retained = {'document_id': 'AEC_HI_KEEP', 'sha256': 'same', 'text': 'retained'}
+            stale = {'document_id': 'AEC_HI_STALE', 'sha256': 'old', 'text': 'discarded'}
+            p.common.write_jsonl(root / 'manifest.jsonl', [
+                selected, retained, {**stale, 'sha256': 'changed'},
+            ])
+            p.common.write_jsonl(root / 'documents.jsonl', [retained, stale])
+            cfg = {'work_dir': directory, 'report_dir': directory}
+
+            with patch.object(p.extractor, 'extract_html', return_value=[]):
+                p.extract(cfg, selected_ids=[selected['document_id']])
+
+            result = p.read_lines(root / 'documents.jsonl')
+            self.assertEqual([row['document_id'] for row in result],
+                             [retained['document_id'], selected['document_id']])
+            self.assertEqual(result[0]['text'], 'retained')
+
+    def test_phase4_ocr_language_override_preserves_legacy_default(self):
+        from types import SimpleNamespace
+        from unittest.mock import Mock, patch
+
+        ocr = Mock(return_value='recognized')
+        with patch.dict('sys.modules', {'pytesseract': SimpleNamespace(image_to_string=ocr)}):
+            p.extractor.ocr_image(object(), 'bn')
+            self.assertEqual(ocr.call_args.kwargs['lang'], 'ben')
+            p.extractor.ocr_image(object(), 'bn', tesseract_language='ben+eng')
+            self.assertEqual(ocr.call_args.kwargs['lang'], 'ben+eng')
+
+    def test_india_books_scope_rejects_foreign_and_nonbook_sources(self):
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            sources = root / 'sources.csv'
+            sources.write_text(
+                'document_id,language,source_url,publication_format,publisher_country,'
+                'government_publisher_reference,permission_status,permission_reference,'
+                'language_origin,license,document_family_id\n'
+                'AEC_BN_FOREIGN,bn,https://example.org/bn,book,BD,https://example.org/bd,'
+                'approved,ref,native_verified,CC-BY,FOREIGN\n'
+                'AEC_HI_ARTICLE,hi,https://example.org/hi,journal_article,IN,https://example.org/in,'
+                'approved,ref,native_verified,CC-BY,ARTICLE\n'
+                'AEC_TA_BOOK,ta,https://example.org/ta,book,IN,https://example.org/in,'
+                'pending,,unknown,unverified,BOOK\n'
+            )
+            cfg = {'sources': str(sources), 'work_dir': directory, 'report_dir': directory,
+                   'indian_government_books_only': True}
+            result = p.acquire(cfg, dry_run=True)
+            self.assertEqual(result, {'outside_indian_government_book_scope': 2, 'permission_pending': 1})
+            p.common.write_jsonl(root / 'documents.jsonl', [
+                {'document_id': 'AEC_BN_FOREIGN', 'language': 'bn',
+                 'source_url': 'https://example.org/bn', 'text': 'Prior acquired source'},
+            ])
+            with self.assertRaisesRegex(ValueError, 'No extracted Indian government books'):
+                p.build(cfg)
+
+    def test_prepare_review_keeps_unreviewed_text_out_of_training_splits(self):
+        from unittest.mock import patch
+
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            document = {
+                'document_id': 'AEC_HI_REVIEW', 'language': 'hi',
+                'source_url': 'https://example.org/book', 'title': 'Review fixture',
+                'license': 'CC-BY', 'permission_status': 'approved',
+                'permission_reference': 'fixture', 'language_origin': 'native_verified',
+                'document_family_id': 'review_family',
+                'text': 'fixture words for a candidate document awaiting review',
+            }
+            p.common.write_jsonl(root / 'documents.jsonl', [document])
+            cfg = {'work_dir': directory, 'report_dir': directory, 'phase6_contexts': directory,
+                   'languages': ['hi'], 'min_document_words': 1}
+            with patch.object(p, 'audit', return_value=[]):
+                result = p.build(cfg, prepare_review=True)
+                with self.assertRaisesRegex(ValueError, 'No accepted documents'):
+                    p.build(cfg)
+            self.assertEqual(result['candidate_documents'], 1)
+            self.assertEqual(result['languages_short_of_two_families'], ['hi'])
+            saved = p.read_lines(root / 'pre_review/candidates.jsonl')
+            self.assertEqual(saved[0]['quality_status'], 'pending')
+            self.assertEqual(saved[0]['clean_text_sha256'], p.digest(document['text']))
+            self.assertFalse((root / 'releases').exists())
+
     def test_no_permission_means_no_download(self):
         with TemporaryDirectory() as d:
             sources = Path(d) / 'sources.csv'

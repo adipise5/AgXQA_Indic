@@ -1,1 +1,13 @@
 document_id,clean_text_sha256,quality_status,reviewer,notes
+AEC_BN_VB_COOP_001,ee12c32266d234459643a20c66072b97e351ab12debb621c4d4aa4686442e2d6,accepted,adipise5,Human text review accepted by repository owner in chat on 2026-11-25.
+AEC_BN_VB_PALLI_001,dd3f6499b0b3a61a0dfbdbb2eb6164b33dd47db7030bbbf9440fdcdb5905d9c0,accepted,adipise5,Human text review accepted by repository owner in chat on 2026-11-25.
+AEC_HI_MGAHV_JHARKHAND_KISAN_001,a00d48fb47b7377eaaa230faa0525e7e318ff1b6a2f08a21fe4382ef754ac1a3,accepted,adipise5,Human text review accepted by repository owner in chat on 2026-11-25.
+AEC_HI_MGAHV_KHET_MAZDOOR_001,f38ec2c0c0ae4dd7effb5827d706fa6926d6b38d242fffe9c93181355dad8547,accepted,adipise5,Human text review accepted by repository owner in chat on 2026-11-25.
+AEC_MR_PHULE_ASUD_001,ddd95ee3ccd9e62f233f5171f0aea40478163ed7fcd3e9c99dc499ee05893992,accepted,adipise5,Human text review accepted by repository owner in chat on 2026-11-25.
+AEC_MR_PHULE_ISHARA_001,9e74b47553a734994b462c2c641844e5c60bea440b6e503f3839740422b5dafd,accepted,adipise5,Human text review accepted by repository owner in chat on 2026-11-25.
+AEC_TA_TU_001,44b90cd350c715dcff86e3a8f9a15868ef56b4eabcb06daf96a81463b6c55f70,accepted,adipise5,Human text review accepted by repository owner in chat on 2026-11-25.
+AEC_TA_TU_SOC_001,435643b8781a249beb45034b210e6d846d4ae58a03c72f93b1d1c1aedb807075,accepted,adipise5,Human text review accepted by repository owner in chat on 2026-11-25.
+AEC_TA_TU_RICE_001,b6d437b0d85f3f7ee4bf5e122d26b82691d7ee7fb9af92aa0338f592cc21c884,accepted,adipise5,Repository owner approved the exact extract in chat on 2026-11-25 after disclosure of the implausible temperature in the printed source.
+AEC_TA_TU_SOILS_001,786a9a2b66a4f09cfb52fa1b82fc22a81b61db90004d301bed5203cc2e17b12d,accepted,adipise5,Repository owner approved the exact extract in chat on 2026-11-25.
+AEC_MR_PHULE_ASUD_WATERSHED_001,91c779c6f37db48bdb3ae492b79286d86e35d83948ac4deb3e3a184aa38d85ea,accepted,adipise5,Repository owner approved the exact extract in chat on 2026-11-25.
+AEC_TA_TU_SOC_AGRI_001,e7f2bc54fee8f73961545c5fbf494a5ee7a9d60d656ae2ad1e2a66db3fdd1871,accepted,adipise5,Repository owner approved the exact extract in chat on 2026-11-25.
