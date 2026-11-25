@@ -1,0 +1,40 @@
+{
+  "status": "local_mlm_input_prepared",
+  "phase4_version": "3f3481d6662a2b69",
+  "phase6_baseline": "e8754e957bcb8da6ddd9fd916e7820d8a334ecb8",
+  "tokenizer": {
+    "id": "FacebookAI/xlm-roberta-base",
+    "revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+    "sha256": "a898ea75433890f6610f4e470b8ebeb0c21dce5c8dd61f892eb09eb5919d2e2c",
+    "library_version": "0.23.3"
+  },
+  "max_sequence_length": 256,
+  "splits": {
+    "train": {
+      "documents": 6,
+      "sequences": 39,
+      "content_tokens": 9120,
+      "languages": [
+        "bn",
+        "hi",
+        "mr",
+        "ta"
+      ],
+      "source_sha256": "6919cdb1f1f96bb4a778f53eea24a01089a4fc0e95115537d7717eafbbc319ab",
+      "sha256": "dd0526148b4202347505cc51556098211e0cb49e3e041501ea832c4675b06a0d"
+    },
+    "validation": {
+      "documents": 6,
+      "sequences": 77,
+      "content_tokens": 18911,
+      "languages": [
+        "bn",
+        "hi",
+        "mr",
+        "ta"
+      ],
+      "source_sha256": "32ff009340e187e9828c1a24efff95160a68b200ba9126ace6b21d808972a49a",
+      "sha256": "c535e6da0914dafc79554260a6d441af897966413e50983d8dc7a35520eaa04a"
+    }
+  }
+}

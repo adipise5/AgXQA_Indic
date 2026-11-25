@@ -1,6 +1,6 @@
 {
   "phase": 5,
-  "status": "pending",
+  "status": "mlm_pilot_measured_overlap_audited_matched_qa_pending",
   "seed": 42,
   "languages": [
     "en",
@@ -11,9 +11,9 @@
   ],
   "inputs": [],
   "output_dir": "outputs/phase_05_domain_adaptation",
-  "model_id": null,
-  "model_revision": null,
+  "model_id": "FacebookAI/xlm-roberta-base",
+  "model_revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
   "dataset_revision": "gemini-v2",
   "dataset_contract": "phase_02_multilingual_benchmark/configs/qa_release.json",
-  "notes": "Adapted QA uses the Phase 3 evaluation set. Corpus overlap auditing and model execution are pending."
+  "notes": "The reviewed Indic-AEC local MLM pilot and literal overlap audit are measured. Matched adapted QA is pending."
 }

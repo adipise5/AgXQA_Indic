@@ -1,0 +1,61 @@
+{
+  "status": "local_pretrained_mlm_pilot",
+  "model_id": "FacebookAI/xlm-roberta-base",
+  "model_revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+  "model_sha256": "6fd4797bc397c3b8b55d6bb5740366b57e6a3ce91c04c77f22aafc0c128e6feb",
+  "input_manifest_sha256": "6b1f0de12b57e8ec57b1d3de5a789fc486935be745dc7a17491b6662c8f40cf7",
+  "phase4_version": "3f3481d6662a2b69",
+  "phase6_baseline": "e8754e957bcb8da6ddd9fd916e7820d8a334ecb8",
+  "transformers": "5.2.0",
+  "device": "cpu",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "torch": "2.10.0",
+  "seed": 42,
+  "validation_mask_seed": 43,
+  "epochs": 1,
+  "optimizer": "AdamW",
+  "learning_rate": 2e-05,
+  "batch_size": 1,
+  "mask_probability": 0.15,
+  "trained_parameters": 7087872,
+  "parameter_names": [
+    "roberta.encoder.layer.11.attention.self.query.weight",
+    "roberta.encoder.layer.11.attention.self.query.bias",
+    "roberta.encoder.layer.11.attention.self.key.weight",
+    "roberta.encoder.layer.11.attention.self.key.bias",
+    "roberta.encoder.layer.11.attention.self.value.weight",
+    "roberta.encoder.layer.11.attention.self.value.bias",
+    "roberta.encoder.layer.11.attention.output.dense.weight",
+    "roberta.encoder.layer.11.attention.output.dense.bias",
+    "roberta.encoder.layer.11.attention.output.LayerNorm.weight",
+    "roberta.encoder.layer.11.attention.output.LayerNorm.bias",
+    "roberta.encoder.layer.11.intermediate.dense.weight",
+    "roberta.encoder.layer.11.intermediate.dense.bias",
+    "roberta.encoder.layer.11.output.dense.weight",
+    "roberta.encoder.layer.11.output.dense.bias",
+    "roberta.encoder.layer.11.output.LayerNorm.weight",
+    "roberta.encoder.layer.11.output.LayerNorm.bias"
+  ],
+  "baseline_validation": {
+    "loss": 1.7456222259852747,
+    "masked_tokens": 2948
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train": {
+        "loss": 2.0755259219032585,
+        "masked_tokens": 1378
+      },
+      "validation": {
+        "loss": 1.7385473206052948,
+        "masked_tokens": 2948
+      }
+    }
+  ],
+  "reloaded_validation": {
+    "loss": 1.7385473206052948,
+    "masked_tokens": 2948
+  },
+  "checkpoint_sha256": "1e7122873ee756397f1dc1dbcf6a4e788a429967124c6fc7d9af12ff53e7cd76"
+}
