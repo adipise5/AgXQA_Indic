@@ -13,6 +13,7 @@
   "output_dir": "outputs/phase_03_multilingual_finetuning",
   "model_id": null,
   "model_revision": null,
-  "dataset_revision": null,
-  "notes": "Starter only. Resolve inputs and hyperparameters before execution."
+  "dataset_revision": "gemini-v2",
+  "dataset_contract": "phase_02_multilingual_benchmark/configs/qa_release.json",
+  "notes": "Phase 3A and 3B share the pinned evaluation set. Review and model execution are pending."
 }

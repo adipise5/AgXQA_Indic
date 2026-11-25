@@ -13,6 +13,7 @@
   "output_dir": "outputs/phase_05_domain_adaptation",
   "model_id": null,
   "model_revision": null,
-  "dataset_revision": null,
-  "notes": "Starter only. Resolve inputs and hyperparameters before execution."
+  "dataset_revision": "gemini-v2",
+  "dataset_contract": "phase_02_multilingual_benchmark/configs/qa_release.json",
+  "notes": "Adapted QA uses the Phase 3 evaluation set. Corpus overlap auditing and model execution are pending."
 }

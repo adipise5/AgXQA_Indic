@@ -1,0 +1,19 @@
+{
+  "dataset_version": "gemini-v2",
+  "bundle_dir": "phase_02_multilingual_benchmark/outputs/gemini-v2",
+  "bundle_manifest_sha256": "b6f3401c4f79edbcd7db60c5d8c878adac622e11f510c971cbf9a51a5e4e838c",
+  "primary_variant": "span_checked",
+  "published_evaluation_variant": "final",
+  "variant_split_sha256": {
+    "span_checked": {
+      "train": "b4064eb9e81ae5b0c9ed446ef771e5f81f8652b52c269007f4090ffcc6b06714",
+      "validation": "9713edf65b962788855ebcdfc2567fb849c033cb9cf4081076005c49d5562334",
+      "test": "3929e4c00f4746b431b4a4574660df70630311f0ecb62f0029a3a9031bae539e"
+    },
+    "document_disjoint": {
+      "train": "3e1bb0c3b811966761e71958db0cfbd69ee8c9333b936e79e39d7c306731a795",
+      "validation": "dd0bebccb65e420c957e8ee5255b82dd8ba7641714a93b9d25f6a29cb79c7989",
+      "test": "55b099b0737f7d88ea291d23ba56cba926f71e57f6807bdd9ed749c159fae016"
+    }
+  }
+}

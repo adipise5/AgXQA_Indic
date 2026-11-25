@@ -10,7 +10,7 @@ Source: [`msu-ceco/agxqa_v1`](https://huggingface.co/datasets/msu-ceco/agxqa_v1)
 | Verified export IDs shared across available languages | 1,304 | 347 | 327 |
 | Span-checked five-language groups | 1,304 | 347 | 322 |
 
-Within each prepared split, all five languages contain the same retained IDs. The English validation rows come from the official source. The provisional test omits the five groups pending source adjudication. The importer preserves the original files and records Unicode normalization, span corrections, and the retained IDs in a versioned bundle.
+Within each prepared split, all five languages contain the same retained IDs. Every English row comes from the pinned source. The provisional test holds out five groups pending source adjudication. The `gemini-v2` bundle preserves the original exports and records Unicode normalization, span corrections, and the retained and excluded IDs.
 
 Human review target: all test questions; seeded 5% train and 10% validation samples; all flagged candidates; separate English source adjudication. Actual coverage is currently zero. Assigned reviewers: Aditya Saxena (Hindi), Aditya Pise (Marathi), Saunak (Bengali), Dhiraj (Tamil). Ratings, identity, decisions and timestamps must come from actual reviewers. No inter-annotator agreement is claimed.
 

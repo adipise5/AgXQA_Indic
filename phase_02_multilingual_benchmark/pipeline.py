@@ -87,13 +87,18 @@ def resolve_path(value):
     return path if path.is_absolute() else REPO / path
 
 
-def document_identity(row):
-    reference = row.get("references", "")
+def reference_urls(reference):
     urls = sorted(set(re.findall(r"https?://[^\s<>]+", reference)))
     normalized = []
     for url in urls:
         parts = urlsplit(url.rstrip(".,);]"))
         normalized.append(urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path, parts.query, "")))
+    return normalized
+
+
+def document_identity(row):
+    reference = row.get("references", "")
+    normalized = reference_urls(reference)
     if normalized:
         return "reference-url:" + digest(normalized), "reference_url_or_url_set"
     if reference.strip() and reference.strip().lower() not in ("none", "n/a", "unknown"):

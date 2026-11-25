@@ -1,0 +1,156 @@
+{
+  "dataset_version": "gemini-v2",
+  "input_sha256": {
+    "fixed_tval_flat.jsonl": "4b3bd33c6bfa748e4805eb7bee8a3b6f0960bb0d8d1431b7ee0a3547f288025f",
+    "test_flat_multilingual.jsonl": "abb653fe3108be065ca83b9240b9cd9f01ba244bd57912bb005c751ccae8ccfb",
+    "train_flat_multilingual_clean.jsonl": "9b820966b462c6d52a18bd69792f702f02c6dd2639241bb29dd8e11740ae35fb"
+  },
+  "validation_raw_sha256": "fb5aaef3db95b4aaa6a0988ef1f1582603a9fb85b961abb777e62e2d2a3e85fb",
+  "official_export_exclusions_by_split": {
+    "train": 199,
+    "validation": 6,
+    "test": 3
+  },
+  "incomplete_validation_rows": 11,
+  "pending_english_test_ids": [
+    "1170477",
+    "1174212",
+    "1181597",
+    "1183012",
+    "481"
+  ],
+  "span_checked_group_counts": {
+    "train": 1304,
+    "validation": 347,
+    "test": 322
+  },
+  "raw_export_test_extractability": {
+    "bn": {
+      "rows": 327,
+      "multiple_reference_rows": 0,
+      "all_references_found_raw": 285,
+      "all_references_found_nfc": 327,
+      "all_offsets_valid": 206,
+      "english_source_references": 433,
+      "exported_references": 327,
+      "rows_with_fewer_references_than_source": 58,
+      "reference_count_equal_to_source": 269,
+      "reference_count_shortfall": 106
+    },
+    "en": {
+      "rows": 327,
+      "multiple_reference_rows": 58,
+      "all_references_found_raw": 322,
+      "all_references_found_nfc": 322,
+      "all_offsets_valid": 322,
+      "english_source_references": 433,
+      "exported_references": 433,
+      "rows_with_fewer_references_than_source": 0,
+      "reference_count_equal_to_source": 327,
+      "reference_count_shortfall": 0
+    },
+    "hi": {
+      "rows": 327,
+      "multiple_reference_rows": 0,
+      "all_references_found_raw": 326,
+      "all_references_found_nfc": 327,
+      "all_offsets_valid": 324,
+      "english_source_references": 433,
+      "exported_references": 327,
+      "rows_with_fewer_references_than_source": 58,
+      "reference_count_equal_to_source": 269,
+      "reference_count_shortfall": 106
+    },
+    "mr": {
+      "rows": 327,
+      "multiple_reference_rows": 0,
+      "all_references_found_raw": 326,
+      "all_references_found_nfc": 326,
+      "all_offsets_valid": 325,
+      "english_source_references": 433,
+      "exported_references": 327,
+      "rows_with_fewer_references_than_source": 58,
+      "reference_count_equal_to_source": 269,
+      "reference_count_shortfall": 106
+    },
+    "ta": {
+      "rows": 327,
+      "multiple_reference_rows": 0,
+      "all_references_found_raw": 327,
+      "all_references_found_nfc": 327,
+      "all_offsets_valid": 326,
+      "english_source_references": 433,
+      "exported_references": 327,
+      "rows_with_fewer_references_than_source": 58,
+      "reference_count_equal_to_source": 269,
+      "reference_count_shortfall": 106
+    }
+  },
+  "official_english_train_test_overlap": {
+    "en": {
+      "test_rows": 330,
+      "exact_train_context_rows": 309,
+      "shared_document_rows": 326
+    }
+  },
+  "retained_train_test_overlap": {
+    "bn": {
+      "test_rows": 327,
+      "exact_train_context_rows": 0,
+      "shared_document_rows": 323
+    },
+    "en": {
+      "test_rows": 327,
+      "exact_train_context_rows": 300,
+      "shared_document_rows": 323
+    },
+    "hi": {
+      "test_rows": 327,
+      "exact_train_context_rows": 1,
+      "shared_document_rows": 323
+    },
+    "mr": {
+      "test_rows": 327,
+      "exact_train_context_rows": 0,
+      "shared_document_rows": 323
+    },
+    "ta": {
+      "test_rows": 327,
+      "exact_train_context_rows": 0,
+      "shared_document_rows": 323
+    }
+  },
+  "span_checked_train_test_overlap": {
+    "bn": {
+      "test_rows": 322,
+      "exact_train_context_rows": 0,
+      "shared_document_rows": 318
+    },
+    "en": {
+      "test_rows": 322,
+      "exact_train_context_rows": 295,
+      "shared_document_rows": 318
+    },
+    "hi": {
+      "test_rows": 322,
+      "exact_train_context_rows": 1,
+      "shared_document_rows": 318
+    },
+    "mr": {
+      "test_rows": 322,
+      "exact_train_context_rows": 0,
+      "shared_document_rows": 318
+    },
+    "ta": {
+      "test_rows": 322,
+      "exact_train_context_rows": 0,
+      "shared_document_rows": 318
+    }
+  },
+  "document_disjoint_group_counts": {
+    "train": 306,
+    "validation": 36,
+    "test": 322
+  },
+  "human_reviewed_records": 0
+}
