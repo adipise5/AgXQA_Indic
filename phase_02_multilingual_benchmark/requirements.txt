@@ -1,0 +1,4 @@
+# Optional Phase 2 dependencies for language ID, YAML configuration and plots.
+langid==1.1.6
+PyYAML==6.0.3
+matplotlib==3.10.8

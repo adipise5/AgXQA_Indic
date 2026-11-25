@@ -1,0 +1,10 @@
+.venv/
+.cache/
+data/
+outputs/
+__pycache__/
+*.pyc
+*.safetensors
+*.bin
+*.pt
+*.sqlite

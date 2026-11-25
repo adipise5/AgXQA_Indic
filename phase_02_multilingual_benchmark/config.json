@@ -1,7 +1,11 @@
 {
   "phase": 2,
-  "status": "pending",
+  "status": "gemini_span_checked_subset_prepared_human_review_pending",
   "seed": 42,
+  "owner": "Saunak",
+  "dataset": "msu-ceco/agxqa_v1",
+  "dataset_revision": "9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c",
+  "source_dir": "phase_02_multilingual_benchmark/data/english",
   "languages": [
     "en",
     "hi",
@@ -9,10 +13,16 @@
     "bn",
     "ta"
   ],
-  "inputs": [],
-  "output_dir": "outputs/phase_02_multilingual_benchmark",
-  "model_id": null,
-  "model_revision": null,
-  "dataset_revision": null,
-  "notes": "Starter only. Resolve inputs and hyperparameters before execution."
+  "review_policy": {
+    "train_fraction": 0.05,
+    "validation_fraction": 0.1,
+    "test_fraction": 1.0,
+    "fractions_origin": "proposed implementation choices; user requested sampled train/validation and full test review",
+    "require_resolution_of_all_automated_flags": true
+  },
+  "raw_output_dir": "data/agxqa_indic/raw_translations",
+  "candidate_output_dir": "phase_02_multilingual_benchmark/outputs/candidates",
+  "review_dir": "phase_02_multilingual_benchmark/human_review",
+  "final_output_dir": "data/agxqa_indic/final",
+  "human_reviewed_dir": "data/agxqa_indic/human_reviewed"
 }

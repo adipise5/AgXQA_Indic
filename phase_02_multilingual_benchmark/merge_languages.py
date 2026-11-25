@@ -1,11 +1,8 @@
-"""Implementation starter for phase 2: merge_languages. See README.md."""
-import argparse
+"""Compatibility entry point for the reviewed Phase 2 CLI."""
+import sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from phase_02_multilingual_benchmark.cli import run
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--config', default='phase_02_multilingual_benchmark/config.json')
-    parser.parse_args()
-    parser.exit(2, 'Pending implementation: merge_languages. Follow the phase README and record real artifacts.\n')
-
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    run("merge_languages")

@@ -1,0 +1,68 @@
+{
+  "dataset": "msu-ceco/agxqa_v1",
+  "revision": "9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c",
+  "counts": {
+    "train": 1503,
+    "validation": 353,
+    "test": 330
+  },
+  "total": 2186,
+  "file_sha256": {
+    "train": "72da2aaa34d90ce32f28c6d461f258dc9ec712f0af8ff3b5041ceb1528817d85",
+    "validation": "386181aa34e6b71faa3474868008cc7b8bed7143da0218f22e546cdfc4ebc583",
+    "test": "505fa18e7d7e7b6f86f090ae8c1172d5fd29ba5f6845a82107eb49df59c32a8b"
+  },
+  "unique_contexts": 391,
+  "unique_questions": 2185,
+  "unique_answer_strings": 2045,
+  "invalid_source_answer_offsets": [
+    {
+      "id": "1170477",
+      "answer_index": 1
+    },
+    {
+      "id": "1174212",
+      "answer_index": 1
+    },
+    {
+      "id": "1183012",
+      "answer_index": 1
+    },
+    {
+      "id": "1183012",
+      "answer_index": 2
+    },
+    {
+      "id": "1183012",
+      "answer_index": 3
+    },
+    {
+      "id": "1181597",
+      "answer_index": 1
+    },
+    {
+      "id": "1181597",
+      "answer_index": 2
+    },
+    {
+      "id": "1181597",
+      "answer_index": 3
+    },
+    {
+      "id": "481",
+      "answer_index": 0
+    }
+  ],
+  "raw_source_modified": false,
+  "document_id_methods": {
+    "reference_url_or_url_set": 2166,
+    "reference_text_surrogate": 20
+  },
+  "leakage": {
+    "cross_split_original_ids": [],
+    "cross_split_reference_document_groups": 39,
+    "cross_split_exact_context_groups": 207,
+    "document_disjoint": false,
+    "note": "Official splits are preserved. Existing document/context overlap is reported, never hidden by split-prefixed document IDs."
+  }
+}

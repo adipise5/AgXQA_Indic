@@ -12,7 +12,7 @@
   },
   "phases": {
     "1": "partial_agroberta_measured_xlmr_pending",
-    "2": "pending_review",
+    "2": "gemini_span_checked_subset_prepared_human_review_pending",
     "3": "pending",
     "4": "pending",
     "5": "pending",

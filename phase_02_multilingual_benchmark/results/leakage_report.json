@@ -1,0 +1,12 @@
+{
+  "official_source": {
+    "cross_split_original_ids": [],
+    "cross_split_reference_document_groups": 39,
+    "cross_split_exact_context_groups": 207,
+    "document_disjoint": false,
+    "note": "Official splits are preserved. Existing document/context overlap is reported, never hidden by split-prefixed document IDs."
+  },
+  "candidate_id_split_mismatches": [],
+  "official_splits_reshuffled": false,
+  "note": "Existing official source-document overlap is retained and disclosed."
+}

@@ -7,6 +7,8 @@ __pycache__/
 outputs/
 checkpoints/
 *.safetensors
+*.onnx
+*.onnx.data
 *.pt
 .DS_Store
 
