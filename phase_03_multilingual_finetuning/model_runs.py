@@ -184,7 +184,8 @@ def verify_resume_inputs(output, checkpoint, settings, training, identity, seed)
             "previous_device": launch["device"], "previous_training_configuration": launch["training_configuration_override"]}
 
 
-def train_qa(args, settings, splits, provenance, experiment, training_languages, resume=None):
+def train_qa(args, settings, splits, provenance, experiment, training_languages, resume=None, *,
+             initialize_encoder=None):
     import torch
     from transformers import DataCollatorWithPadding, Trainer, TrainingArguments, set_seed
 
@@ -204,6 +205,11 @@ def train_qa(args, settings, splits, provenance, experiment, training_languages,
     mps_limit = configure_mps_memory(torch, device, args.mps_memory_fraction)
     set_seed(args.seed)
     model, tokenizer = load_model_and_tokenizer(settings["base_model"], settings["base_revision"], args.offline, trained=False)
+    initialization = None
+    if initialize_encoder is not None:
+        if resume:
+            raise ValueError("Adapted initialization is only supported for a fresh run")
+        initialization = initialize_encoder(model)
     pilot = args.pilot_steps is not None
     prepared = {split: prepare_features(splits[split], tokenizer, token_settings, labels=True)
                 for split in (("train",) if pilot else ("train", "validation"))}
@@ -288,6 +294,8 @@ def train_qa(args, settings, splits, provenance, experiment, training_languages,
         "training_data": provenance, "training_configuration": settings_training, "tokenization": token_settings,
         "computational_statistics": training_metrics, "checkpoint_file_sha256": file_manifest(checkpoint),
     }
+    if initialization is not None:
+        record["adapted_initialization"] = initialization
     write_json(checkpoint / PROVENANCE, record)
 
 

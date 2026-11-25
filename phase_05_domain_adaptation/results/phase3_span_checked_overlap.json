@@ -1,0 +1,122 @@
+{
+  "status": "no_literal_overlap_flags",
+  "timestamp_utc": "2026-11-25T15:28:44.531446+00:00",
+  "repository_contract_commit": "c57f0a83d01dc3a7a70167570ecb6e236eed4bc1",
+  "source_revision": "9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c",
+  "source_sha256": {
+    "train": "72da2aaa34d90ce32f28c6d461f258dc9ec712f0af8ff3b5041ceb1528817d85",
+    "validation": "386181aa34e6b71faa3474868008cc7b8bed7143da0218f22e546cdfc4ebc583",
+    "test": "505fa18e7d7e7b6f86f090ae8c1172d5fd29ba5f6845a82107eb49df59c32a8b"
+  },
+  "translated_export_sha256": {
+    "train_flat_multilingual_clean.jsonl": "9b820966b462c6d52a18bd69792f702f02c6dd2639241bb29dd8e11740ae35fb",
+    "fixed_tval_flat.jsonl": "4b3bd33c6bfa748e4805eb7bee8a3b6f0960bb0d8d1431b7ee0a3547f288025f",
+    "test_flat_multilingual.jsonl": "abb653fe3108be065ca83b9240b9cd9f01ba244bd57912bb005c751ccae8ccfb"
+  },
+  "supplemental_alignment_log_sha256": "b53dbad3dd05b4fb0861f5908a1debe45e9753c80a427fa1f913909c4272b3b9",
+  "dataset": {
+    "variant": "span_checked",
+    "reviewed_release": false,
+    "splits": {
+      "train": {
+        "sha256": "b4064eb9e81ae5b0c9ed446ef771e5f81f8652b52c269007f4090ffcc6b06714",
+        "matches_phase3": true,
+        "rows": 6520,
+        "groups": 1304
+      },
+      "validation": {
+        "sha256": "9713edf65b962788855ebcdfc2567fb849c033cb9cf4081076005c49d5562334",
+        "matches_phase3": true,
+        "rows": 1735,
+        "groups": 347
+      },
+      "test": {
+        "sha256": "3929e4c00f4746b431b4a4574660df70630311f0ecb62f0029a3a9031bae539e",
+        "matches_phase3": true,
+        "rows": 1610,
+        "groups": 322
+      }
+    },
+    "original_bundle_manifest_available": false,
+    "pending_test_group_ids": [
+      "1170477",
+      "1174212",
+      "1181597",
+      "1183012",
+      "481"
+    ]
+  },
+  "corpus": {
+    "version": "3f3481d6662a2b69",
+    "train_sha256": "6919cdb1f1f96bb4a778f53eea24a01089a4fc0e95115537d7717eafbbc319ab",
+    "training_excerpts": 6,
+    "input_manifest_sha256": "6b1f0de12b57e8ec57b1d3de5a789fc486935be745dc7a17491b6662c8f40cf7",
+    "adapted_layer_sha256": "1e7122873ee756397f1dc1dbcf6a4e788a429967124c6fc7d9af12ff53e7cd76"
+  },
+  "phase6_reconstruction": {
+    "phase6_documents": 70,
+    "raw_byte_matches": 66,
+    "changed_raw_snapshots": [
+      "BN_DOC_018",
+      "HI_DOC_003",
+      "MR_DOC_018",
+      "TA_DOC_005"
+    ],
+    "verified_qa_records": 2351
+  },
+  "phase6_reserved_source_hits": [],
+  "literal_overlap": {
+    "phase2": {
+      "reference_rows": 3370,
+      "word_5gram": {
+        "references_compared": 3370,
+        "short_reference_ids": [],
+        "findings": [],
+        "thresholds": {
+          "0.3": 0,
+          "0.4": 0,
+          "0.5": 0
+        }
+      },
+      "character_10gram": {
+        "references_compared": 3370,
+        "short_reference_ids": [],
+        "findings": [],
+        "thresholds": {
+          "0.3": 0,
+          "0.4": 0,
+          "0.5": 0
+        }
+      }
+    },
+    "phase6": {
+      "reference_rows": 1960,
+      "word_5gram": {
+        "references_compared": 1960,
+        "short_reference_ids": [],
+        "findings": [],
+        "thresholds": {
+          "0.3": 0,
+          "0.4": 0,
+          "0.5": 0
+        }
+      },
+      "character_10gram": {
+        "references_compared": 1960,
+        "short_reference_ids": [],
+        "findings": [],
+        "thresholds": {
+          "0.3": 0,
+          "0.4": 0,
+          "0.5": 0
+        }
+      }
+    }
+  },
+  "notes": [
+    "Phase 2 includes all retained validation and test candidate passages, including pending test groups.",
+    "Exact Phase 3 train, validation, and test bytes were reconstructed from the original English source and supplied exports.",
+    "The source bundle manifest and original validation-response evidence were not available.",
+    "No model QA training or evaluation was run during this audit. Literal checks do not establish semantic disjointness."
+  ]
+}
