@@ -71,6 +71,66 @@
           "indic_macro": 64.96
         }
       }
+    },
+    "phase_7": {
+      "results": "phase_07_comparative_evaluation/results/comparison_tables.md",
+      "manifest": "phase_07_comparative_evaluation/results/phase7_manifest.json",
+      "run": "native-20261125T202902Z",
+      "selected_system": "phase_3b",
+      "seed": 42,
+      "native_dataset_sha256": "7ff7cc154f67ae1b463ce130ed760e583651f440f4cd155d5a945ca2c3b56336",
+      "native_records": 2351,
+      "native_human_reviewed_records": 0,
+      "native_f1": {
+        "phase_3a": {
+          "hi": 61.42,
+          "mr": 56.52,
+          "bn": 62.64,
+          "ta": 56.43,
+          "indic_macro": 59.25
+        },
+        "phase_3b": {
+          "hi": 74.17,
+          "mr": 72.8,
+          "bn": 78.21,
+          "ta": 72.7,
+          "indic_macro": 74.47
+        }
+      },
+      "native_3b_minus_3a_indic_macro_f1": {
+        "delta": 15.22,
+        "ci95": [
+          13.48,
+          17.34
+        ],
+        "resampling": "source documents within language"
+      },
+      "native_adaptation_diagnostic": {
+        "declared": "include_before_inference",
+        "alpha_1_minus_alpha_0_indic_macro_f1": {
+          "delta": -2.71,
+          "ci95": [
+            -3.84,
+            -1.55
+          ]
+        },
+        "alpha_0_rerun_minus_recorded_3b_indic_macro_f1": {
+          "delta": 0.09,
+          "ci95": [
+            -0.89,
+            1.04
+          ]
+        }
+      },
+      "phase_5": "sweep selected alpha 0; no qualifying adaptation",
+      "status": "evaluation_complete_review_pending",
+      "deliverables": "phase_07_comparative_evaluation/DELIVERABLES.md",
+      "native_review_coverage": "0 of 2,351 questions human-reviewed (provisional)",
+      "error_sample_review": "0 of 289 sampled cases reviewed; automated categories provisional",
+      "pending_reviewer_decisions": [
+        "human review of the 2,351 frozen Native questions",
+        "reviewer categories in native_error_sample.private.csv"
+      ]
     }
   },
   "phases": {
@@ -80,6 +140,6 @@
     "4": "reviewed_pilot_release_submission_evidence_verified",
     "5": "complete_seed_42_sweep_selected_alpha_0_phase_3b_retained",
     "6": "partial_qa_generated_human_review_pending",
-    "7": "pending"
+    "7": "evaluation_complete_seed_42_phase_3b_selected_native_review_pending"
   }
 }

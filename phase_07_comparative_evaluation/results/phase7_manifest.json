@@ -1,0 +1,357 @@
+{
+  "selected_model": "phase_3b",
+  "run_id": "native-20261125T202902Z",
+  "revisions": {
+    "run": {
+      "base_commit": "f391a373aea0bdddd8442d9a7f0c9ab25c082f20",
+      "tree": "6ef439163eba07131db00d98d8bee06f99ad5741",
+      "branch": "research/phase7-native-evaluation",
+      "uncommitted_changes": true,
+      "source": ".source_commit",
+      "file_git_blob": {
+        "phase_07_comparative_evaluation/evaluate_frozen.py": "5aff6ba9719160128f93ac442905c8002a5706b9",
+        "phase_07_comparative_evaluation/statistical_analysis.py": "7a0ba1592532c89f5cc682a7e22f00214cc13df4",
+        "phase_07_comparative_evaluation/generate_plots.py": "726c444a41f37d217298090dad3ad3b0561956c2",
+        "phase_07_comparative_evaluation/hpc/run_phase7.sh": "7384c1107a517c132b1449d25abd0bc5e27cb415",
+        "phase_07_comparative_evaluation/configs/checkpoints.json": "9e4fab4eb2d8b2fdada899ff83e2ef367eb355da"
+      }
+    },
+    "report_generation": {
+      "base_commit": "f391a373aea0bdddd8442d9a7f0c9ab25c082f20",
+      "branch": "research/phase7-native-evaluation",
+      "uncommitted_changes": true,
+      "file_git_blob": {
+        "phase_07_comparative_evaluation/evaluate_frozen.py": "5aff6ba9719160128f93ac442905c8002a5706b9",
+        "phase_07_comparative_evaluation/statistical_analysis.py": "8d0f1be3ff953eacd091e9c6627dfd9e3cd8d09b",
+        "phase_07_comparative_evaluation/generate_plots.py": "cb118eb3cc7bb4ce82c67105bc3c60a29e392811",
+        "phase_07_comparative_evaluation/hpc/run_phase7.sh": "ced62d3b45e2d101e3800d1d10166239fc4cfa1e",
+        "phase_07_comparative_evaluation/configs/checkpoints.json": "9e4fab4eb2d8b2fdada899ff83e2ef367eb355da"
+      },
+      "changed_since_run": [
+        "phase_07_comparative_evaluation/generate_plots.py",
+        "phase_07_comparative_evaluation/hpc/run_phase7.sh",
+        "phase_07_comparative_evaluation/statistical_analysis.py"
+      ]
+    }
+  },
+  "native_dataset": {
+    "frozen_filename": "phase6_test.shared.jsonl",
+    "sha256": "7ff7cc154f67ae1b463ce130ed760e583651f440f4cd155d5a945ca2c3b56336",
+    "records": 2351,
+    "languages": {
+      "hi": 1107,
+      "mr": 581,
+      "bn": 420,
+      "ta": 243
+    },
+    "source_documents": 70,
+    "passages": 826,
+    "human_reviewed_records": 0,
+    "manifest_sha256": "9b58b5d57b80d655652143c580aeb1a5e43a4fa79373b3125a65c42dafcaa73b",
+    "overlap_audit_sha256": "1e35f6ffcb2f1b7a003265af29dc0039a247bd694e1c6a1fc5212eb6830c9e19"
+  },
+  "decoding": {
+    "max_seq_length": 384,
+    "doc_stride": 128,
+    "max_answer_length": 64,
+    "n_best_size": 20
+  },
+  "scorers": {
+    "english": "squad_v1_english",
+    "translated_and_native": "agxqa-indic-v1 (EM and token-overlap F1, 0-100)"
+  },
+  "bootstrap": {
+    "iterations": 10000,
+    "confidence": 0.95,
+    "seed": 42,
+    "native_unit": "source documents within each language, identical draws for both models",
+    "translated_unit": "source documents"
+  },
+  "review_coverage": {
+    "native_questions_human_reviewed": 0,
+    "native_questions": 2351,
+    "error_sample": {
+      "sampled_rows": 289,
+      "reviewed_rows": 0,
+      "status": "automated flags only; not reviewer-confirmed"
+    }
+  },
+  "models": {
+    "phase_3a": {
+      "role": "primary",
+      "label": "English-only XLM-R (Phase 3A)",
+      "checkpoint": {
+        "directory": "outputs/phase_03_multilingual_finetuning/english-fallback-cuda-span-checked-42/best_checkpoint",
+        "selected_epoch_checkpoint": "checkpoint-500",
+        "model_sha256": "3d350d925798c5f67c27ee4f07a46f1149549b583cfcd5ac885fcba74ea1deea",
+        "file_sha256": {
+          "config.json": "4f728f0636914d16d9566c2fb257f321cfa544e6d8d3c81e63f7856adacc45e3",
+          "model.safetensors": "3d350d925798c5f67c27ee4f07a46f1149549b583cfcd5ac885fcba74ea1deea",
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f",
+          "tokenizer.json": "8ed2321636c1d1ce7e5a8fbbe853a0d5665225a48338f5927f4ec3da30b457ed",
+          "tokenizer_config.json": "ccf223ba3d5b3cc7fa6c3bf451f3bb40557a5c92b0aa33f63d17802ff1a96fd9",
+          "training_args.bin": "d5f1d352a041248e38bee10927276afdeb45fc302ffe05b8f9b8ffb86a50d77a"
+        },
+        "provenance_sha256": "eda23313643c40bfa1b6d798af92717dfa43dfc4598908bc559f9fb65fceb2b2",
+        "seed": 42,
+        "experiment": "phase_3a"
+      },
+      "batch_size": 8,
+      "device": "cuda",
+      "source": {
+        "base_commit": "f391a373aea0bdddd8442d9a7f0c9ab25c082f20",
+        "tree": "6ef439163eba07131db00d98d8bee06f99ad5741",
+        "branch": "research/phase7-native-evaluation",
+        "uncommitted_changes": true,
+        "source": ".source_commit"
+      },
+      "command": [
+        "python",
+        "-m",
+        "phase_07_comparative_evaluation.evaluate_frozen",
+        "--manifest",
+        "outputs/phase_07_comparative_evaluation/step1/manifest.json",
+        "--model",
+        "phase_3a",
+        "--output",
+        "outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3a",
+        "--device",
+        "cuda",
+        "--batch-size",
+        "8"
+      ],
+      "environment": {
+        "python": "3.11.18",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.6",
+        "cuda_visible_devices": "0"
+      },
+      "prediction_count": 2351,
+      "evaluated_languages": {
+        "hi": 1107,
+        "mr": 581,
+        "bn": 420,
+        "ta": 243
+      },
+      "predictions_sha256": "c4b352204591183f69168abf4586805750eaeae2b7989549a9431060e8c3d9f5",
+      "long_gold_spans": 1,
+      "metrics_sha256": "1adc4c8cbb69b5975b2058f6dbc35c8e2850b9df527b47f46de9cb87ba6c81f0"
+    },
+    "phase_3b": {
+      "role": "primary",
+      "label": "Multilingual XLM-R (Phase 3B, selected)",
+      "checkpoint": {
+        "directory": "outputs/phase_03_multilingual_finetuning/training-3b-cuda-span-checked-42/best_checkpoint",
+        "selected_epoch_checkpoint": "checkpoint-1792",
+        "model_sha256": "34441b90ad42829eb6779c3ed82690da278c8bd39a5d20d2b8273aa5a3017915",
+        "file_sha256": {
+          "config.json": "4f728f0636914d16d9566c2fb257f321cfa544e6d8d3c81e63f7856adacc45e3",
+          "model.safetensors": "34441b90ad42829eb6779c3ed82690da278c8bd39a5d20d2b8273aa5a3017915",
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f",
+          "tokenizer.json": "8ed2321636c1d1ce7e5a8fbbe853a0d5665225a48338f5927f4ec3da30b457ed",
+          "tokenizer_config.json": "ccf223ba3d5b3cc7fa6c3bf451f3bb40557a5c92b0aa33f63d17802ff1a96fd9",
+          "training_args.bin": "725090c5b33b230b5dfa28e1180a578bfc8fb2d0ca4915f6c873dcdb5a553b7c"
+        },
+        "provenance_sha256": "8e50f2873574f467215cd8ceb5ce4ddf6e44605b7387093b9be5272b69e0ebb2",
+        "seed": 42,
+        "experiment": "phase_3b"
+      },
+      "batch_size": 8,
+      "device": "cuda",
+      "source": {
+        "base_commit": "f391a373aea0bdddd8442d9a7f0c9ab25c082f20",
+        "tree": "6ef439163eba07131db00d98d8bee06f99ad5741",
+        "branch": "research/phase7-native-evaluation",
+        "uncommitted_changes": true,
+        "source": ".source_commit"
+      },
+      "command": [
+        "python",
+        "-m",
+        "phase_07_comparative_evaluation.evaluate_frozen",
+        "--manifest",
+        "outputs/phase_07_comparative_evaluation/step1/manifest.json",
+        "--model",
+        "phase_3b",
+        "--output",
+        "outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3b",
+        "--device",
+        "cuda",
+        "--batch-size",
+        "8"
+      ],
+      "environment": {
+        "python": "3.11.18",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.6",
+        "cuda_visible_devices": "0"
+      },
+      "prediction_count": 2351,
+      "evaluated_languages": {
+        "hi": 1107,
+        "mr": 581,
+        "bn": 420,
+        "ta": 243
+      },
+      "predictions_sha256": "51f6a7ac316de709800c293293bee537d0a905b16141b323f3b400fd179eb415",
+      "long_gold_spans": 1,
+      "metrics_sha256": "4e8ddbcee3e8a1eb16718214fd042ec5c161135c3f4934e5ade74223af351c51"
+    },
+    "phase_5_alpha_0": {
+      "role": "diagnostic",
+      "label": "Phase 5 alpha 0 (matched control)",
+      "checkpoint": {
+        "directory": "outputs/phase_05_domain_adaptation/alpha-sweep/alpha0-seed42/training/best_checkpoint",
+        "selected_epoch_checkpoint": "checkpoint-896",
+        "model_sha256": "9b2315405fe09376fbd581e41447b7c5c88f6ec9df3b7516fc852e3e508fac3b",
+        "file_sha256": {
+          "config.json": "4f728f0636914d16d9566c2fb257f321cfa544e6d8d3c81e63f7856adacc45e3",
+          "model.safetensors": "9b2315405fe09376fbd581e41447b7c5c88f6ec9df3b7516fc852e3e508fac3b",
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f",
+          "tokenizer.json": "8ed2321636c1d1ce7e5a8fbbe853a0d5665225a48338f5927f4ec3da30b457ed",
+          "tokenizer_config.json": "ccf223ba3d5b3cc7fa6c3bf451f3bb40557a5c92b0aa33f63d17802ff1a96fd9",
+          "training_args.bin": "c4fb94a9a2e360c048024db59e8ebdb355858857c9e70134e976b1bc26e5032d"
+        },
+        "provenance_sha256": "bf10dde228dc3fc0e368691d5e60252c57bd7267223ade5525a73341128bdecb",
+        "seed": 42,
+        "experiment": "phase_5_alpha_0"
+      },
+      "batch_size": 8,
+      "device": "cuda",
+      "source": {
+        "base_commit": "f391a373aea0bdddd8442d9a7f0c9ab25c082f20",
+        "tree": "6ef439163eba07131db00d98d8bee06f99ad5741",
+        "branch": "research/phase7-native-evaluation",
+        "uncommitted_changes": true,
+        "source": ".source_commit"
+      },
+      "command": [
+        "python",
+        "-m",
+        "phase_07_comparative_evaluation.evaluate_frozen",
+        "--manifest",
+        "outputs/phase_07_comparative_evaluation/step1/manifest.json",
+        "--model",
+        "phase_5_alpha_0",
+        "--output",
+        "outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_5_alpha_0",
+        "--device",
+        "cuda",
+        "--batch-size",
+        "8"
+      ],
+      "environment": {
+        "python": "3.11.18",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.6",
+        "cuda_visible_devices": "0"
+      },
+      "prediction_count": 2351,
+      "evaluated_languages": {
+        "hi": 1107,
+        "mr": 581,
+        "bn": 420,
+        "ta": 243
+      },
+      "predictions_sha256": "78e93c6c51a6dcd8346260d76962589c87968c17c4b54a7e08a257fafd9a25f8",
+      "long_gold_spans": 1,
+      "metrics_sha256": "3a448d8639a465f15267a602775a8dfdea0330d5b801548c2b444ccc5c2629c2"
+    },
+    "phase_5_alpha_1": {
+      "role": "diagnostic",
+      "label": "Phase 5 alpha 1 (Indic-AEC adapted layer)",
+      "checkpoint": {
+        "directory": "outputs/phase_05_domain_adaptation/matched-qa-seed42/training/best_checkpoint",
+        "selected_epoch_checkpoint": "checkpoint-896",
+        "model_sha256": "a4697b9535bfd121a35eafe9828b427c22333b656a2a256212014545be406dc4",
+        "file_sha256": {
+          "config.json": "4f728f0636914d16d9566c2fb257f321cfa544e6d8d3c81e63f7856adacc45e3",
+          "model.safetensors": "a4697b9535bfd121a35eafe9828b427c22333b656a2a256212014545be406dc4",
+          "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+          "special_tokens_map.json": "06e405a36dfe4b9604f484f6a1e619af1a7f7d09e34a8555eb0b77b66318067f",
+          "tokenizer.json": "8ed2321636c1d1ce7e5a8fbbe853a0d5665225a48338f5927f4ec3da30b457ed",
+          "tokenizer_config.json": "ccf223ba3d5b3cc7fa6c3bf451f3bb40557a5c92b0aa33f63d17802ff1a96fd9",
+          "training_args.bin": "40a55f037559bcc015b2b621f1caae35435cd56497981eb20150c8f64934e0c1"
+        },
+        "provenance_sha256": "3dc06a7fb264de379d2e3577b21e1cabbf92638f050ae151cfc224730c01b62e",
+        "seed": 42,
+        "experiment": "phase_5_adapted"
+      },
+      "batch_size": 8,
+      "device": "cuda",
+      "source": {
+        "base_commit": "f391a373aea0bdddd8442d9a7f0c9ab25c082f20",
+        "tree": "6ef439163eba07131db00d98d8bee06f99ad5741",
+        "branch": "research/phase7-native-evaluation",
+        "uncommitted_changes": true,
+        "source": ".source_commit"
+      },
+      "command": [
+        "python",
+        "-m",
+        "phase_07_comparative_evaluation.evaluate_frozen",
+        "--manifest",
+        "outputs/phase_07_comparative_evaluation/step1/manifest.json",
+        "--model",
+        "phase_5_alpha_1",
+        "--output",
+        "outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_5_alpha_1",
+        "--device",
+        "cuda",
+        "--batch-size",
+        "8"
+      ],
+      "environment": {
+        "python": "3.11.18",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.6",
+        "cuda_visible_devices": "0"
+      },
+      "prediction_count": 2351,
+      "evaluated_languages": {
+        "hi": 1107,
+        "mr": 581,
+        "bn": 420,
+        "ta": 243
+      },
+      "predictions_sha256": "dcc80943c97546d3a987e762a5c45b12a5bf9e2c58f76c03f2f7cd1d94b6d1a0",
+      "long_gold_spans": 1,
+      "metrics_sha256": "279c87512849575d9184aacea3addf4ed27ea72dbcef13b30f362c5f33375746"
+    }
+  },
+  "paired_analysis_sha256": {
+    "native_phase_3b_vs_phase_3a.json": "7fe4013250a9c95480b884899827eb057c55865188fefa2e823eaab676a6d384",
+    "native_phase_5_alpha_1_vs_alpha_0.json": "cb1f4add2e835b2d406ee35fafaef69009f94b18879f89b48dcb7424363ece5e",
+    "native_phase_5_alpha_0_vs_phase_3b.json": "ab0f5ba571af81593f9255c6617b6d9bd15527e5e879070d586915f848e2690b"
+  },
+  "translated_predictions_sha256": {
+    "phase_3a": "13023a5436473178590c2ea0f094c6ea8e706e60e89be1847fa0dbcf7fdecc77",
+    "phase_3b": "21437eea81882a6290df27fcd2d853d97c301c092418a47c32224d2e862d49cb"
+  },
+  "english_source": "phase_01_original_baseline/results/baseline_results.json",
+  "commands": [
+    "python -m phase_07_comparative_evaluation.evaluate_frozen --manifest outputs/phase_07_comparative_evaluation/step1/manifest.json --model phase_3a --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3a --device cuda --batch-size 8",
+    "python -m phase_07_comparative_evaluation.evaluate_frozen --manifest outputs/phase_07_comparative_evaluation/step1/manifest.json --model phase_3b --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3b --device cuda --batch-size 8",
+    "python -m phase_07_comparative_evaluation.evaluate_frozen --manifest outputs/phase_07_comparative_evaluation/step1/manifest.json --model phase_5_alpha_0 --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_5_alpha_0 --device cuda --batch-size 8",
+    "python -m phase_07_comparative_evaluation.evaluate_frozen --manifest outputs/phase_07_comparative_evaluation/step1/manifest.json --model phase_5_alpha_1 --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_5_alpha_1 --device cuda --batch-size 8",
+    "python -m shared.evaluate outputs/phase_07_comparative_evaluation/step1/phase6_test.shared.jsonl outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3a/predictions.jsonl --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3a/metrics.json",
+    "python -m shared.evaluate outputs/phase_07_comparative_evaluation/step1/phase6_test.shared.jsonl outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3b/predictions.jsonl --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3b/metrics.json",
+    "python -m shared.evaluate outputs/phase_07_comparative_evaluation/step1/phase6_test.shared.jsonl outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_5_alpha_0/predictions.jsonl --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_5_alpha_0/metrics.json",
+    "python -m shared.evaluate outputs/phase_07_comparative_evaluation/step1/phase6_test.shared.jsonl outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_5_alpha_1/predictions.jsonl --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_5_alpha_1/metrics.json",
+    "python -m phase_07_comparative_evaluation.statistical_analysis native --gold outputs/phase_07_comparative_evaluation/step1/phase6_test.shared.jsonl --control outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3a/predictions.jsonl --candidate outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3b/predictions.jsonl --control-label phase_3a --candidate-label phase_3b --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/analysis/native_phase_3b_vs_phase_3a.json",
+    "python -m phase_07_comparative_evaluation.statistical_analysis native --gold outputs/phase_07_comparative_evaluation/step1/phase6_test.shared.jsonl --control outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_5_alpha_0/predictions.jsonl --candidate outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_5_alpha_1/predictions.jsonl --control-label phase_5_alpha_0 --candidate-label phase_5_alpha_1 --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/analysis/native_phase_5_alpha_1_vs_alpha_0.json",
+    "python -m phase_07_comparative_evaluation.statistical_analysis native --gold outputs/phase_07_comparative_evaluation/step1/phase6_test.shared.jsonl --control outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3b/predictions.jsonl --candidate outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_5_alpha_0/predictions.jsonl --control-label phase_3b --candidate-label phase_5_alpha_0 --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/analysis/native_phase_5_alpha_0_vs_phase_3b.json",
+    "python -m phase_07_comparative_evaluation.statistical_analysis translated --output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/analysis/translated.json",
+    "python -m phase_07_comparative_evaluation.statistical_analysis errors --gold outputs/phase_07_comparative_evaluation/step1/phase6_test.shared.jsonl --control-run outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3a --candidate-run outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/phase_3b --private-output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/analysis/native_error_sample.private.csv --counts-output outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z/analysis/native_error_counts.json",
+    "python -m phase_07_comparative_evaluation.statistical_analysis report --run outputs/phase_07_comparative_evaluation/runs/native-20261125T202902Z --output-dir phase_07_comparative_evaluation/results",
+    "python -m phase_07_comparative_evaluation.generate_plots --results phase_07_comparative_evaluation/results --output-dir phase_07_comparative_evaluation/results/plots"
+  ],
+  "decisions": {
+    "selected_model": "phase_3b",
+    "phase_5": "sweep selected alpha 0; no qualifying adaptation",
+    "native_adaptation_diagnostic": "declared before Native inference; reported separately"
+  }
+}

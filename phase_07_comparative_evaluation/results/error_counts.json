@@ -1,0 +1,161 @@
+{
+  "control": "phase_3a",
+  "candidate": "phase_3b",
+  "per_case_sample": 25,
+  "seed": 42,
+  "definition": "Cases use exact match. Automatic flags describe the model that missed; alternative phrasing and unit errors need human review in the private CSV.",
+  "by_language": {
+    "hi": {
+      "questions": 1107,
+      "both_correct": 264,
+      "both_wrong": 465,
+      "candidate_recovered": 252,
+      "candidate_newly_missed": 126,
+      "sampled": {
+        "candidate_recovered": 25,
+        "candidate_newly_missed": 25,
+        "both_wrong": 25
+      },
+      "flags": {
+        "candidate_recovered": {
+          "gold_has_numeral": 8,
+          "partial_overlap": 19,
+          "prediction_longer_than_gold": 3,
+          "prediction_inside_gold": 15,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 3
+        },
+        "candidate_newly_missed": {
+          "gold_has_numeral": 8,
+          "partial_overlap": 24,
+          "prediction_longer_than_gold": 20,
+          "prediction_inside_gold": 3,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 1
+        },
+        "both_wrong": {
+          "gold_has_numeral": 10,
+          "partial_overlap": 23,
+          "prediction_longer_than_gold": 18,
+          "prediction_inside_gold": 3,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 2
+        }
+      }
+    },
+    "mr": {
+      "questions": 581,
+      "both_correct": 144,
+      "both_wrong": 256,
+      "candidate_recovered": 138,
+      "candidate_newly_missed": 43,
+      "sampled": {
+        "candidate_recovered": 25,
+        "candidate_newly_missed": 25,
+        "both_wrong": 25
+      },
+      "flags": {
+        "candidate_recovered": {
+          "gold_has_numeral": 12,
+          "partial_overlap": 20,
+          "prediction_longer_than_gold": 7,
+          "prediction_inside_gold": 13,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 8
+        },
+        "candidate_newly_missed": {
+          "gold_has_numeral": 10,
+          "partial_overlap": 22,
+          "prediction_longer_than_gold": 14,
+          "prediction_inside_gold": 5,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 8
+        },
+        "both_wrong": {
+          "gold_has_numeral": 13,
+          "partial_overlap": 20,
+          "prediction_longer_than_gold": 14,
+          "prediction_inside_gold": 3,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 5
+        }
+      }
+    },
+    "bn": {
+      "questions": 420,
+      "both_correct": 117,
+      "both_wrong": 173,
+      "candidate_recovered": 102,
+      "candidate_newly_missed": 28,
+      "sampled": {
+        "candidate_recovered": 25,
+        "candidate_newly_missed": 25,
+        "both_wrong": 25
+      },
+      "flags": {
+        "candidate_recovered": {
+          "gold_has_numeral": 11,
+          "partial_overlap": 20,
+          "prediction_longer_than_gold": 8,
+          "prediction_inside_gold": 10,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 5
+        },
+        "candidate_newly_missed": {
+          "gold_has_numeral": 10,
+          "partial_overlap": 24,
+          "prediction_longer_than_gold": 21,
+          "prediction_inside_gold": 2,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 2
+        },
+        "both_wrong": {
+          "gold_has_numeral": 6,
+          "partial_overlap": 20,
+          "prediction_longer_than_gold": 14,
+          "prediction_inside_gold": 8,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 2
+        }
+      }
+    },
+    "ta": {
+      "questions": 243,
+      "both_correct": 50,
+      "both_wrong": 117,
+      "candidate_recovered": 62,
+      "candidate_newly_missed": 14,
+      "sampled": {
+        "candidate_recovered": 25,
+        "candidate_newly_missed": 14,
+        "both_wrong": 25
+      },
+      "flags": {
+        "candidate_recovered": {
+          "gold_has_numeral": 12,
+          "partial_overlap": 20,
+          "prediction_longer_than_gold": 13,
+          "prediction_inside_gold": 7,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 7
+        },
+        "candidate_newly_missed": {
+          "gold_has_numeral": 7,
+          "partial_overlap": 14,
+          "prediction_longer_than_gold": 8,
+          "prediction_inside_gold": 6,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 4
+        },
+        "both_wrong": {
+          "gold_has_numeral": 6,
+          "partial_overlap": 20,
+          "prediction_longer_than_gold": 9,
+          "prediction_inside_gold": 9,
+          "gold_exceeds_decode_limit": 0,
+          "multi_window_passage": 8
+        }
+      }
+    }
+  }
+}
