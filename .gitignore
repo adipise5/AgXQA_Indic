@@ -16,6 +16,9 @@ checkpoints/
 !phase_01_original_baseline/checkpoints/
 phase_01_original_baseline/checkpoints/*
 !phase_01_original_baseline/checkpoints/README.md
+!phase_03_multilingual_finetuning/checkpoints/
+phase_03_multilingual_finetuning/checkpoints/*
+!phase_03_multilingual_finetuning/checkpoints/README.md
 
 # Phase 6 native QA: passage text is withheld until redistribution is permitted.
 # Committed: final/*.jsonl (release without passages), metadata.csv, public review sheets.

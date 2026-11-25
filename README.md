@@ -15,7 +15,7 @@ This repository organizes seven experiments to study cross-lingual transfer, mul
 |---|---|---|---|
 | 1 | [Reproduce the Original AgXQA Baseline](phase_01_original_baseline/README.md) | Saunak; review by Dhiraj | Partial: AgRoBERTa measured; English XLM-R pending |
 | 2 | [Create AgXQA-Indic](phase_02_multilingual_benchmark/README.md) | Saunak + language reviewers | Span-checked splits prepared. Human review and English source adjudication pending |
-| 3 | [Multilingual Fine-Tuning and Cross-Lingual Evaluation](phase_03_multilingual_finetuning/README.md) | Saunak | Pending |
+| 3 | [Multilingual Fine-Tuning and Cross-Lingual Evaluation](phase_03_multilingual_finetuning/README.md) | Saunak | Full 3B run restarted on the Mac GPU with fixed-length padding |
 | 4 | [Build Our Own Indic-AEC](phase_04_indic_aec_corpus/README.md) | Aditya Pise | Pending |
 | 5 | [Domain Adaptation Using Indic-AEC](phase_05_domain_adaptation/README.md) | Aditya Pise | Pending |
 | 6 | [Build a Native Indic Agricultural QA Dataset](phase_06_native_indic_qa/README.md) | Aditya Saxena | Pending |

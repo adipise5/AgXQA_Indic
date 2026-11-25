@@ -13,7 +13,7 @@
   "phases": {
     "1": "partial_agroberta_measured_xlmr_pending",
     "2": "gemini_span_checked_subset_prepared_human_review_pending",
-    "3": "pending",
+    "3": "phase_3b_span_checked_seed_42_mps_fixed_padding_run_started",
     "4": "pending",
     "5": "pending",
     "6": "partial_qa_generated_human_review_pending",

@@ -1,7 +1,7 @@
 {
   "status": "pending",
   "model_id": "FacebookAI/xlm-roberta-base",
-  "model_revision": null,
+  "model_revision": "e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
   "dataset_contract": "phase_02_multilingual_benchmark/configs/qa_release.json",
   "checkpoint_requirement": "Original pretrained XLM-R Base for multilingual QA training",
   "seed": 42,
@@ -19,9 +19,7 @@
     "bn",
     "ta"
   ],
-  "learning_rate": 3e-05,
-  "epochs": 5,
-  "max_length": 384,
-  "doc_stride": 128,
-  "notes": "Proposed defaults, not tuned or executed; pin model revision and resolve data paths."
+  "training_configuration": "phase_03_multilingual_finetuning/configs/multilingual_config.yaml",
+  "evaluation_configuration": "phase_03_multilingual_finetuning/configs/evaluation_config.yaml",
+  "notes": "Proposed training settings. Model execution is pending."
 }
